@@ -40,6 +40,10 @@ export default {
             path: 'esignedit',
             template: 'src/pages/EsignEdit',
         },
+        {
+            path: 'createnew',
+            template: 'src/pages/CreateProjectNew',
+        },
         // A 404 component
         {
             path: '404',
