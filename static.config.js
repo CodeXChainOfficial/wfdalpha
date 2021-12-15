@@ -44,6 +44,10 @@ export default {
             path: 'createnew',
             template: 'src/pages/CreateProjectNew',
         },
+        {
+            path: 'backproject',
+            template: 'src/pages/BackProject',
+        },
         // A 404 component
         {
             path: '404',
