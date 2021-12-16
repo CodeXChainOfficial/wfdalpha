@@ -8,7 +8,7 @@ import React, { useEffect, useState,  useCallback, useContext, useRef, } from 'r
 import { useStore } from '../store'
 import { IoChevronUpOutline, IoChevronDownOutline, IoCheckmark } from 'react-icons/io5';
 
-import { ImageTransition, InputTransition } from "../components/ImageTransition";
+import { ButtonTransition, InputTransition } from "../components/ImageTransition";
 
 export default function NewProject() {
   const [backPressed, setBackPressed] = useState(false);
@@ -88,14 +88,8 @@ export default function NewProject() {
           </Flex>
           {/* -----------------Back Project----------------- */}
           <Flex w='100%' mt='60px'justify='center' mb='170px'>
-            <ImageTransition 
+            <ButtonTransition 
               unitid='submit'
-              border1='linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)' 
-              background1='linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)'
-              border2='linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)'
-              background2='linear-gradient(180deg, #1A133E 0%, #1A133E 100%)'
-              border3="linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"
-              background3="linear-gradient(180deg, #171347 0%, #171347 100%)"
               selected={false}
               width='350px' height='50px' rounded='33px'
             >
@@ -103,7 +97,7 @@ export default function NewProject() {
                   onClick = {()=>{}} >
                 Back Project
               </Box>
-            </ImageTransition>
+            </ButtonTransition>
           </Flex>
           {/* -----------------------space line-------------------------------- */}
           <Img mt='102px' height='1px' objectFit='cover' src='/line.svg' alt='UST Avatar'/>
