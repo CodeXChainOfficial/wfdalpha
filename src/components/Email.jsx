@@ -1,72 +1,31 @@
-import { FormEvent, ChangeEvent, useState } from 'react';
-import {
-  Stack,
-  FormControl,
-  Input,
-  Button,
-  useColorModeValue,
-  Heading,
-  Text,
-  Container,
-  Center,
-  Flex,
-} from '@chakra-ui/react';
-import { CheckIcon } from '@chakra-ui/icons';
 import React from 'react';
+import { FormEvent, ChangeEvent, useState } from 'react';
+import { Box, Text, Flex, } from '@chakra-ui/react';
+import { InputTransition, ButtonTransition } from '../components/ImageTransition';
 
 export default function Emailsub() {
-  const [email, setEmail] = useState('');
-  const [state, setState] = useState(
-    'initial'
-  );
-  const [error, setError] = useState(false);
 
   return (
-    <Flex
-      minH={'40vh'}
-      align={'center'}
-      justify={'center'}
-      w={'100%'}
-      h={"621px"}
-      id = {'Contactme'}
-      bg={'url(saft1.svg)'}
-      backgroundSize = {"cover"}
-      bgRepeat={"no-repeat"}
-      >
-      
-      <Container
-        boxShadow={'xl'}
-        rounded={'lg'}
-        p={6}
-        bg={'url(saft2.svg)'}
-        minW= {"1212px"}
-        marginTop={'535px'}
-        h= {"808px"}
-        bgRepeat={"no-repeat"}
-        >
-        <Heading
-          as={'h2'}
-          fontSize={{ base: '22px', sm: '2xl' }}
-          textAlign={'center'}
-          mb={5}
-          fontFamily="Pilat Extended"
-fontStyle={"normal"}
-fontWeight={"normal"}
-lineHeight={"28px"}
-textTransform={"uppercase"}
-color="rgba(255, 255, 255, 0.54)">
-          Get in Wefund
-        </Heading>
-        <Heading fontFamily="Pilat Extended"
-fontStyle="normal"
-fontWeight="bold"
-fontSize="35px"
-lineHeight="45px" textAlign={'center'}>Grow With Us</Heading>
-<Center>
-        <Button bg={"linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"}  size="lg" maxW={'200'} marginTop={"150px"}>
-            Start Funding
-            </Button></Center>
-      </Container>
+    <Flex direction='column' mx='115px' mt='219px' h='350px' bg='url(saft2.svg)' backgroundSize = "cover" bgRepeat="no-repeat" >
+      <Flex mt='66px' justify='center'>
+        <Text fontFamily='PilatExtended-Regular' fontWeight='400' fontSize='22px'>
+          GET IN WEFUND
+        </Text>
+      </Flex>
+      <Flex mt='14px' justify='center'>
+        <Text fontFamily='PilatExtended-Regular' fontWeight='700' fontSize='35px'>
+          Grow With Us Now
+        </Text>
+      </Flex>
+      <Flex mt='72px' mb='1000px' justify='center'>
+          <InputTransition 
+            unitid='investinwefund'
+            selected={false}
+            width='210px' height='50px' rounded='md'
+          >
+            Invest in WeFund
+          </InputTransition>
+      </Flex>
     </Flex>
   );
 }

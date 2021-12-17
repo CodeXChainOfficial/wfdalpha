@@ -10,7 +10,7 @@ import { IoCloudUploadOutline, IoCheckbox } from 'react-icons/io5';
 
 import '../styles/CreateProject.css';
 
-import { ImageTransition, InputTransition } from "../components/ImageTransition";
+import { ButtonTransition, ImageTransition, InputTransition } from "../components/ImageTransition";
 
 export default function NewProject() {
   const [isUST, setIsUST] = useState(true);
@@ -290,14 +290,7 @@ export default function NewProject() {
           </Flex>
           {/* -----------------submit----------------- */}
           <Flex w='100%' mt='60px'justify='center' mb='170px'>
-            <ImageTransition 
-              unitid='submit'
-              border1='linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)' 
-              background1='linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)'
-              border2='linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)'
-              background2='linear-gradient(180deg, #1A133E 0%, #1A133E 100%)'
-              border3="linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"
-              background3="linear-gradient(180deg, #171347 0%, #171347 100%)"
+            <ButtonTransition unitid="submit"
               selected={false}
               width='350px' height='50px' rounded='33px'
             >
@@ -305,7 +298,7 @@ export default function NewProject() {
                   onClick = {()=>{setSubmitPressed(!submitPressed)}} >
                 Submit
               </Box>
-            </ImageTransition>
+            </ButtonTransition>
           </Flex>
         </div>
         </Flex>

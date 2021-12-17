@@ -1,57 +1,74 @@
-import React from "react";
-
+import React from 'react';
 import {
-  Flex,
   Image,
-  Container,
-  Heading,
-  Stack,
+  Flex,
   Text,
-  Button,
-  Icon,
-  IconProps,
+  Box,
 } from '@chakra-ui/react';
+import { ButtonTransition, InputTransition } from '../components/ImageTransition';
+import { IoChevronDownOutline } from 'react-icons/io5';
 
-export default function CallToActionWithIllustration() {
+export default function CallToActionWithIllustration(props) {
+  function transitToUpwards()
+  {
+    if(typeof document !== 'undefined'){
+      var part1 = document.getElementById('part1');
+     //  console.log(medium);
+      part1.classList.add('movingup_transited');
+      props.onTransitOpacity();
+    }
+  }
   return (
-    <Container 
-      minWidth={"1440px"}
-      w={'100%'}
-      height= {"1001px"}
-      bg={'url(herobackground.svg)'}
-      backgroundSize = {"cover"}
-      bgRepeat={"no-repeat"}>
-      <Stack
-        textAlign={'center'}
-        align={'center'}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}>
+    <Flex id="part1" className='movingup_normal' w='100%' 
+    bg='url(/herobackground.svg),linear-gradient(90deg, #1F0021 0%, #120054 104.34%)'
+    backgroundSize='contain' bgRepeat="no-repeat" direction='column' onClick={props.onClick} 
+    onTransitOpacity={props.onTransitOpacity}
+    style={props.style}
+    >
+      <Flex justify='center' pt='122px'>
         <Image src="horizontallogo.svg"></Image>
-        <Heading
-          fontWeight={600}
-          fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
-          lineHeight={'110%'}>
-          
-          The foremost enabler of crypto-blockchain based crowdfunding launchpad
-        </Heading>
-                <Stack spacing={6} direction={'row'}>
-          <Button
-            rounded={'full'}
-            px={6}
-            colorScheme={'orange'}
-            bg="linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"
-            borderRadius= "33px"
-            _hover={{ bg: 'linear-gradient(180deg, rgba(0, 193, 255, 0.1) 0%, rgba(0, 193, 255, 0) 100%)', transition:"all .5s" }}>
+      </Flex>
+      <Box ml='100px' mr='100px'>
+        <Text fontFamily='PilatExtended-Regular' fontWeight='700'
+          fontSize='55px'
+          lineHeight='110%'
+          textAlign='center'
+        >
+          The foremost enabler of<br/>crypto-blockchain<br/>based crowdfunding launchpad
+        </Text>
+      </Box>
+      <Flex w='100%' mt='60px'justify='center' mb='65px'>
+        <ButtonTransition 
+          unitid='getstarted'
+          selected={false}
+          width='178px' height='50px' rounded='33px'
+        >
+          <Box variant="solid" color="white" justify='center' align='center'
+              onClick = {()=>{}} >
             Get started
-          </Button>
-          <Button rounded={'full'} px={6}
-          bg="linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"
-          borderRadius= "33px"
-          _hover={{ bg: 'linear-gradient(180deg, rgba(0, 193, 255, 0.1) 0%, rgba(0, 193, 255, 0) 100%)', transition:"all .5s" }}>
-            Learn more
-          </Button>
-        </Stack>
-      </Stack>
-    </Container>
+          </Box>
+        </ButtonTransition>
+        <ButtonTransition 
+          unitid='howitworks'
+          selected={false}
+          width='178px' height='50px' rounded='33px' ml='20px'
+        >
+          <Box variant="solid" color="white" justify='center' align='center'
+              onClick = {()=>{}} >
+            How it works?
+          </Box>
+        </ButtonTransition>
+      </Flex>
+      <Flex mt='138px' mb='138px' justify='center'>
+        <InputTransition 
+          unitid='gotonext'
+          selected={false}
+          width='92px' height='55px' rounded='100px'
+          onClick={()=>{transitToUpwards()}}
+        >              
+          <IoChevronDownOutline/>
+        </InputTransition>
+      </Flex>
+    </Flex>
   );
 }

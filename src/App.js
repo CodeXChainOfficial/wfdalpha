@@ -15,6 +15,7 @@ if (typeof document !== 'undefined') {
 import { StoreProvider } from './store'
 
 class App extends Component {
+ 
     render() {
         return (
             <Suspense

@@ -1,418 +1,154 @@
-import {
-  Container,
-  SimpleGrid,
-  Image,
-  Flex,
-  Heading,
-  Text,
-  Stack,
-  Box,
-  Icon,
-  Link,
-  Button,
-  Center,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
-import React from 'react';
+import React, {useState} from 'react';
+import { Image, Flex, Text, Box, } from '@chakra-ui/react';
+import { ButtonTransition } from '../components/ImageTransition';
 
-export default function Industry() { 
+export default function Industry()
+{
+  const [choice, setChoice] = useState(1);
+  
+  function slideView(_choosen)
+  {
+    setChoice(_choosen);
+  }
+
   return(
-    <Flex>
-  <Tabs size="lg" marginTop = {20}  colorScheme="white" >
-  <TabList justifyContent={"space-evenly"}>
-    <Center>
-      <Tab as={Stack} bg={"rgba(255, 255, 255, 0.08)"} width= "242px" height= "161px">
-          <Image
-              marginTop={10}
-              maxH = {100}
-              src="prj-startup.svg"
-              alt="WeFund"
-              /> 
-              <Stack direction={'row'} spacing={12} p={5}>
-              <Text fontSize={14} maxW={24} textAlign="center">Crypto-Startup Industry </Text>
-              </Stack>
-      </Tab>
-      <Tab as={Stack} bg={"rgba(255, 255, 255, 0.05)"}width= "242px" height= "161px">
-      <Image
-              maxH = {10}
-              src="time-not%20yet.svg"
-              alt="WeFund"
-              marginRight={"70%"}
-              /> 
-          <Image
-              maxH = {100}
-              src="prj-gaming.svg"
-              alt="WeFund"
-              /> 
-              <Stack direction={'row'} spacing={12} p={4}>
-              <Text fontSize={14} maxW={24} textAlign="center">Gaming Industry</Text>
-              </Stack>
-      </Tab>
-      <Tab as={Stack} bg={"rgba(255, 255, 255, 0.08)" }  width= "242px" height= "161px">
-      <Image
-              maxH = {10}
-              src="time-not%20yet.svg"
-              alt="WeFund"
-              marginRight={"70%"}
-              /> 
-          <Image
-              maxH = {100}
-              src="prj-creative.svg"
-              alt="WeFund"
-              /> 
-              <Stack direction={'row'} spacing={12} p={4}>
-              <Text fontSize={14} maxW={24} textAlign="center">Creative Industry </Text>
-              </Stack>
-      </Tab>
-      <Tab as={Stack} bg={"rgba(255, 255, 255, 0.05)"}width= "242px" height= "161px">
-          <Image
-              maxH = {10}
-              src="time-not%20yet.svg"
-              alt="WeFund"
-              marginRight={"70%"}
-              /> 
-              <Image
-              maxH = {100}
-              src="prj-sport.svg"
-              alt="WeFund"
-              /> 
-              <Stack direction={'row'} spacing={12} p={6}>
-              <Text fontSize={14} maxW={24} textAlign="center">Sport Industry </Text>
-              </Stack>
-      </Tab>
-      <Tab as={Stack} bg={"rgba(255, 255, 255, 0.08)"} width= "242px" height= "161px">
-      <Image
-              maxH = {10}
-              src="time-not%20yet.svg"
-              alt="WeFund"
-              marginRight={"70%"}
-              /> 
-          <Image
-              maxH = {100}
-              src="prj-real%20estate.svg"
-              alt="WeFund"
-              /> 
-              <Stack direction={'row'} spacing={12} p={3}>
-              <Text fontSize={14} maxW={24} textAlign="center">Real Estate Industry </Text>
-              </Stack>
-      </Tab>
-      
-      </Center>
-      
-  </TabList>
-  <TabPanels  size="md" maxW={'6xl'} maxH={'48vh'} py={12} p="6" >
-  <TabPanel>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Stack spacing={4}>
-        <br/><br/>
-          <Heading
-fontStyle=" normal"
-fontWeight=" 300"
-fontSize=" 18px"
-lineHeight=" 150%"
-/* identical to box height, or 27px */
-
-letterSpacing=" 0.05em"
-textTransform=" uppercase"
-color=" rgba(255, 255, 255, 0.54)">Crypto Startup Industry</Heading>
-          <Heading color={'white'} fontFamily="Pilat Extended">Crypto Project</Heading>
-          <Text color={"#2AC54D"} fontFamily=" Sk-Modernist"
-fontStyle=" normal"
-fontWeight=" bold"
-fontWize=" 18px"
-lineHeight=" 140%">Ongoing</Text>
-          <Text  fontFamily=" Sk-Modernist"
-fontStyle=" normal"
-fontWeight=" normal"
-fontSize=" 18px"
-lineHeight=" 150%"
-
-
-color=" #FFFFFF">
-          WeFund supports both crypto and non-crypto projects. We are passionate about blockchain technology and its limitless potential. WeFund is designed to democratize the fundraising process.
-          </Text>
-            <Button bg={"linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"}  size="lg" maxW={'200'} marginTop={"56px"}>
-            Start Funding
-            </Button>
-        </Stack>
-        <Flex>
-          <Box>
-          <br/>
-          <Image 
-            width="563px"
-            height="438px"
-            left="774px"
-            top="2641px"
-            borderRadius={"4xl"}
-            paddingLeft={20}
-            src={
-              'nft.svg'
-            }
-          />
+    <Flex direction='column' px='115px' pt='47px' fontFamily='Sk-Modernist-Regular'>
+      <Flex direction='row' fontFamily='PilatExtended-Regular' fontWeight='700' fontSize='35px'>
+        <Text color='#00A3FF'>WeFund&nbsp;</Text>
+        <Text>Supports All</Text>
+      </Flex>
+      <Flex direction='row' mt='45px' >
+        {/* ----------crypto startup industry--------------- */}
+        <Box w='242px' h='161px' bg='#FFFFFF0D'  borderRadius='10% 0 0 0'
+          style={{borderBottomWidth:(choice==1?'3px':'0px')}}
+          onClick={()=>{slideView(1)}}
+        >
+          <Flex ml='15px' h='90px' align='center'>
+            <Image alt='Crypto Industry' src= '/CryptoIndustry.svg' h='90px' />
+          </Flex>
+          <Box ml='15px'>
+            <Text mt='14px' fontSize='15px' fontWeight='700'>Crypto-Startup Industry</Text>
+            <Text fontSize='12px' fontWeight='700' color='#2AC54D'>Ongoing</Text>
+          </Box>
+        </Box>
+        {/* --------------Gaming industry-------------------------- */}
+        <Box w='242px' h='161px' bg='#FFFFFF14'
+          style={{borderBottomWidth:(choice==2?'3px':'0px')}}
+          onClick={()=>{slideView(2)}}
+        >
+          <Flex ml='15px' h='90px' align='center'>
+            <Image alt='Crypto Industry' src= '/GamingIndustry.svg' h='90px' />
+          </Flex>
+          <Box ml='15px'>
+            <Text mt='14px' fontSize='15px' fontWeight='700'>Gaming Industry</Text>
+            <Text fontSize='12px' fontWeight='700' color='#FE8600'>Coming soon</Text>
+          </Box>
+        </Box>
+        {/* --------------Creatie industry------------------ */}
+        <Box w='242px' h='161px' bg='#FFFFFF0D' 
+          style={{borderBottomWidth:(choice==3?'3px':'0px')}}
+          onClick={()=>{slideView(3)}}
+        >
+          <Flex ml='15px' h='90px' align='center'>
+            <Image alt='Crypto Industry' src= '/CreativeIndustry.svg' h='90px' />
+          </Flex>
+          <Box ml='15px'>
+            <Text mt='14px' fontSize='15px' fontWeight='700'>Creative Industry</Text>
+            <Text fontSize='12px' fontWeight='700' color='#FE8600'>Coming soon</Text>
+          </Box>
+        </Box>
+        {/* ------------------sports industry------------------- */}
+        <Box w='242px' h='161px' bg='#FFFFFF14'
+          style={{borderBottomWidth:(choice==4?'3px':'0px')}}
+          onClick={()=>{slideView(4)}}
+        >
+          <Flex ml='15px' h='90px' align='center'>
+            <Image alt='Crypto Industry' src= '/SportsIndustry.svg' h='90px' />
+          </Flex>
+          <Box ml='15px'>
+            <Text mt='14px' fontSize='15px' fontWeight='700'>Sports Industry</Text>
+            <Text fontSize='12px' fontWeight='700' color='#FE8600'>Coming soon</Text>
+          </Box>
+        </Box>
+        {/* ------------------Real Estate industry------------------- */}
+        <Box w='242px' h='161px' bg='#FFFFFF14' borderRadius='0 10% 0 0'
+          style={{borderBottomWidth:(choice==5?'3px':'0px')}}
+          onClick={()=>{slideView(5)}}
+        >
+          <Flex ml='15px' h='90px' align='center'>
+            <Image alt='Crypto Industry' src= '/RealIndustry.svg' h='90px' />
+          </Flex>
+          <Box ml='15px'>
+            <Text mt='14px' fontSize='15px' fontWeight='700'>Real Estate Industry</Text>
+            <Text fontSize='12px' fontWeight='700' color='#FE8600'>Coming soon</Text>
+          </Box>
+        </Box>
+      </Flex>
+      <Flex mt='69px'>
+        <Flex direction="row">
+          <Flex direction='column' w='50%' justify='space-between'>
+            <Box>
+              <Text fontFamily='PilatExtended-Regular' fontWeight='300' color='#FFFFFF8A' fontSize='18px'>
+                -{PROJECT_ITEMS[choice-1].label}
+              </Text>
+              <Text fontFamily='PilatExtended-Regular' fontWeight='700' fontSize='40px'>
+              {PROJECT_ITEMS[choice-1].title}
+              </Text>
+              <Text fontFamily='Sk-Modernist-Regular' fontWeight='700' color='#2AC54D' fontSize='18px'>{PROJECT_ITEMS[choice-1].state}</Text>
+              <Text fontFamily='Sk-Modernist-Regular' fontWeight='400' fontSize='18px'w='75%'>
+                {PROJECT_ITEMS[choice-1].description}
+              </Text>
+            </Box>
+            <ButtonTransition 
+              unitid='cryptofunding'
+              selected={true}
+              width='192px' height='50px' rounded='md'
+            >
+              Start Funding
+            </ButtonTransition>
+          </Flex>
+          <Box w='50%'>
+            <Image alt='Crypto project' src= {PROJECT_ITEMS[choice-1].imgsrc} w='100%' h='100%' />
           </Box>
         </Flex>
-        
-      </SimpleGrid>
-      </TabPanel>
-      <TabPanel>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Stack spacing={4}>
-        <br/><br/>
-          <Heading font-family="Pilat Extended"
-font-style=" normal"
-font-weight=" 300"
-font-size=" 18px"
-line-height=" 150%"
-/* identical to box height, or 27px */
-
-letter-spacing=" 0.05em"
-text-transform=" uppercase"
-
-color=" rgba(255, 255, 255, 0.54)">Crypto Startup Industry</Heading>
-          <Heading color={'white'} font-family="Pilat Extended">Crypto Project</Heading>
-          <Text color={"#2AC54D"} font-family="Sk-Modernist"
-font-style=" normal"
-font-weight=" bold"
-font-size=" 18px"
-line-height=" 140%">Ongoing</Text>
-          <Text fontSize={'lg'} font-family="Sk-Modernist"
-font-style=" normal"
-font-weight=" normal"
-font-size=" 18px"
-line-height=" 150%"
-/* or 27px */
-
-
-color=" #FFFFFF">
-          WeFund supports both crypto and non-crypto projects. We are passionate about blockchain technology and its limitless potential. WeFund is designed to democratize the fundraising process.
-          </Text>
-          <Stack spacing={12} direction={'row'}>
-          <Button  size="sm" maxW={'20'} colorScheme={'bslue'}>
-            
-            </Button>
-            <Button  size="sm" maxW={'20'} colorScheme={'bslue'}>
-            
-            </Button>
-            <Button bg={"linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"}  size="lg" maxW={'200'}>
-            Start Funding
-            </Button>
-            </Stack>
-        </Stack>
-        <Flex>
-          <Box>
-          <br/>
-          <Image 
-            width="563px"
-            height="438px"
-            left="774px"
-            top="2641px"
-            borderRadius={"4xl"}
-            paddingLeft={20}
-            src={
-              'nft.svg'
-            }
-          />
-          </Box>
-        </Flex>
-        
-      </SimpleGrid>
-      </TabPanel>
-      <TabPanel>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Stack spacing={4}>
-        <br/><br/>
-          <Heading font-family=" Pilat Extended"
-            font-style=" normal"
-            font-weight=" 300"
-            font-size=" 18px"
-            line-height=" 150%"
-            /* identical to box height, or 27px */
-
-            letter-spacing=" 0.05em"
-            text-transform=" uppercase"
-
-            color=" rgba(255, 255, 255, 0.54)">Crypto Startup Industry
-          </Heading>
-          <Heading color={'white'} font-family="Pilat Extended">Crypto Project</Heading>
-          <Text color={"#2AC54D"} font-family=" Sk-Modernist"
-            font-style=" normal"
-            font-weight=" bold"
-            font-size=" 18px"
-            line-height=" 140%">Ongoing</Text>
-                      <Text fontSize={'lg'} font-family=" Sk-Modernist"
-            font-style=" normal"
-            font-weight=" normal"
-            font-size=" 18px"
-            line-height=" 150%"
-            /* or 27px */
-
-
-            color=" #FFFFFF">
-          WeFund 1 supports both crypto and non-crypto projects. We are passionate about blockchain technology and its limitless potential. WeFund is designed to democratize the fundraising process.
-          </Text>
-          <br/><br/><br/><br/>
-          <Stack spacing={12} direction={'row'}>
-          <Button  size="sm" maxW={'20'} colorScheme={'bslue'}>
-            
-            </Button>
-            <Button  size="sm" maxW={'20'} colorScheme={'bslue'}>
-            
-            </Button>
-            <Button bg={"linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"}  size="lg" maxW={'200'}>
-            Start Funding
-            </Button>
-            </Stack>
-        </Stack>
-        <Flex>
-          <Box>
-          <br/>
-          <Image 
-            width="563px"
-            height="438px"
-            left="774px"
-            top="2641px"
-            borderRadius={"4xl"}
-            paddingLeft={20}
-            src={
-              'nft.svg'
-            }
-          />
-          </Box>
-        </Flex>
-        
-      </SimpleGrid>
-      </TabPanel>
-      <TabPanel>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Stack spacing={4}>
-        <br/><br/>
-          <Heading font-family=" Pilat Extended"
-font-style=" normal"
-font-weight=" 300"
-font-size=" 18px"
-line-height=" 150%"
-/* identical to box height, or 27px */
-
-letter-spacing=" 0.05em"
-text-transform=" uppercase"
-
-color=" rgba(255, 255, 255, 0.54)">Crypto Startup Industry</Heading>
-          <Heading color={'white'} font-family="Pilat Extended">Crypto Project</Heading>
-          <Text color={" #FE8600"} font-family=" Sk-Modernist"
-font-style=" normal"
-font-weight=" bold"
-font-size=" 18px"
-line-height=" 140%">OComing Soon</Text>
-          <Text fontSize={'lg'} font-family=" Sk-Modernist"
-font-style=" normal"
-font-weight=" normal"
-font-size=" 18px"
-line-height=" 150%"
-/* or 27px */
-
-
-color=" #FFFFFF">
-          WeFund 2 supports both crypto and non-crypto projects. We are passionate about blockchain technology and its limitless potential. WeFund is designed to democratize the fundraising process.
-          </Text>
-          <br/><br/><br/><br/>
-          <Stack spacing={12} direction={'row'}>
-          <Button  size="sm" maxW={'20'} colorScheme={'bslue'}>
-            
-            </Button>
-            <Button  size="sm" maxW={'20'} colorScheme={'bslue'}>
-            
-            </Button>
-            <Button bg={"linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"}  size="lg" maxW={'200'}>
-            Start Funding
-            </Button>
-            </Stack>
-        </Stack>
-        <Flex>
-          <Box>
-          <br/>
-          <Image 
-            width="563px"
-            height="438px"
-            left="774px"
-            top="2641px"
-            borderRadius={"4xl"}
-            paddingLeft={20}
-            src={
-              'nft.svg'
-            }
-          />
-          </Box>
-        </Flex>
-        
-      </SimpleGrid>
-      </TabPanel>
-      <TabPanel>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Stack spacing={4}>
-        <br/><br/>
-          <Heading font-family=" Pilat Extended"
-          font-style=" normal"
-          font-weight=" 300"
-          font-size=" 18px"
-          line-height=" 150%"
-          /* identical to box height, or 27px */
-
-          letter-spacing=" 0.05em"
-          text-transform=" uppercase"
-
-          color=" rgba(255, 255, 255, 0.54)">Crypto Startup Industry</Heading>
-                    <Heading color={'white'} font-family="Pilat Extended">Crypto Project</Heading>
-                    <Text color={" #FE8600"} font-family=" Sk-Modernist"
-          font-style=" normal"
-          font-weight=" bold"
-          font-size=" 18px"
-          line-height=" 140%">Coming Soon</Text>
-                    <Text fontSize={'lg'} font-family=" Sk-Modernist"
-          font-style=" normal"
-          font-weight=" normal"
-          font-size=" 18px"
-          line-height=" 150%"
-          /* or 27px */
-
-
-          color=" #FFFFFF">
-          WeFund supports both crypto and non-crypto projects. We are passionate about blockchain technology and its limitless potential. WeFund is designed to democratize the fundraising process.
-          </Text>
-          <br/><br/><br/><br/>
-          <Stack spacing={12} direction={'row'}>
-          <Button  size="sm" maxW={'20'} colorScheme={'bslue'}>
-            
-            </Button>
-            <Button  size="sm" maxW={'20'} colorScheme={'bslue'}>
-            
-            </Button>
-            <Button bg={"linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"}  size="lg" maxW={'200'}>
-            Start Funding
-            </Button>
-            </Stack>
-        </Stack>
-        <Flex>
-          <Box>
-          <br/>
-          <Image 
-            width="563px"
-            height="438px"
-            left="774px"
-            top="2641px"
-            borderRadius={"4xl"}
-            paddingLeft={20}
-            src={
-              'nft.svg'
-            }
-          />
-          </Box>
-        </Flex>
-        
-      </SimpleGrid>
-      </TabPanel>
-  </TabPanels>
-  </Tabs>
-  </Flex>
-  );
+      </Flex>
+    </Flex>
+  )
 }
+const PROJECT_ITEMS = [
+  {
+    label: 'CRYPTO-STARTUP INDUSTRY',
+    title: 'Crypto Project',
+    state: 'Ongoing',
+    description: 'WeFund supports both crypto and non-crypto projects. We are passionate about blockchain technology and its limitless potential. WeFund is designed to democratize the fundraising process.',
+    imgsrc: '/CryptoProject.svg'
+  },
+  {
+    label: 'GAMING INDUSTORY',
+    title: 'Gaming Project',
+    state: 'Coming soon',
+    description: 'WeFund supports both crypto and non-crypto projects. We are passionate about blockchain technology and its  limitless potential. WeFund is designed to democratize the fundraising process.',
+    imgsrc: '/GamingProject.svg'
+  },
+  {
+    label: 'CREATIVE INDUSTRY',
+    title: 'Creative Project',
+    state: 'Coming soon',
+    description: 'WeFund supports both crypto and non-crypto projects. We are passionate about blockchain technology and its limitless potential. WeFund is designed to democratize the fundraising process.',
+    imgsrc: '/CreativeProject.svg'
+  },
+  {
+    label: 'SPORTS INDUSTRY',
+    title: 'Sports Project',
+    state: 'Coming soon',
+    description:'WeFund supports both crypto and non-crypto projects. We are passionate about blockchain technology and its limitless potential. WeFund is designed to democratize the fundraising process.',
+    imgsrc: '/SportsProject.svg'
+  },
+  {
+    label: 'REAL ESTATE INDUSTRY',
+    title: 'Real Estate Project',
+    state: 'Coming soon',
+    description: 'WeFund supports both crypto and non-crypto projects. We are passionate about blockchain technology and its limitless potential. WeFund is designed to democratize the fundraising process.',
+    imgsrc: '/RealEstateProject.svg'
+  },
+]
