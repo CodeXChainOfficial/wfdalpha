@@ -19,9 +19,9 @@ export default function CallToActionWithIllustration(props) {
     }
   }
   return (
-    <Flex id="part1" className='movingup_normal' w='100%' 
+    <Flex id="part1" className='movingup_normal' w='1440px' 
     bg='url(/herobackground.svg),linear-gradient(90deg, #1F0021 0%, #120054 104.34%)'
-    backgroundSize='contain' bgRepeat="no-repeat" direction='column' onClick={props.onClick} 
+    backgroundSize='cover' bgRepeat="no-repeat" direction='column' onClick={props.onClick} 
     onTransitOpacity={props.onTransitOpacity}
     style={props.style}
     >

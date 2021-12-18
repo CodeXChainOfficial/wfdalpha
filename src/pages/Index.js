@@ -25,6 +25,7 @@ export default() => {
     return(
         <ChakraProvider resetCSS theme={theme}>
             <Container>
+                <Flex direction='column'  maxWidth='1440px'>
                 <Hero style={{zIndex:'2', position:'absolute'}}   
                     onTransitOpacity={() => {transitOpacity()}}/>
                 <Flex id="main_part" style={{zIndex:'1'}} className="hidden" direction='column'>
@@ -34,6 +35,7 @@ export default() => {
                     <Emailsub/>
                     <Projectfeature/>
                     {/* <FooterCenter/> */}
+                </Flex>
                 </Flex>
             </Container>
         </ChakraProvider>

@@ -30,24 +30,34 @@ export default function Aboutone() {
       mouseoriginY = mouseposY;
     }
 
-    var base = 0.1;
+    var base = 1;
     var deltaX = e.pageX - mouseoriginX;
     var deltaY = e.pageY - mouseoriginY;
+    var limit = 300;
+    if(deltaX > limit)
+      deltaX = limit;
+    if(deltaX < -limit)
+      deltaX = -limit;
+    if(deltaY > limit)
+      deltaY = limit;
+    if(deltaY < -limit)
+      deltaY = -limit;
+    deltaY += 300;
 
     var rocket = document.getElementById('rocket');
     rocket.style.transform = 'translate3d(' + (deltaX*base) + 'px, '+ (deltaY*base) + 'px, 0px)';
     
-    var swirl = document.getElementById('swirl');
-    swirl.style.transform = 'translate3d(' + (-deltaX*base) + 'px, '+ (-deltaY*base) + 'px, 0px)';
+    // var swirl = document.getElementById('swirl');
+    // swirl.style.transform = 'translate3d(' + (-deltaX*base) + 'px, '+ (-deltaY*base) + 'px, 0px)';
   }
   return (
     <Flex direction='column' px='115' pt='68' fontFamily='Sk-Modernist-Regular'
       onMouseMove = {(e) => movingback(e)}
-      // backgroundImage="url('/swirl.svg')" backgroundSize="contain" bgRepeat='no-repeat'
+       backgroundImage="url('/swirl.svg')" backgroundSize="contain" bgRepeat='no-repeat'
     >
-      <Flex id='swirl' position='absolute' width='100%' zIndex='-1' style={{transition:'transform 3s'}}>
+      {/* <Flex id='swirl' position='absolute' zIndex='-1' style={{transition:'transform 3s'}}>
         <Image alt='Wefund' src= '/swirl.svg' w='100%' h='auto' />
-      </Flex>
+      </Flex> */}
       <Flex direction='row'>
         <Box direction='column'>
           <Flex direction='row'>
@@ -73,7 +83,7 @@ export default function Aboutone() {
           </Flex>
         </Box>
         <Flex ml='0px' mt='0px' w='100%' h='100%'>
-          <Flex id='rocket' position='relative' style={{transition:'transform 3s'}}>
+          <Flex id='rocket' position='relative' style={{transition:'transform 0.3s'}}>
             <Image alt='feature image' h='449px' src= '/rocket.svg' />
           </Flex>
         </Flex>
