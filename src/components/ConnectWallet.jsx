@@ -505,18 +505,18 @@ export default function ConnectWallet() {
 
 
             //Store coins global state
-            dispatch({ type: 'setAllNativeCoins', message: coins })
-            console.log(coins)
-            // let alte = parseInt(alteTokens.balance) / 1000000
-            // console.log(alte)
-            let alte = 0
-            let uusd = coins.filter((c) => {
-                return c.denom === 'uusd'
-            })
-            let ust = parseInt(uusd) / 1000000
-            setBank(numeral(ust).format('0,0.00'))
-            dispatch({ type: 'setUstBalance', message: ust })
-            setAlteBank(numeral(alte).format('0,0.00'))
+            // dispatch({ type: 'setAllNativeCoins', message: coins })
+            // console.log(coins)
+            // // let alte = parseInt(alteTokens.balance) / 1000000
+            // // console.log(alte)
+            // let alte = 0
+            // let uusd = coins.filter((c) => {
+            //     return c.denom === 'uusd'
+            // })
+            // let ust = parseInt(uusd) / 1000000
+            // setBank(numeral(ust).format('0,0.00'))
+            // dispatch({ type: 'setUstBalance', message: ust })
+            // setAlteBank(numeral(alte).format('0,0.00'))
             // connectTo("extension")
         } else {
             setBank(null)

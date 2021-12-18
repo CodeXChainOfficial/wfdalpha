@@ -9,6 +9,8 @@ export default function Industry()
   function slideView(_choosen)
   {
     setChoice(_choosen);
+    var projectpad = document.getElementById('projectpad');
+    projectpad.style.transform = 'translateX('+(-1200*_choosen)+'px)';    
   }
 
   return(
@@ -20,8 +22,8 @@ export default function Industry()
       <Flex direction='row' mt='45px' >
         {/* ----------crypto startup industry--------------- */}
         <Box w='242px' h='161px' bg='#FFFFFF0D'  borderRadius='10% 0 0 0'
-          style={{borderBottomWidth:(choice==1?'3px':'0px')}}
-          onClick={()=>{slideView(1)}}
+          style={{borderBottomWidth:(choice==0?'3px':'0px')}}
+          onClick={()=>{slideView(0)}}
         >
           <Flex ml='15px' h='90px' align='center'>
             <Image alt='Crypto Industry' src= '/CryptoIndustry.svg' h='90px' />
@@ -33,8 +35,8 @@ export default function Industry()
         </Box>
         {/* --------------Gaming industry-------------------------- */}
         <Box w='242px' h='161px' bg='#FFFFFF14'
-          style={{borderBottomWidth:(choice==2?'3px':'0px')}}
-          onClick={()=>{slideView(2)}}
+          style={{borderBottomWidth:(choice==1?'3px':'0px')}}
+          onClick={()=>{slideView(1)}}
         >
           <Flex ml='15px' h='90px' align='center'>
             <Image alt='Crypto Industry' src= '/GamingIndustry.svg' h='90px' />
@@ -46,8 +48,8 @@ export default function Industry()
         </Box>
         {/* --------------Creatie industry------------------ */}
         <Box w='242px' h='161px' bg='#FFFFFF0D' 
-          style={{borderBottomWidth:(choice==3?'3px':'0px')}}
-          onClick={()=>{slideView(3)}}
+          style={{borderBottomWidth:(choice==2?'3px':'0px')}}
+          onClick={()=>{slideView(2)}}
         >
           <Flex ml='15px' h='90px' align='center'>
             <Image alt='Crypto Industry' src= '/CreativeIndustry.svg' h='90px' />
@@ -59,8 +61,8 @@ export default function Industry()
         </Box>
         {/* ------------------sports industry------------------- */}
         <Box w='242px' h='161px' bg='#FFFFFF14'
-          style={{borderBottomWidth:(choice==4?'3px':'0px')}}
-          onClick={()=>{slideView(4)}}
+          style={{borderBottomWidth:(choice==3?'3px':'0px')}}
+          onClick={()=>{slideView(3)}}
         >
           <Flex ml='15px' h='90px' align='center'>
             <Image alt='Crypto Industry' src= '/SportsIndustry.svg' h='90px' />
@@ -72,8 +74,8 @@ export default function Industry()
         </Box>
         {/* ------------------Real Estate industry------------------- */}
         <Box w='242px' h='161px' bg='#FFFFFF14' borderRadius='0 10% 0 0'
-          style={{borderBottomWidth:(choice==5?'3px':'0px')}}
-          onClick={()=>{slideView(5)}}
+          style={{borderBottomWidth:(choice==4?'3px':'0px')}}
+          onClick={()=>{slideView(4)}}
         >
           <Flex ml='15px' h='90px' align='center'>
             <Image alt='Crypto Industry' src= '/RealIndustry.svg' h='90px' />
@@ -84,32 +86,40 @@ export default function Industry()
           </Box>
         </Box>
       </Flex>
-      <Flex mt='69px'>
-        <Flex direction="row">
-          <Flex direction='column' w='50%' justify='space-between'>
-            <Box>
-              <Text fontFamily='PilatExtended-Regular' fontWeight='300' color='#FFFFFF8A' fontSize='18px'>
-                -{PROJECT_ITEMS[choice-1].label}
-              </Text>
-              <Text fontFamily='PilatExtended-Regular' fontWeight='700' fontSize='40px'>
-              {PROJECT_ITEMS[choice-1].title}
-              </Text>
-              <Text fontFamily='Sk-Modernist-Regular' fontWeight='700' color='#2AC54D' fontSize='18px'>{PROJECT_ITEMS[choice-1].state}</Text>
-              <Text fontFamily='Sk-Modernist-Regular' fontWeight='400' fontSize='18px'w='75%'>
-                {PROJECT_ITEMS[choice-1].description}
-              </Text>
+      <Flex mt='69px' w='1200px' overflow='hidden'>
+        <Flex id='projectpad' direction='row' position='relative' 
+        style={{transition:'transform 1s'}}>
+          {PROJECT_ITEMS.map((projectItem, index) => (
+          <Flex direction="row" w='1200px' h='438px' key={index}>
+            <Flex direction='column' w='50%' justify='space-between'>
+              <Box>
+                <Text fontFamily='PilatExtended-Regular' fontWeight='300' color='#FFFFFF8A' fontSize='18px'>
+                  -{projectItem.label}
+                </Text>
+                <Text fontFamily='PilatExtended-Regular' fontWeight='700' fontSize='40px'>
+                {projectItem.title}
+                </Text>
+                <Text fontFamily='Sk-Modernist-Regular' fontWeight='700' color='#2AC54D' fontSize='18px'>{projectItem.state}</Text>
+                <Text fontFamily='Sk-Modernist-Regular' fontWeight='400' fontSize='18px'w='75%'>
+                  {projectItem.description}
+                </Text>
+              </Box>
+              <ButtonTransition 
+                unitid={'cryptofunding'+index}
+                selected={false}
+                width='192px' height='50px' rounded='md'
+              >
+                <Flex direction='row'>
+                  Start Funding
+                  <Image ml='10px' alt='startfunding' src= '/handgo.svg' />
+                </Flex>
+              </ButtonTransition>
+            </Flex>
+            <Box w='50%'>
+              <Image alt='Crypto project' src= {projectItem.imgsrc} w='100%' h='100%' />
             </Box>
-            <ButtonTransition 
-              unitid='cryptofunding'
-              selected={true}
-              width='192px' height='50px' rounded='md'
-            >
-              Start Funding
-            </ButtonTransition>
           </Flex>
-          <Box w='50%'>
-            <Image alt='Crypto project' src= {PROJECT_ITEMS[choice-1].imgsrc} w='100%' h='100%' />
-          </Box>
+          ))}
         </Flex>
       </Flex>
     </Flex>

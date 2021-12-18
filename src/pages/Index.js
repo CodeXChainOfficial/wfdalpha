@@ -32,7 +32,7 @@ export default() => {
                     <Industry/>
                     <RoadMap/>
                     <Emailsub/>
-                    {/* <Projectfeature/> */}
+                    <Projectfeature/>
                     {/* <FooterCenter/> */}
                 </Flex>
             </Container>

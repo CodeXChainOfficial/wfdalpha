@@ -6,7 +6,7 @@ import {
   Box,
 } from '@chakra-ui/react';
 import { ButtonTransition, InputTransition } from '../components/ImageTransition';
-import { IoChevronDownOutline } from 'react-icons/io5';
+import { IoArrowDownOutline,IoArrowForwardCircleOutline } from 'react-icons/io5';
 
 export default function CallToActionWithIllustration(props) {
   function transitToUpwards()
@@ -53,20 +53,21 @@ export default function CallToActionWithIllustration(props) {
           selected={false}
           width='178px' height='50px' rounded='33px' ml='20px'
         >
-          <Box variant="solid" color="white" justify='center' align='center'
+          <Flex direction='row' variant="solid" color="white" justify='center' align='center'
               onClick = {()=>{}} >
-            How it works?
-          </Box>
+            <IoArrowForwardCircleOutline/>
+            &nbsp;How it works?
+          </Flex>
         </ButtonTransition>
       </Flex>
       <Flex mt='138px' mb='138px' justify='center'>
         <InputTransition 
           unitid='gotonext'
           selected={false}
-          width='92px' height='55px' rounded='100px'
+          width='65px' height='55px' rounded='1000px'
           onClick={()=>{transitToUpwards()}}
         >              
-          <IoChevronDownOutline/>
+          <IoArrowDownOutline style={{width:'30px', height:'30px'}}/>
         </InputTransition>
       </Flex>
     </Flex>
