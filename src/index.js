@@ -1,42 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import './styles/transition.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import './styles/transition.css'
 
-let Wallet = {};
+let Wallet = {}
 if (typeof document !== 'undefined') {
-  Wallet = require('@terra-money/wallet-provider').WalletProvider;
+  Wallet = require('@terra-money/wallet-provider').WalletProvider
 }
 // Your top level component
-import App from './App';
+import App from './App'
 
 const mainnet = {
   name: 'mainnet',
   chainID: 'columbus-4',
   lcd: 'https://lcd.terra.dev',
-};
+}
 
 const testnet = {
   name: 'testnet',
   chainID: 'tequila-0004',
   lcd: 'https://tequila-lcd.terra.dev',
-};
+}
 
 // Export your top level component as JSX (for static rendering)
-export default App;
+export default App
 
 // Render your app
 if (typeof document !== 'undefined') {
-  const target = document.getElementById('root');
+  const target = document.getElementById('root')
 
-  const renderMethod = target.hasChildNodes()
-    ? ReactDOM.hydrate
-    : ReactDOM.render;
-  let inProduction = false;
+  const renderMethod = ReactDOM.render
+  let inProduction = true
   const render = (Comp) => {
     renderMethod(
       <Wallet
-        defaultNetwork={testnet}
+        // defaultNetwork={testnet}
+        defaultNetwork={mainnet}
         walletConnectChainIds={{
           0: testnet,
           1: mainnet,
@@ -47,21 +46,21 @@ if (typeof document !== 'undefined') {
             : 'https://tequila-walletconnect.terra.dev/',
         }}
       >
-        <AppContainer>
-          <Comp />
-        </AppContainer>
+        {/* <AppContainer> */}
+        <Comp />
+        {/* </AppContainer> */}
       </Wallet>,
-      target
-    );
-  };
+      target,
+    )
+  }
 
   // Render!
-  render(App);
+  render(App)
 
   // Hot Module Replacement
-  if (module && module.hot) {
-    module.hot.accept('./App', () => {
-      render(App);
-    });
-  }
+  // if (module && module.hot) {
+  //     module.hot.accept('./App', () => {
+  //         render(App)
+  //     })
+  // }
 }
