@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
+import './styles/transition.css'
 
 let Wallet = {}
 if (typeof document !== 'undefined') {
@@ -28,14 +29,13 @@ export default App
 if (typeof document !== 'undefined') {
     const target = document.getElementById('root')
 
-    const renderMethod = target.hasChildNodes()
-        ? ReactDOM.hydrate
-        : ReactDOM.render
-    let inProduction = false
+    const renderMethod = ReactDOM.render
+    let inProduction = true
     const render = (Comp) => {
         renderMethod(
             <Wallet
-                defaultNetwork={testnet}
+                // defaultNetwork={testnet}
+                defaultNetwork={mainnet}
                 walletConnectChainIds={{
                     0: testnet,
                     1: mainnet,
@@ -43,14 +43,14 @@ if (typeof document !== 'undefined') {
                 connectorOpts={{
                     bridge: inProduction
                         ? 'https://walletconnect.terra.dev/'
-                        : 'https://tequila-walletconnect.terra.dev/'
+                        : 'https://tequila-walletconnect.terra.dev/',
                 }}
             >
-                <AppContainer>
-                    <Comp />
-                </AppContainer>
+                {/* <AppContainer> */}
+                <Comp />
+                {/* </AppContainer> */}
             </Wallet>,
-            target
+            target,
         )
     }
 
@@ -58,9 +58,9 @@ if (typeof document !== 'undefined') {
     render(App)
 
     // Hot Module Replacement
-    if (module && module.hot) {
-        module.hot.accept('./App', () => {
-            render(App)
-        })
-    }
+    // if (module && module.hot) {
+    //     module.hot.accept('./App', () => {
+    //         render(App)
+    //     })
+    // }
 }

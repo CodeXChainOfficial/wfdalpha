@@ -1,143 +1,147 @@
-import React from 'react';
-import { Flex, Box, Text, Image } from '@chakra-ui/react';
-import { ButtonTransition } from '../components/ImageTransition';
-import { IoCloudDownloadOutline } from 'react-icons/io5';
+import React from 'react'
+import { Flex, Text, Image } from '@chakra-ui/react'
+import { ButtonBackTransition } from '../components/ImageTransition'
 
 export default function Aboutone() {
-  var mouseoriginX = 0, mouseposX = 0;
-  var mouseoriginY = 0, mouseposY = 0;
-
-  function movingback(e){
-    if(mouseoriginX == 0)
-    {
-      mouseoriginX = e.pageX;
-      mouseposX = e.pageX
-    }
-    if( (mouseposX < e.pageX && e.pageX < mouseoriginX ) ||
-        (mouseposX > e.pageX && e.pageX > mouseoriginX) )
-    {
-      mouseoriginX = mouseposX;
-    }
-
-    if(mouseoriginY == 0)
-    {
-      mouseoriginY = e.pageY;
-      mouseposY = e.pageY
-    }
-    if( (mouseposY < e.pageY && e.pageY < mouseoriginY ) ||
-        (mouseposY > e.pageY && e.pageY > mouseoriginY) )
-    {
-      mouseoriginY = mouseposY;
-    }
-
-    var base = 1;
-    var deltaX = e.pageX - mouseoriginX;
-    var deltaY = e.pageY - mouseoriginY;
-    var limit = 300;
-    if(deltaX > limit)
-      deltaX = limit;
-    if(deltaX < -limit)
-      deltaX = -limit;
-    if(deltaY > limit)
-      deltaY = limit;
-    if(deltaY < -limit)
-      deltaY = -limit;
-    deltaY += 300;
-
-    var rocket = document.getElementById('rocket');
-    rocket.style.transform = 'translate3d(' + (deltaX*base) + 'px, '+ (deltaY*base) + 'px, 0px)';
-    
-    // var swirl = document.getElementById('swirl');
-    // swirl.style.transform = 'translate3d(' + (-deltaX*base) + 'px, '+ (-deltaY*base) + 'px, 0px)';
-  }
   return (
-    <Flex direction='column' px='115' pt='68' fontFamily='Sk-Modernist-Regular'
-      onMouseMove = {(e) => movingback(e)}
-       backgroundImage="url('/swirl.svg')" backgroundSize="contain" bgRepeat='no-repeat'
-    >
-      {/* <Flex id='swirl' position='absolute' zIndex='-1' style={{transition:'transform 3s'}}>
-        <Image alt='Wefund' src= '/swirl.svg' w='100%' h='auto' />
-      </Flex> */}
-      <Flex direction='row'>
-        <Box direction='column'>
-          <Flex direction='row'>
-            <Text fontFamily='PilatExtended-Regular' fontWeight='400' fontSize='18px'
-              color='#FFFFFF8A'>ABOUT WEFUND
-            </Text>
+    <Flex id="aboutSection">
+      <Flex id="aboutFirstSection">
+        <Flex id="aboutFirstSection1">
+          <Flex direction="row">
+            <Text id="aboutUsPageLable">ABOUT WEFUND</Text>
           </Flex>
-          <Flex direction='row'>
-            <Flex align='center'>
-              <Image alt='Wefund' src= '/onegoal.svg' h='62px' />
+          <Flex direction="row" mt="20px">
+            <Flex align="center" mr="15px">
+              <Image alt="Wefund" src="/onegoal.svg" id="aboutUsPageNumber1" />
             </Flex>
             <Flex>
-              <Text fontFamily='PilatExtended-Regular' fontWeight='700' fontSize='31px'
-                color='white'>GOAL<br/>PASSION
+              <Text id="aboutUsPageHeadingHead">
+                GOAL
+                <br />
+                PASSION
               </Text>
             </Flex>
           </Flex>
-          <Flex mt='22px'>
-            <Text fontWeight='400' fontSize='18px' color='#FFFFFF8A' lineHeight='29px'>
-              WeFund is Decentralized crowdfunding for the crypto-startup project industry and beyond implemented for a real-life use case.<br/><br/>
-              The vision of WeFund is to become the connector of the blockchain ecosystem that exists on the market. to fulfill this vision, WeFund's initial development stage would be in the Terra ecosystem and will continue to use another ecosystem such as Solana, Etherium, Cardano, etc in near future
+          <Flex mt="22px" w="100%" flexDirection="column" justify="flex-start">
+            <Text id="aboutUsPageHeadingDesc">
+              WeFund is a decentralized crowdfunding and incubation platform for
+              blockchain and real-world projects.
+              <br />
+              <br />
+              WeFund’s mission is to host high-quality projects that align with
+              WeFund’s investor community, community-driven decision making for
+              100% transparency, and manage funds exclusively on Terra’s Anchor
+              protocol using smart contracts for investor security.
             </Text>
+
+            <Flex id="rocket" position="relative">
+              <Image h="200px" src="/rocket.svg" />
+            </Flex>
+
+            <a href="/Whitepaper_2.0.docx">
+              <Flex w="100%" mt="30px" id="displayNoneInMobile">
+                <ButtonBackTransition
+                  width="100%"
+                  height="55px"
+                  rounded="100px"
+                  selected={false}
+                  unitid="downwhitepaper"
+                >
+                  <Flex
+                    w="100%"
+                    pl="25px"
+                    pr="25px"
+                    alignItems="center"
+                    justify="space-between"
+                  >
+                    <Text color="white">Download Whitepaper </Text>
+                    <Image src="Download.svg" />
+                  </Flex>
+                </ButtonBackTransition>
+              </Flex>
+            </a>
+            <a href="/Whitepaper_2.0.docx">
+              <Flex w="100%" mt="30px" id="displayNoneInDesktop">
+                <ButtonBackTransition
+                  width="100%"
+                  height="40px"
+                  rounded="100px"
+                  selected={false}
+                  unitid="downwhitepaper"
+                >
+                  <Flex
+                    w="100%"
+                    pl="25px"
+                    pr="25px"
+                    alignItems="center"
+                    justify="space-between"
+                  >
+                    <Text color="white" fontSize="12px">
+                      Download Whitepaper{' '}
+                    </Text>
+                    <Image src="Download.svg" height="12px" />
+                  </Flex>
+                </ButtonBackTransition>
+              </Flex>
+            </a>
           </Flex>
-        </Box>
-        <Flex ml='0px' mt='0px' w='100%' h='100%'>
-          <Flex id='rocket' position='relative' style={{transition:'transform 0.3s'}}>
-            <Image alt='feature image' h='449px' src= '/rocket.svg' />
+        </Flex>
+        <Flex id="aboutFirstSection2">
+          <Flex alignItems="center" justifyContent="center">
+            <Flex bg="#291554" className="aboutUsBox LeftRadiusAboutUs">
+              <Image className="aboutUsSectionImages" src="/gift.svg" />
+              <Text className="aboutUsSectionBoxesTexts">
+                Yield Benefit For Backers
+              </Text>
+            </Flex>
+            <Flex bg="#200E55" className="aboutUsBox RightRadiusAboutUs">
+              <Image className="aboutUsSectionImages" src="/blockchain.svg" />
+              <Text className="aboutUsSectionBoxesTexts">
+                Bridge Real-World and Blockchain
+              </Text>
+            </Flex>
+          </Flex>
+
+          <Flex alignItems="center" justifyContent="center">
+            <Flex className="aboutUsBox" bg="#200E55">
+              <Image className="aboutUsSectionImages" src="/incubatore.svg" />
+              <Text className="aboutUsSectionBoxesTexts">
+                Cross-Chain Incubator
+              </Text>
+            </Flex>
+            <Flex className="aboutUsBox" bg="#291554">
+              <Image className="aboutUsSectionImages" src="/nftmirror.svg" />
+              <Text className="aboutUsSectionBoxesTexts">
+                Deflationary Token Value
+              </Text>
+            </Flex>
+          </Flex>
+
+          <Flex alignItems="center" justifyContent="center">
+            <Flex className="aboutUsBox" bg="#291554">
+              <Image alt="Crypto Industry" src="/voting.svg" />
+              <Text className="aboutUsSectionBoxesTexts">
+                Community Voting Power
+              </Text>
+            </Flex>
+            <Flex className="aboutUsBox" bg="#200E55">
+              <Image alt="Crypto Industry" src="/lowriskinvestment.svg" />
+              <Text className="aboutUsSectionBoxesTexts">
+                Secure & Refundable Deposits
+              </Text>
+            </Flex>
+          </Flex>
+
+          <Flex alignItems="center" justifyContent="center">
+            <Flex bg="#FFFFFF0D" className="aboutUsBoxLast">
+              <Image alt="Crypto Industry" src="/nftmirror.svg" />
+              <Text className="aboutUsSectionBoxesTexts">
+                Money Release With Milestone and Investor Vote Approval
+              </Text>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
-      <Flex direction='row' mt='20px'>
-        <Box w='202px' h='178px' bg='#FFFFFF14'>
-          <Box ml='34px' mt='31px' w='120px' borderRadius='10% 0 0 10%'>
-            <Image alt='Wefund' src= '/gift.svg' h='60px' />
-            <Text mt='14px' fontSize='15px' fontWeight='700'>Yield Benefit for Backers</Text>
-          </Box>
-        </Box>
-        <Box w='202px' h='178px' bg='#FFFFFF0D'>
-          <Box ml='34px' mt='31px' w='120px'>
-            <Image alt='phone' src= '/phone.svg' h='60px' />
-            <Text mt='14px' fontSize='15px' fontWeight='700'>Secure Stable Deposits</Text>
-          </Box>
-        </Box>
-        <Box w='202px' h='178px' bg='#FFFFFF14'>
-          <Box ml='34px' mt='31px' w='120px'>
-            <Image alt='Wefund' src= '/lowriskinvestment.svg' h='60px' />
-            <Text mt='14px' fontSize='15px' fontWeight='700'>Low Risk investement</Text>
-          </Box>
-        </Box>
-        <Box w='202px' h='178px' bg='#FFFFFF0D'>
-          <Box ml='34px' mt='31px' w='120px' borderRadius='10% 0 0 10%'>
-            <Image alt='Wefund' src= '/governance.svg' h='60px' />
-            <Text mt='14px' fontSize='15px' fontWeight='700'>Governance Voting Power</Text>
-          </Box>
-        </Box>
-        <Box w='202px' h='178px' bg='#FFFFFF14'>
-          <Box ml='34px' mt='31px' w='120px'>
-            <Image alt='Wefund' src= '/deflationary.svg' h='60px' />
-            <Text mt='14px' fontSize='15px' fontWeight='700'>Deflationary Token Value</Text>
-          </Box>
-        </Box>
-        <Box w='202px' h='178px' bg='#FFFFFF0D'>
-          <Box ml='34px' mt='31px' w='120px' borderRadius='0 10% 10% 0'>
-            <Image alt='Wefund' src= '/nftmirror.svg' h='60px' />
-            <Text mt='14px' fontSize='15px' fontWeight='700'>NFT Mirror Real World Asset</Text>
-          </Box>
-        </Box>
-      </Flex>
-      <Flex mt='30px' mb='59px'>
-        <ButtonTransition 
-          unitid='downwhitepaper'
-          selected={false}
-          width='100%' height='55px' rounded='md'
-        >
-          <Flex justify='space-between' w='100%' px='22px'>
-            <Box>Download Whitepaer</Box>
-            <Box><IoCloudDownloadOutline color='red'/></Box>
-          </Flex>
-        </ButtonTransition>
-      </Flex>
     </Flex>
-  );
+  )
 }
