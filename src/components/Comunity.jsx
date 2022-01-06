@@ -9,11 +9,13 @@ export default function Comunity() {
       <Flex id="emailInnerBox">
         <Flex flexDirection="column" textAlign="center">
           <Flex className="emailInnerBoxTitle">
-            <Text color="#bfdbeb">WeFund&nbsp;</Text>
-            <Text>was born from the community,</Text>
+            <Text>Be Part of</Text>
+            <Text color="#00A3FF" ml="8px">
+              WeFund
+            </Text>
           </Flex>
           <Text mt="10px" className="emailInnerBoxTitle">
-            for the community.
+            Private Sale is now open
           </Text>
         </Flex>
         <Flex justify="center" id="displayNoneInMobile">
@@ -24,26 +26,21 @@ export default function Comunity() {
             height="50px"
             rounded="100px"
           >
-            <Flex direction="row">
-              Invest in WeFund
-              <Image ml="10px" alt="startfunding" src="/investface.svg" />
-            </Flex>
+            <Text>Invest in WeFund</Text>
           </ButtonTransition>
         </Flex>
         <Flex justify="center" id="displayNoneInDesktop">
           <ButtonTransition
             unitid="investinwefund"
             selected={false}
-            width="120px"
-            height="20px"
+            width="140px"
+            height="30px"
             rounded="100px"
           >
-            <Flex direction="row" fontSize="10px">
-              Invest in WeFund
-            </Flex>
+            <Text fontSize="12px">Invest in WeFund</Text>
           </ButtonTransition>
         </Flex>
       </Flex>
     </Flex>
   )
-  }
+}

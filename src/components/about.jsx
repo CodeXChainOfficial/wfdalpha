@@ -38,7 +38,7 @@ export default function Aboutone() {
               <Image h="200px" src="/rocket.svg" />
             </Flex>
 
-            <a href="/Whitepaper_2.0.docx">
+            <a href="/Litepaper.pptx">
               <Flex w="100%" mt="30px" id="displayNoneInMobile">
                 <ButtonBackTransition
                   width="100%"
@@ -54,13 +54,13 @@ export default function Aboutone() {
                     alignItems="center"
                     justify="space-between"
                   >
-                    <Text color="white">Download Whitepaper </Text>
+                    <Text color="white">Download Litepaper </Text>
                     <Image src="Download.svg" />
                   </Flex>
                 </ButtonBackTransition>
               </Flex>
             </a>
-            <a href="/Whitepaper_2.0.docx">
+            <a href="/Litepaper.pptx">
               <Flex w="100%" mt="30px" id="displayNoneInDesktop">
                 <ButtonBackTransition
                   width="100%"
@@ -77,7 +77,7 @@ export default function Aboutone() {
                     justify="space-between"
                   >
                     <Text color="white" fontSize="12px">
-                      Download Whitepaper{' '}
+                      Download Litepaper{' '}
                     </Text>
                     <Image src="Download.svg" height="12px" />
                   </Flex>
@@ -118,25 +118,17 @@ export default function Aboutone() {
           </Flex>
 
           <Flex alignItems="center" justifyContent="center">
-            <Flex className="aboutUsBox" bg="#291554">
+            <Flex className="aboutUsBox LeftBottomRadiusAboutUs" bg="#291554">
               <Image alt="Crypto Industry" src="/voting.svg" />
               <Text className="aboutUsSectionBoxesTexts">
                 Community Voting Power
               </Text>
             </Flex>
-            <Flex className="aboutUsBox" bg="#200E55">
+            <Flex className="aboutUsBox RightBottomRadiusAboutUs" bg="#200E55">
               <Image alt="Crypto Industry" src="/lowriskinvestment.svg" />
               <Text className="aboutUsSectionBoxesTexts">
-                Secure & Refundable Deposits
-              </Text>
-            </Flex>
-          </Flex>
-
-          <Flex alignItems="center" justifyContent="center">
-            <Flex bg="#FFFFFF0D" className="aboutUsBoxLast">
-              <Image alt="Crypto Industry" src="/nftmirror.svg" />
-              <Text className="aboutUsSectionBoxesTexts">
-                Money Release With Milestone and Investor Vote Approval
+                Money release with Milestone system after Investor Voting
+                approval
               </Text>
             </Flex>
           </Flex>

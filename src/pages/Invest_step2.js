@@ -1,13 +1,13 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from '../theme';
-import { Box, Flex,  Input, InputGroup, VStack,  Image, InputRightElement, Img, Text
+import { Box, Flex,  Input, InputGroup, HStack,  Image, InputRightElement, Img, Text
   } from "@chakra-ui/react";
+import { CheckIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState,  useCallback, useContext, useRef, } from 'react';
 import { navigate } from '@reach/router'
 
 import { ImageTransition, InputTransition, InputTransitiongrey } from "../components/ImageTransition";
 import { useStore } from '../store'
-import Faq from '../components/FAQ';
 
 export default function NewProject() {
   const [backAmount, setBackAmount] = useState('');
@@ -39,47 +39,50 @@ export default function NewProject() {
     <ChakraProvider resetCSS theme={theme}>
       <div style={{background:"linear-gradient(90deg, #1F0021 0%, #120054 104.34%)", 
       width:'100%', color:'white', fontSize:'18px', fontFamily:'Sk-Modernist-Regular', fontWeight:'500' }}>
-        <div style={{backgroundImage:"url('/createproject_banner_emphasis.svg')", 
-        boxShadow:"0px 5px 50px 0px #000000A6", width:'100%', zIndex:'10'}}>
-        <div style={{backgroundImage:"url('/createproject_banner.svg')", width:'100%', width:'100%', zIndex:'11',backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover',zIndex:'11'}}>
-          <Flex pt='64px' justify="center">
+        <div style={{backgroundImage:"url('/createproject_banner_emphasis.svg')", width:'100%', zIndex:'10'}}>
+        <div  style={{backgroundImage:"url('/createproject_banner.svg')", position:'absolute', top:'80px',  width:'100%', width:'100%', zIndex:'11',backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover',zIndex:'11'}}>
+          <Flex pt='95px' justify="center">
             <Text fontSize='16px' fontWeight='normal' color={'rgba(255, 255, 255, 0.54)'}>Home &gt;&nbsp;</Text>
-            <Text fontSize='16px' color={'rgba(255, 255, 255, 0.84)'}>Back the Project</Text>
+            <Text fontSize='16px' color={'rgba(255, 255, 255, 0.84)'}>Invest in WeFund</Text>
           </Flex>
-          <Flex mt='11px' pb='75px' mb="20px" justify='center'
+          <Flex mt='11px' pb='55px' mb="20px" justify='center'
             style={{fontFamily:'PilatExtended-Bold'}}>
-            <Text fontSize='40px' color='#4790f5'>Invest</Text>
-            <Text fontSize='40px'>&nbsp;in WeFund</Text>
+            <Text fontSize={{base:'25px',md:'25px',lg:'40px'}} color='#4790f5'>Invest</Text>
+            <Text fontSize={{base:'25px',md:'25px',lg:'40px'}}>&nbsp;in WeFund</Text>
           </Flex>
         </div>
         </div>
-        <Flex width='100%' justify='center' mt='-80px' px='175px'>
+        <Flex width='100%' justify='center' mt='80px' px='175px'>
         <Box width='900px' bg='#FFFFFF0D' px='50px' style={{fontFamily:'Sk-Modernist-Regular'}} >
+          
           <Flex mt='83px' justify='center' align='center' direction='column'
             style={{fontFamily:'PilatExtended-Regular'}}>
-            <Text fontSize='22px' fontWeight={'300'} textAlign='center'>
-              Input your investment amount
-            </Text>
-            <Text 
-              fontSize='16px' 
-              color='rgba(255, 255, 255, 0.54)' 
-              fontWeight={'normal'}
-              w={{base:'300px', lg:'100%'}}
-              textAlign='center'
-            >
-              Please enter your UST amount and we will convert the WFD amount for you
-            </Text>
+              <HStack  mt='150px' mb='50px' px='15px'>
+                <Box style={{paddingTop: '3px', paddingLeft:'3px', height: '24px', width: '24px', border: '3px solid #3BE489', backgroundColor: ' #3BE489', borderRadius: '50%', display:'inline-block'}}>
+                <CheckIcon color="#250E3F" w={3} h={3} marginBottom={'20px'}/>
+                </Box>
+                <Text>Step 1</Text>
+                <Box style={{height: '4px', width: '63px', background: 'linear-gradient(90deg, #3BE489 0%, rgba(59, 228, 137, 0) 100%)'}}></Box>
+                <Box style={{height: '24px', width: '24px', border: '3px solid rgba(255, 255, 255, 0.3799999952316284)', borderRadius: '50%', display:'inline-block'}}></Box>
+                <Text>Step 2</Text>
+                <Box style={{height: '0px', width: '63px', border: '2px solid rgba(255, 255, 255, 0.3799999952316284)', background: ' rgba(255, 255, 255, 0.3799999952316284)'}}></Box>
+                <Box style={{height: '24px', width: '24px', border: '3px solid rgba(255, 255, 255, 0.3799999952316284)', borderRadius: '50%', display:'inline-block'}}></Box>
+                <Text>Final Step</Text>
+              </HStack>
+                <Text fontSize={{base:'15px',md:'15px',lg:'22px'}} fontWeight={'300'}>Input your <span style={{color:'#00A3FF'}}>Investment Amount</span></Text>
+            <Text fontSize={{base:'12px',md:'12px',lg:'16x'}} maxW={'390px'} color='rgba(255, 255, 255, 0.54)' fontWeight={'normal'} mt={'20px'} textAlign={'center'}>Please enter your UST amount and we will convert the WFD amount for you</Text>
+            
+            
           </Flex>
           {/* --------amount to back----------- */}
-          <Flex mt='83px' justify='center' align='center' direction='column'>
-          <Flex alignSelf={'flex-start'} marginLeft={'10%'}>
+          <Flex direction={{base:'column',md:'column',lg:'column'}} ml={{base:'0px',md:'0px',lg:'0px'}} mt='40px' justify="center" align='center'>
+          <Flex >
             <Text mb='20px'>UST amount you want to Invest</Text>
           </Flex>
           <InputTransition 
             unitid='backamount'
             selected={backAmount==''?false:true}
-            width={{base:'300px', lg:'600px'}} 
-            height='55px' rounded='md' mb='42px'
+            width='300px' height='55px' rounded='md' mb='42px'
           >      
             <InputGroup 
               size={{base:'200px', lg:'sm'}} 
@@ -101,14 +104,13 @@ export default function NewProject() {
                 />          
               </InputGroup>
           </InputTransition>
-          <Flex alignSelf={'flex-start'} marginLeft={'10%'}>
+          <Flex>
             <Text mb='20px' >WFD Tokens You Will Receive</Text>
           </Flex>
           <InputTransition 
             unitid='WFDamount'
             selected={backAmount==''?false:true}
-            width={{base:'300px', lg:'600px'}} 
-            height='55px' rounded='md'
+            width='300px' height='55px' rounded='md'
           >      
             <InputGroup 
               size={{base:'200px', lg:'sm'}} 
@@ -152,7 +154,7 @@ export default function NewProject() {
               </Box>
             </ImageTransition>
           </Flex>
-          <Faq/>
+          
         </Box>
         </Flex>
       </div>

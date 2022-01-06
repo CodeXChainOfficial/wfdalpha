@@ -295,7 +295,7 @@ export default function ProjectDetail()
                                       <HStack>
                                         <BsPerson size={'1em'} color="#00A3FF" />
                                         <StatLabel fontWeight={'medium'} isTruncated>
-                                        'Backer'
+                                        'Amount Backed'
                                         </StatLabel>
                                       </HStack>
                                         <StatNumber fontSize={'2xl'} fontWeight={'bold'}>
@@ -319,7 +319,7 @@ export default function ProjectDetail()
                                     <HStack>
                                         <BsCashCoin size={'1em'} color="#00A3FF" />
                                         <StatLabel fontWeight={'medium'} isTruncated>
-                                        'Funding Pool'
+                                        'Fundraising Amount'
                                         </StatLabel>
                                       </HStack>
                                         <StatNumber fontSize={'2xl'} fontWeight={'bold'}>
@@ -385,7 +385,24 @@ export default function ProjectDetail()
                                 w={{base:'400px', lg:'1000px'}}
                               >
                               <span style={{color:"white",fontWeight:"900" ,fontSize:"18px" ,marginBottom:"20px"}}>
-                                Introducing
+                              WeFund Mission
+
+                              WeFund's mission is to improve and ultimately solve these key aspects of crowdfunding:
+
+Projects and project-related events are approved by the community:  This helps to give backers what they want, and allows greater agility for projects to adjust and follow market trends.
+
+Backers are protected:  Funds are released gradually after they are approved by the community.
+At the same time, this process helps to keep the team's morale and motivation high.
+
+Security:  By using Anchor protocol we safeguard funds from hackers and human errors, which in turn helps projects to move forward with greater peace of mind.
+
+We create a set of fundraising events along the project's development timeline, which gives credibility and a greater chance of success, and at the same time avoids collecting and risking large sums of backer funds before a project demonstrates progress.  This helps everyone, the team as well as the project backers.
+
+Crowdfunding works when done with fairness, therefore we created a system to maximize the backing opportunity proportional to the number of potential backers, always guaranteeing the possibility for backers to participate.
+
+WeFund changes the game:  Protects backers and at the same time protects project creators, making the whole process more secure and transparent.
+
+WeFund was born from the community, for the community.
                               </span>
                               {state.oneprojectData.project_description}
                               </chakra.p>
@@ -395,19 +412,42 @@ export default function ProjectDetail()
                             <Text fontSize='28px' fontWeight={'900'} lineHeight={'36px'} mb={'20px'}>Project <span style={{color:'#00A3FF'}} mb='25px'>Founder Speaks</span></Text>
                             <Box background="rgba(255, 255, 255, 0.05)" border="1.5px solid rgba(255, 255, 255, 0.15)" boxSizing="border-box" borderRadius="10px" mt={'30px'}>
                               <Box px={'45px'} paddingTop={"35px"} paddingBottom={"35px"} >
-                              <Text fontSize={'18px'} fontWeight={'bold'}>Incredible Experience</Text>
+                              <Text fontSize={'18px'} fontWeight={'bold'}>WeFund Mission</Text>
                               <br/>
-                              <Text color= {"rgba(255, 255, 255, 0.54)"}>Aliquip mollit sunt qui irure. Irure ullamco Lorem excepteur dolor qui ea ad quis. 
-                                      Enim fugiat cillum enim ad occaecat sint qui elit labore mollit sunt laborum fugiat consequat. 
-                                      Voluptate labore sunt duis eu deserunt. Occaecat do ut ut labore cillum enim dolore ad enim enim id. 
-                                      Aliquip do veniam ad excepteur ad cillum qui deserunt nostrud sunt aliqua duis sunt occaecat. 
-                                      Laborum incididunt commodo ullamco proident quis.</Text>
+                              <Text color= {"rgba(255, 255, 255, 0.54)"}>
+
+                           
+                                
+                              </Text>
                               </Box>
                               <HStack borderTop={"1.5px solid rgba(255, 255, 255, 0.15)"} spacing={10} paddingLeft={'45px'} paddingTop={"35px"} paddingBottom={"35px"}>
                                 <Image height='35px' objectFit='cover' src='/WeFund Logos only.png' alt='UST Avatar'/>
                                 <VStack textAlign={'left'}> 
-                                  <Text fontWeight={'bold'} textAlign={'left'} alignSelf={'flex-start'}>Founder Name</Text>
-                                  <Text textAlign={'left'}>CEO at ABC Corporation</Text>
+                                  <Text fontWeight={'bold'} textAlign={'left'} alignSelf={'flex-start'}>WeFund Team</Text>
+                                  <Text textAlign={'left'}>
+                                  Andrea Bello
+Co Founder & CEO & Co-CTO
+
+Most recently behind the development of a smart contract (Fan$quad) that was deployed Col-4 during a hackathon organized by Terraformlabs and former CTO of a Guild Game, successfully raising a $10 million Seed round. Founder of Mosquito Solution, an innovative natural misting system startup created and launched within 1 year, operating in Bali, Indonesia. Founder of Bello Service, Domotic System for smart-home efficiency, reducing electrical consumption by 30%. R&D engineer at ABB UPS system, an expert in coding C programming.
+Ika Afifah
+Co Founder & CMO
+
+Previous CMO at Gamesta to successfully raise a $10 million Seed round. Prior to Guild Game, she worked at Tencent as an operation specialist, in a partnership division. Before Tencent, she was senior partnership manager at Bigo. She previously held a senior account executive position at one of the digital marketing agencies under Jet Group and was a manager at Waves who successfully helped founders to raise $1.2M in pre-seed funding. 
+
+Jason Galvin
+Co-CTO
+
+World explorer, entrepreneur, and blockchain technology enthusiast. Came from a career in Silicon Valley building web applications during the dot-com boom. Wanting to do it all over again, this time helping to build Web 3.0.
+
+
+Austin Taylor
+CCO
+
+Comes from a background in investment and corporate finance. After completing his education, he worked as a Business Analyst for a large tech company in Seattle, Washington USA building AI applications to identify high-risk sale transactions. He now is an Investment Manager for a prestigious silicon valley venture capital firm located in Jakarta, Indonesia managing investment deals in the Southeast Asia region.
+
+
+
+                                  </Text>
                                 </VStack>
                               </HStack>
                             </Box>

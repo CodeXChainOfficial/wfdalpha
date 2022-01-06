@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from '../theme';
 import { useNavigate } from '@reach/router'
-import {chakra, Box, Flex, Text, VStack, Image, Img
+import {chakra, Box, Flex, Text, VStack, Image, Img, HStack
   } from "@chakra-ui/react";
 import React, { useState} from 'react';
 import { IoChevronUpOutline, IoChevronDownOutline, IoCheckmark } from 'react-icons/io5';
@@ -32,22 +32,29 @@ export default function NewProject() {
           </Flex>
           <Flex mt='11px' pb='75px' mb="20px" justify='center'
             style={{fontFamily:'PilatExtended-Bold'}}>
-            <Text fontSize='40px' color='#4790f5'>Invest</Text>
-            <Text fontSize='40px'>&nbsp;in WeFund</Text>
+            <Text fontSize={{base:'25px',md:'25px',lg:'40px'}} color='#4790f5'>Invest</Text>
+            <Text fontSize={{base:'25px',md:'25px',lg:'40px'}}>&nbsp;in WeFund</Text>
           </Flex>
         </div>
         </div>
-        <Flex width='100%' justify='center' mt='-80px' px='175px'>
-        <Box width='900px' bg='#FFFFFF0D' px='50px' style={{fontFamily:'Sk-Modernist-Regular'}} >
-          <Flex mt='83px' justify='center' align='center' direction='column'
-            style={{fontFamily:'PilatExtended-Regular'}}>
-            <Text fontSize='22px' fontWeight={'300'}>SAFT Form</Text>
-            <Text fontSize='16px' color='rgba(255, 255, 255, 0.54)' fontWeight={'normal'}
-              w={{base:'300px', lg:'100%'}}
-            >
-              Please check and confirm the form and go next to share us next informations
-            </Text>
-          </Flex>
+        <Flex width='100%' justify='center' mt='80px' px='175px'>
+          <Box width='900px' bg='#FFFFFF0D' px='50px' style={{fontFamily:'Sk-Modernist'}} >
+            
+            <Flex mt='83px' justify='center' align='center' direction='column'
+              style={{fontFamily:'PilatExtended'}}>
+                <HStack  mt='150px' mb='50px'>
+                  <Box style={{height: '24px', width: '24px', border: '3px solid #3BE489', borderRadius: '50%', display:'inline-block'}}></Box>
+                    <Text>Step 1</Text>
+                  <Box style={{height: '0x', width: '63px', border: '2px solid rgba(255, 255, 255, 0.3799999952316284)', background: ' rgba(255, 255, 255, 0.3799999952316284)'}}></Box>
+                  <Box style={{height: '24px', width: '24px', border: '3px solid rgba(255, 255, 255, 0.3799999952316284)', borderRadius: '50%', display:'inline-block'}}></Box>
+                    <Text>Step 2</Text>
+                  <Box style={{height: '0px', width: '63px', border: '2px solid rgba(255, 255, 255, 0.3799999952316284)', background: ' rgba(255, 255, 255, 0.3799999952316284)'}}></Box>
+                  <Box style={{height: '24px', width: '24px', border: '3px solid rgba(255, 255, 255, 0.3799999952316284)', borderRadius: '50%', display:'inline-block'}}></Box>
+                    <Text>Final Step</Text>
+                </HStack>
+              <Text fontSize='22px' fontWeight={'300'}>SAFT Form</Text>
+              <Text fontSize='16px' color='rgba(255, 255, 255, 0.54)' fontWeight={'normal'} mt={'20px'} textAlign={'center'}>Please check and confirm the form and go next step</Text>
+            </Flex>
           {/* --------amount to back----------- */}
           <Flex mt='83px' justify='center' align='center' direction='column'>
             <Flex >
@@ -68,7 +75,7 @@ export default function NewProject() {
                 }
               </InputTransition>
 
-              <Text ml='10px' fontSize='14px' fontWeight='400'>I agree will all condition of this Project and WeFund</Text>
+              <Text ml='10px' fontSize='14px' fontWeight='400'>I agree with all conditions of this Project and WeFund</Text>
             </Flex>
           </Flex>
           {/* -----------------Back Project----------------- */}
@@ -90,7 +97,7 @@ export default function NewProject() {
                 </Box>
             </ImageTransition>
           </Flex>
-          <Faq/>
+          
         </Box>
         </Flex>
       </div>
