@@ -6,7 +6,7 @@ import { Box, Flex, Text, Input, InputGroup,  InputLeftElement, HStack, } from "
 import React, { useEffect, useState,  useCallback, useContext, useRef, } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import { navigate } from '@reach/router'
-
+// import ReCAPTCHA from "react-google-recaptcha";
 import { useStore } from '../store'
 import { ImageTransition, ButtonTransition, InputTransition } from "../components/ImageTransition";
 import Notification from '../components/Notification'
@@ -172,6 +172,10 @@ export default function Invest_step3() {
       })
   }
 
+  function recaptcha(value) {
+    console.log("Captcha value:", value);
+  }
+
   return (
     <ChakraProvider resetCSS theme={theme}>
       <div style={{background:"linear-gradient(90deg, #1F0021 0%, #120054 104.34%)", 
@@ -318,7 +322,11 @@ export default function Invest_step3() {
             >
               <Box variant="solid" color="white" justify='center' align='center' 
                 onClick={()=>onNext()}
-              >
+              > 
+              {/* <ReCAPTCHA
+                sitekey="6LdNrhkeAAAAACIAeAea2JU1lLHXHANiikg2G5iT"
+                onChange={recaptcha}
+              /> */}
                 Submit
               </Box>
             </ImageTransition>
