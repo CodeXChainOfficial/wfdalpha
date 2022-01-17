@@ -7,7 +7,7 @@ import React, { useState} from 'react';
 import { IoChevronUpOutline, IoChevronDownOutline, IoCheckmark } from 'react-icons/io5';
 
 import { ImageTransition, InputTransition, InputTransitiongrey } from "../components/ImageTransition";
-import ESign from './EsignEdit';
+import ESign from '../components/Pdf';
 import Faq from '../components/FAQ';
 
 export default function NewProject() {
@@ -23,14 +23,13 @@ export default function NewProject() {
     <ChakraProvider resetCSS theme={theme}>
       <div style={{background:"linear-gradient(90deg, #1F0021 0%, #120054 104.34%)", 
       width:'100%', color:'white', fontSize:'18px', fontFamily:'Sk-Modernist-Regular', fontWeight:'500' }}>
-        <div style={{backgroundImage:"url('/createproject_banner_emphasis.svg')", 
-        boxShadow:"0px 5px 50px 0px #000000A6", width:'100%', zIndex:'10'}}>
-        <div style={{backgroundImage:"url('/createproject_banner.svg')", width:'100%', width:'100%', zIndex:'11',backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover',zIndex:'11'}}>
-          <Flex pt='64px' justify="center">
+        <div style={{backgroundImage:"url('/createproject_banner_emphasis.svg')", width:'100%', zIndex:'10'}}>
+        <div style={{backgroundImage:"url('/createproject_banner.svg')", position:'absolute', top:'80px',  width:'100%', width:'100%', zIndex:'11',backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover',zIndex:'11'}}>
+          <Flex pt='95px' justify="center">
             <Text fontSize='16px' fontWeight='normal' color={'rgba(255, 255, 255, 0.54)'}>Home &gt;&nbsp;</Text>
             <Text fontSize='16px' color={'rgba(255, 255, 255, 0.84)'}>Back the Project</Text>
           </Flex>
-          <Flex mt='11px' pb='75px' mb="20px" justify='center'
+          <Flex mt='11px' pb='55px' mb="20px" justify='center'
             style={{fontFamily:'PilatExtended-Bold'}}>
             <Text fontSize={{base:'25px',md:'25px',lg:'40px'}} color='#4790f5'>Invest</Text>
             <Text fontSize={{base:'25px',md:'25px',lg:'40px'}}>&nbsp;in WeFund</Text>
@@ -58,7 +57,7 @@ export default function NewProject() {
           {/* --------amount to back----------- */}
           <Flex mt='83px' justify='center' align='center' direction='column'>
             <Flex >
-              {/* <Image alignSelf={'flex-start'} alt={'Wefund'} src={ 'saft.svg' } /> */}
+              {/* <Image alignSelf={'flex-start'} alt={'WeFund'} src={ 'saft.svg' } /> */}
               <ESign/>
             </Flex>
 
@@ -97,7 +96,6 @@ export default function NewProject() {
                 </Box>
             </ImageTransition>
           </Flex>
-          
         </Box>
         </Flex>
       </div>

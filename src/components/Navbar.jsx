@@ -7,7 +7,6 @@ import theme from '../theme'
 import { ButtonBackTransition } from '../components/ImageTransition'
 import { Container } from '../components/Container'
 import '../styles/Navbar.css'
-
 export default function Navbar() {
   return (
     <ChakraProvider resetCSS theme={theme}>

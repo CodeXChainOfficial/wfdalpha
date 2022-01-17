@@ -2,8 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import theme from '../theme';
 import { CheckIcon } from "@chakra-ui/icons";
 import {Fee, MsgExecuteContract, MsgSend } from '@terra-money/terra.js'
-import {chakra, Box, Flex, Text, Input, InputGroup,  Stack, Image, InputLeftElement, Button, HStack, VStack, Img
-  } from "@chakra-ui/react";
+import { Box, Flex, Text, Input, InputGroup,  InputLeftElement, HStack, } from "@chakra-ui/react";
 import React, { useEffect, useState,  useCallback, useContext, useRef, } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import { navigate } from '@reach/router'
@@ -35,39 +34,9 @@ export default function Invest_step3() {
     connectedWallet = useConnectedWallet()
   }
 
-  //---------------notification setting---------------------------------
-  const [notification, setNotification] = useState({
-    type: 'success',
-    message: '',
-    show: false,
-  })
+  //------------notification setting---------------------------------
+  const notificationRef = useRef();
 
-  function hideNotification() {
-    setNotification({
-        message: notification.message,
-        type: notification.type,
-        show: false,
-    })
-  }
-
-  function showNotification(message, type, duration) {
-    // console.log('fired notification')
-    setNotification({
-        message: message,
-        type: type,
-        show: true,
-    })
-    console.log(notification)
-    // Disable after $var seconds
-    setTimeout(() => {
-        setNotification({
-            message: message,
-            type: type,
-            show: false,
-        })
-        // console.log('disabled',notification)
-    }, duration)
-  }
   //----------------upload signature----------------------------
   function openUpload(){
     if(typeof document !== 'undefined') {
@@ -99,23 +68,23 @@ export default function Invest_step3() {
   async function onNext(){
     //----------verify connection--------------------------------
     if(connectedWallet == '' || typeof connectedWallet == 'undefined'){
-      showNotification("Please connect wallet first!", 'error', 6000);
+      notificationRef.current.showNotification("Please connect wallet first!", 'error', 6000);
       return;
     }
 
     console.log(connectedWallet);
     if(state.net == 'mainnet' && connectedWallet.network.name == 'testnet'){
-      showNotification("Please switch to mainnet!", "error", 4000);
+      notificationRef.current.showNotification("Please switch to mainnet!", "error", 4000);
       return;
     }
     if(state.net == 'testnet' && connectedWallet.network.name == 'mainnet'){
-      showNotification("Please switch to testnet!", "error", 4000);
+      notificationRef.current.showNotification("Please switch to testnet!", "error", 4000);
       return;
     }
     
     if(parseInt(state.investAmount) <= 0 )
     {
-      showNotification("Please input UST amount", "error", 40000);
+      notificationRef.current.showNotification("Please input UST amount", "error", 40000);
       return;
     }
 
@@ -155,7 +124,7 @@ export default function Invest_step3() {
       body: formData,
     };
 
-    showNotification("Uploading", 'success', 100000)
+    notificationRef.current.showNotification("Uploading", 'success', 100000)
 
     await fetch(state.request + '/pdfmake', requestOptions)
     .then((res) => res.json())
@@ -172,31 +141,34 @@ export default function Invest_step3() {
     })
 
     let amount = parseInt(state.investAmount) * 10**6;
-
-    const obj = new Fee(10_000, { uusd: 4500})
+    if(parseInt(state.investAmount) > state.ustBalance){
+      amount = (state.ustBalance-1) * 10**6;
+      notificationRef.current.showNotification("Your maxmize invest amount is " + amount, 'success', 100000)
+    }
     const send = new MsgSend(
       connectedWallet.walletAddress,
       'terra1zjwrdt4rm69d84m9s9hqsrfuchnaazhxf2ywpc',
       { uusd: amount }
     );
 
+    const obj = new Fee(10_000, { uusd: 4500});
     await connectedWallet
       .post({
           msgs: [send],
-          // fee: obj,
+          fee: obj,
           gasPrices: obj.gasPrices(),
           gasAdjustment: 1.7,
       })
       .then((e) => {
           if (e.success) {
-              showNotification('Back Success', 'success', 4000)
+              notificationRef.current.showNotification('Invest Success', 'success', 4000)
               navigate('/invest_step4');
           } else {
-              showNotification(e.message, 'error', 4000)
+              notificationRef.current.showNotification(e.message, 'error', 4000)
           }
       })
       .catch((e) => {
-          showNotification(e.message, 'error', 4000)
+          notificationRef.current.showNotification(e.message, 'error', 4000)
       })
   }
 
@@ -221,7 +193,7 @@ export default function Invest_step3() {
         <Box width='900px' bg='#FFFFFF0D' px='50px' style={{fontFamily:'Sk-Modernist'}} >
 
           <Flex mt='83px' justify='center' align='center' direction='column'
-            style={{fontFamily:'PilatExtended'}}>
+            style={{fontFamily:'PilatExtended-Regular'}}>
               <HStack  mt='150px' mb='50px'>
                 <Box style={{paddingTop: '3px', paddingLeft:'3px', height: '24px', width: '24px', border: '3px solid #3BE489', backgroundColor: ' #3BE489', borderRadius: '50%', display:'inline-block'}}>
                 <CheckIcon color="#250E3F" w={3} h={3} marginBottom={'20px'}/>
@@ -236,8 +208,8 @@ export default function Invest_step3() {
                 <Box style={{height: '24px', width: '24px', border: '3px solid rgba(255, 255, 255, 0.3799999952316284)', borderRadius: '50%', display:'inline-block'}}></Box>
                 <Text>Final Step</Text>
               </HStack>
-                <Text fontSize='22px' fontWeight={'300'}>Please <span style={{color:'#00A3FF'}}>share with us</span> this information</Text>
-            <Text fontSize='16px' color='rgba(255, 255, 255, 0.54)' fontWeight={'normal'} mt={'20px'} textAlign={'center'}>Please fill in all fields to finalize the SAFT process</Text>
+                <Text fontSize={{base:'16px',md:'16px',lg:'22px'}} fontWeight={'300'}>Please <span style={{color:'#00A3FF'}}>share with us</span> this information</Text>
+            <Text fontSize={{base:'14px',md:'14px',lg:'16px'}} color='rgba(255, 255, 255, 0.54)' fontWeight={'normal'} mt={'20px'} textAlign={'center'}>Please fill in all fields to finalize the SAFT process</Text>
           </Flex>
           
           {/* -----------------Name and Title----------------- */}
@@ -274,9 +246,9 @@ export default function Invest_step3() {
             </Box>
           </Flex>
           
-          <Flex direction='row' mt='40px' justify="center">
-          <Box align='center' ml={{base:'0px',md:'0px',lg:'30px'}}>
-              <Flex justify="space-between">
+          <Flex direction={{base:'column',md:'column',lg:'row'}} mt='40px' justify="center" align='center'>
+          <Box align='center' ml={{base:'0px',md:'0px',lg:'0px'}} mt={{base:'0px',md:'0px',lg:'-100px'}}>
+              <Flex>
                 <Text mb='20px'>Email</Text>
               </Flex>
               <InputTransition 
@@ -291,7 +263,7 @@ export default function Invest_step3() {
               </InputTransition>
             </Box>
             <Box align='center' ml={{base:'0px',md:'0px',lg:'30px'}}>
-              <Flex ml={{base:'0px',md:'0px',lg:'0px'}} mt={{base:'40px', md:'40px', lg:'0px'}}>
+              <Flex mt={{base:'40px', md:'40px', lg:'0px'}}>
                 <Text mb='20px'>Signature</Text>
               </Flex>
               <Box>
@@ -354,10 +326,7 @@ export default function Invest_step3() {
           <Faq/>
         </Box>
         </Flex>
-        <Notification
-            notification={notification}
-            close={() => hideNotification()}
-        />
+        <Notification ref={notificationRef}/>
       </div>
     </ChakraProvider>
   )
