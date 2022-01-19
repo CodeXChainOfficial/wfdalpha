@@ -23,7 +23,7 @@ export default function CreateProject()
   const [isUST, setIsUST] = useState(true);
 
   const [whitepaper, setWhitepaper] = useState('');
-  const [logo, setLogo] = useState('');
+  const [logo,  setLogo] = useState('');
 
   const [prjCategory, setPrjCategory] = useState('Crypto');
   const [prjName, setPrjName] = useState('');
