@@ -60,19 +60,22 @@ export default function ExplorerProject() {
               },
         }
       )
-      let projectData=[];
-      projectData[0] = oneprojectData;
-
-      if(projectData == ''){
+      if(oneprojectData == ''){
         showNotification("Can't fetch Project Data", 'error', 6000);
         return;
       }
+
+      //fake
+      oneprojectData.project_name= "WeFund Private Sale";
+
+      let projectData=[];
+      projectData[0] = oneprojectData;
 
 
       let i, j
       let totalBacked = 0;
       let totalDeposit = 0;
-      let fake = 120000; //fake
+      let fake = 192000; //fake
 
       for(i=0; i<projectData.length; i++)
       {
@@ -158,7 +161,7 @@ console.log(projectData);
            
                 <Flex width={{lg:'1225px'}} style={{ background: 'rgba(255, 255, 255, 0.05)', borderRadius:'3xl',borderTopColor: 'transparent', fontFamily:'Sk-Modernist-Regular', paddingLeft:'20px', paddingRight:'20px'}} >
                   {/* ------------------project desktop---------- */}
-                  <VStack visibility={{base:'hidden', md:'hidden', lg:'visible'}} maxW={{base:'0px',md:'0px',lg:'2560px'}} maxH={{base:'0px',md:'0px',lg:'9999px'}}>
+                  <VStack display={{base:'none', md:'none', lg:'block'}} maxW={{base:'0px',md:'0px',lg:'2560px'}} maxH={{base:'0px',md:'0px',lg:'9999px'}}>
                       {/* ------------------project list---------- */}
                       <Flex marginTop={'26px'} marginBottom={'26px'} alignSelf={{lg:'flex-start'}} direction={{base:'row',md:'row',lg:'row'}} >
                         <Flex alignSelf={'flex-start'} width={{lg:'950px'}} >
@@ -278,7 +281,7 @@ console.log(projectData);
                       ))}
                   </VStack>
                   {/* ------------------project mobile---------- */}
-                  <VStack visibility={{base:'visible', md:'visible', lg:'hidden'}}>
+                  <VStack display={{base:'block', md:'block', lg:'none'}}>
                     {/* ------------------project list---------- */}
                     <Flex 
                       marginTop={'26px'} 
