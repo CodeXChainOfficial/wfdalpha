@@ -124,6 +124,7 @@ console.log('disconnect');
                   'linear-gradient(180deg, rgba(254, 134, 0, 0.2) 0%, rgba(254, 134, 0, 0) 100%)',
                 backdropFilter: 'blur(54px)',
                 borderRadius: '30px',
+                padding: '0px'
               }}
               onClick = {() => connectTo('connect')}
             >
@@ -147,7 +148,6 @@ console.log('disconnect');
                   'linear-gradient(180deg, rgba(254, 134, 0, 0.2) 0%, rgba(254, 134, 0, 0) 100%)',
                 backdropFilter: 'blur(54px)',
                 borderRadius: '30px',
-                padding: '0px',
               }}
             >
               &nbsp;&nbsp;{returnBank() ? returnBank() : 'loading'}&nbsp;&nbsp;
