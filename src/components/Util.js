@@ -333,3 +333,18 @@ export function isNull(val){
 export function getVal(val){
   return isNull(val)? '' : val;
 }
+
+export function getTicker(chain, type)
+{
+  if(chain.toLowerCase() == 'ethereum'){
+    switch(type.toLowerCase()){
+      case 'eth':
+        return 'eth'
+      case 'usdt':
+        return 'usdterc20'
+      case 'usdc':
+        return 'usdc'
+    }
+  }
+  return null;
+}

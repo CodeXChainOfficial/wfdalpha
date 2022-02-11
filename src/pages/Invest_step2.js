@@ -8,7 +8,7 @@ import {
   HStack, 
   Image, 
   InputRightElement, 
-  Img, 
+  Checkbox, 
   Text
   } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
@@ -19,19 +19,55 @@ import { ImageTransition, InputTransition } from "../components/ImageTransition"
 import { useStore } from '../store';
 import Notification from '../components/Notification';
 import PageLayout from '../components/PageLayout';
-import {ParseParam} from '../components/Util';
+import {getTicker, ParseParam} from '../components/Util';
+import ChainAmountInput from "../components/Invest/CoinAmountInput";
+import CustomSelect from "../components/Invest/CustomSelect";
+import CustomCheckbox from "../components/Invest/CustomCheckbox";
+import { getMinialAmount, getExchangeAmount } from "../components/Changenow_api";
+
 
 export default function InvestStep2() {
   const [backAmount, setBackAmount] = useState('');
   const [wfdAmount, setWfdamount] = useState('');
 
+  const [coinAmount, setCoinAmount] = useState(0);
+  const [coinType, setCoinType] = useState('ETH');
+  const [otherChain, setOtherChain] = useState();
+  const [isOtherChain, setIsOtherChain] = useState(false);
   const {state, dispatch} = useStore();
+
+  const [minialAmount, setMinialAmount] = useState();
+  const [estimatedAmount, setEstimatedAmount] = useState();
 
   //------------parse URL for project id----------------------------
   let project_id = ParseParam();
 
   //------------notification setting---------------------------------
   const notificationRef = useRef();
+
+  async function fetchMinialAmount()
+  {
+    let res = await getMinialAmount(getTicker('ethereum', coinType));
+    if(res.status == 'success'){
+      setMinialAmount(res.data)
+    }
+
+    let amount = parseInt(coinAmount);
+    if(amount > parseInt(res.data)){
+      res = await getExchangeAmount(getTicker('ethereum', coinType), amount)
+console.log(res);
+      if(res.status == 'success'){
+        setEstimatedAmount(`${res.data} UST`);
+      }
+      else
+        setEstimatedAmount('');
+    }
+    else
+      setEstimatedAmount('');
+  }
+  useEffect(() => {
+    fetchMinialAmount();
+  }, [coinType, coinAmount])
 
   function onChangeBackamount(e){
     if(e.target.value != '' && e.target.value != parseInt(e.target.value).toString()){
@@ -42,15 +78,31 @@ export default function InvestStep2() {
     setWfdamount(parseInt(parseInt(e.target.value)/wefundRate));
     setBackAmount(e.target.value);
   }
-
   function onNext(){
-    dispatch({
+    dispatch({ 
       type: 'setInvestamount',
       message: backAmount,
     })
     dispatch({
       type: 'setInvestWfdAmount',
       message: wfdAmount,
+    })
+    dispatch({
+      type: 'setIsOtherChain',
+      message: isOtherChain
+    })
+    dispatch({
+      type: 'setOtherChain',
+      message: otherChain
+    })
+
+    dispatch({
+      type: 'setCoinType',
+      message: getTicker('ethereum', coinType)
+    })
+    dispatch({
+      type: 'setCoinAmount',
+      message: coinAmount
     })
     navigate('/invest_step3?project_id=' + project_id);
   }
@@ -140,10 +192,9 @@ export default function InvestStep2() {
             </InputGroup>
         </InputTransition>
 
-        
         </Flex>
         {/* -----------------Back Project----------------- */}
-        <Flex w='100%' mt='60px'justify='center' mb='170px'>
+        <Flex w='100%' mt='60px'justify='center'>
           <ImageTransition 
             unitid='Invest2invest'
             border1='linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)' 
@@ -160,6 +211,33 @@ export default function InvestStep2() {
               Invest
             </Box>
           </ImageTransition>
+        </Flex>
+
+        <Flex mt='50px'  mb='170px' justify='center'>
+          <Flex direction="column" justify='center' width='300px'>
+            <CustomCheckbox 
+              typeText="Do you use other chain to invest?"
+              type={isOtherChain} 
+              setType={setIsOtherChain}
+            />
+            <CustomSelect
+              typeText =  "Chain"
+              type = {otherChain}
+              setType = {setOtherChain}
+              options = {['Ethereum']}
+            />
+            <ChainAmountInput 
+              type={coinAmount} 
+              setType={setCoinAmount}
+              coinType = {coinType}
+              setCoinType = {setCoinType}
+              notificationRef = {notificationRef}
+            />
+            <Text mt='20px'>Minial Amount</Text>
+            <Text>{minialAmount}</Text>
+            <Text mt='20px'>Estimated Amount</Text>
+            <Text>{estimatedAmount}</Text>
+          </Flex>
         </Flex>
       </Box>
       <Notification ref={notificationRef}/>

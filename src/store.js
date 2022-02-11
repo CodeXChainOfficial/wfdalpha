@@ -7,10 +7,21 @@ const initialState = {
   // net: 'testnet',
   net: 'mainnet',
 
-  // WEFundContractAddress: "terra1qe7p8nh3yrhkzp0u6f3ug25pavwky5uendhxcz", //testnet v2.1
   // WEFundContractAddress: "terra1ca88767e6ganwq2zehtcpv7ef6z32ell26ts3r", //testnet v2.2
-  // WEFundContractAddress: "terra1qcm9957c2gyghkaqgsk0h5mw6xf6ym4xdu7kmu", //mainnet v2.1
   WEFundContractAddress: 'terra1prfeefv02cfxl0zc6aaut9zlc7elygnt66rq2x', //mainnet v2.2
+
+  ETH_USDT: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+  ETH_USDC: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+
+  etherProvider: '',
+  metamaskAccount: '',
+  
+  isOtherChain: false,
+  otherChain: '',
+  coinType: '',
+  coinAmount: 0,
+  terraWallet: 'terra1emwyg68n0wtglz8ex2n2728fnfzca9xkdc4aka',
+  wefundWallet: 'terra1zjwrdt4rm69d84m9s9hqsrfuchnaazhxf2ywpc',
 
   presale: true,
   referralCount: 0,
@@ -52,6 +63,19 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'setIsOtherChain':
+      return { ...state, isOtherChain: action.message }
+    case 'setOtherChain':
+      return { ...state, otherChain: action.message }
+    case 'setCoinType':
+      return { ...state, coinType: action.message }
+    case 'setCoinAmount':
+      return { ...state, coinAmount: action.message }
+    case 'setEtherProvider':
+      return { ...state, etherProvider: action.message }
+    case 'setMetamaskAccount':
+      return { ...state, metamaskAccount: action.message }
+
     case 'setPresale':
       return { ...state, presale: action.message }
     case 'setReferralCount':

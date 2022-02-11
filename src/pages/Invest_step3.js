@@ -33,8 +33,16 @@ import {
   FetchData, 
   isCommunityWallet, 
   CheckNetwork,
-  GetOneProject
+  GetOneProject,
+  isNull
 } from "../components/Util";
+import { 
+  getMinialAmount, 
+  getExchangeID, 
+  sendToken, 
+  getExchangeAmount,
+  getExchangeStatus,
+ } from '../components/Changenow_api'
 
 let useConnectedWallet = {}
 if (typeof document !== 'undefined') {
@@ -50,6 +58,11 @@ export default function Invest_step3() {
   const [chain, setChain] = useState('');
   const [walletAddress, setWalletAddress] = useState('');
   const [oneprojectData, setOneprojectData] = useState('');
+  const [sending, setSending] = useState(false);
+  
+  let timerID = 0;
+  let exchangeID = 0;
+  let estimatedAmount = 0;
 
   const {state, dispatch} = useStore();
   const canvasRef = useRef({});
@@ -114,17 +127,30 @@ export default function Invest_step3() {
   function checkValication()
   {
     if(CheckNetwork(connectedWallet, notificationRef, state) == false)
-    return false;
-
-    if(parseInt(state.investAmount) <= 0 ){
-      notificationRef.current.showNotification("Please input UST amount", "error", 40000);
-      console.log('Please input UST amount');
       return false;
+console.log(parseInt(state.investAmount));
+console.log(state);
+    if(state.isOtherChain == true){
+      if(isNull(state.etherProvider)){
+        notificationRef.current.showNotification("Please connect Metamask", "error", 40000);
+        return false;
+      }
+      if(parseInt(state.coinAmount) <= 0){
+        notificationRef.current.showNotification("Please input Coin amount", "error", 4000);
+        return false;
+      }
     }
-    if(state.presale == false && parseInt(state.investAmount) < 20000){
-      notificationRef.current.showNotification("Input UST amount for private sale of at least 20,000", "error", 40000);
-      console.log('Invalid private sale amount');
-      return false;
+    else{
+      if(parseInt(state.investAmount) <= 0 ){
+        notificationRef.current.showNotification("Please input UST amount", "error", 40000);
+        console.log('Please input UST amount');
+        return false;
+      }
+      if(state.presale == false && parseInt(state.investAmount) < 20000){
+        notificationRef.current.showNotification("Input UST amount for private sale of at least 20,000", "error", 40000);
+        console.log('Invalid private sale amount');
+        return false;
+      }
     }
     return true;
   }
@@ -193,11 +219,53 @@ console.log(oneprojectData);
       console.log("Error:"+e);
     })
   }
+
+  const myTimer = async() => {
+    let res = await getExchangeStatus(exchangeID);
+console.log(res);
+    if(res.status == true && res.data.status == 'finished'){
+      setSending(false);
+      notificationRef.current.hideNotification();
+console.log('hidenotfiatoin');
+      clearInterval(timerID);
+console.log('coming here')
+      navigate('/invest_step4?project_id=' + project_id);
+    }
+  }
+  async function bridge(terraWallet){
+
+    let res = await getExchangeID(state.coinType, terraWallet, 
+      state.coinAmount, state.metamaskAccount, notificationRef)
+    if(res.status == 'failed')
+      return;
+    
+    exchangeID = res.ExchangeID;
+    let payinAddr = res.payinAddr;
+
+    const provider = state.etherProvider;
+    const signer = provider.getSigner();
+
+    var contractAddress = '';
+    if(state.coinType == 'usdterc20')
+      contractAddress = state.ETH_USDT;
+    else if(state.coinType == 'usdc')
+      contractAddress = state.ETH_USDC;
+
+    res = await sendToken(contractAddress, state.coinAmount, payinAddr, 
+      state.metamaskAccount, provider, signer, notificationRef);
+    if(res == false)
+      return;
+      
+    setSending(true);
+    timerID = setInterval(myTimer, 1000 * 1);//1s
+  }
+
   async function onNext(){
     //----------verify connection--------------------------------
     if(checkValication() == false)
       return false;
 
+    if(state.etherProvider)
     dispatch({
       type: 'setInvestname',
       message: InsName,
@@ -222,24 +290,43 @@ console.log(oneprojectData);
     if(project_id == state.wefundID){
       await createSAFTPdf(date);
 
-      let amount = parseInt(state.investAmount) * 10**6;
+      if(state.isOtherChain){
+        notificationRef.current.showNotification(
+          "Sending! Don't do anything while sending! It may takes over 10 minutes", 
+          "success", 
+          100000000000
+        );
+console.log(state.wefundWallet)
+        bridge(state.wefundWallet);
 
-      const msg = new MsgSend(
-        connectedWallet.walletAddress,
-        'terra1zjwrdt4rm69d84m9s9hqsrfuchnaazhxf2ywpc',
-        { uusd: amount }
-      );
-      let memo = state.presale? "Presale" : "Private sale";
-      let res = await EstimateSend(connectedWallet, state.lcd_client, msg, "Invest success ", notificationRef, memo);
-      if(res == true)
-        navigate('/invest_step4?project_id=' + project_id);
+        // bridge('terra1emwyg68n0wtglz8ex2n2728fnfzca9xkdc4aka');
+      }
+      else{
+        let amount = parseInt(state.investAmount) * 10**6;
+
+        const msg = new MsgSend(
+          connectedWallet.walletAddress,
+          state.wefundWallet,
+          { uusd: amount }
+        );
+        let memo = state.presale? "Presale" : "Private sale";
+        let res = await EstimateSend(connectedWallet, state.lcd_client, msg, "Invest success ", notificationRef, memo);
+        
+        if(res == true)
+          navigate('/invest_step4?project_id=' + project_id);
+      }
     }
     else{
-      await createSAFTDocx(date);
+      if(state.isOtherChain){
+        // bridge(state.terraWallet);
+      }
+      else{
+        await createSAFTDocx(date);
 
-      let res = await backProject();
-      if(res == true)
-        navigate('/invest_step4?project_id=' + project_id);
+        let res = await backProject();
+        if(res == true)
+          navigate('/invest_step4?project_id=' + project_id);
+      }
     }
   }
 

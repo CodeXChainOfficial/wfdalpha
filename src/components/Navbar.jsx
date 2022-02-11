@@ -16,6 +16,7 @@ import ConnectWallet from './ConnectWallet'
 import { RiAccountPinBoxFill } from 'react-icons/ri'
 import { Container } from '../components/Container'
 import { ButtonBackTransition } from '../components/ImageTransition'
+import ConnectMetaMask from './ConnectMetaMask'
 
 export default function Navbar() {
   return (
@@ -32,7 +33,7 @@ export default function Navbar() {
             backdropFilter="blur(54px)"
             borderBottom="2px solid rgba(255, 255, 255, 0.103)"
           >
-            <Flex w="50%" h="100%" align="center" justify="space-between">
+            <Flex w="40%" h="100%" align="center" justify="space-between">
               <Flex ml="90px">
                 <Link className="navbar-brand" to="/">
                   <Image
@@ -45,7 +46,7 @@ export default function Navbar() {
               </Flex>
               <DesktopNav />
             </Flex>
-            <Flex mr="20px" align="center" justify="center" w="40%" h="100%">
+            <Flex mr="20px" align="center" justify="center" w="50%" h="100%">
               <ButtonBackTransition
                 unitid="CreateYourProject"
                 selected={false}
@@ -65,8 +66,11 @@ export default function Navbar() {
                 </Link>
               </ButtonBackTransition>
 
-              <Flex w="197px" ml="20px" mr={'10px'}>
+              <Flex w="197px" ml="20px">
                 <ConnectWallet />
+              </Flex>
+              <Flex w='197px' ml="20px" mr="10px">
+                <ConnectMetaMask />
               </Flex>
               <Link to="walletInfo">
                 <Icon as={RiAccountPinBoxFill} fontSize={'45px'} />
@@ -102,6 +106,9 @@ export default function Navbar() {
                 <div className="dropdown-content2">
                   <ConnectWallet />
                 </div>
+              </Flex>
+              <Flex mr="10px">
+                <ConnectMetaMask />
               </Flex>
               <Flex pr="30px" className="dropdown">
                 <Flex className="dropbtn" mr={'20px'}>

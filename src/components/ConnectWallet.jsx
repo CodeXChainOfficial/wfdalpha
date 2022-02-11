@@ -128,9 +128,6 @@ export default function ConnectWallet() {
     }
   }
 
-  //------------notification setting---------------------------------
-  const notificationRef = useRef();
-
   //--------------for referral-----------------------------
   const crypto = require('crypto');
 
@@ -208,7 +205,7 @@ export default function ConnectWallet() {
 
   return (
     <>
-      <VStack display={{ base: 'none', md: 'none', lg: 'block'}}>
+      <VStack display={{ base: 'none', md: 'none', lg: 'block'}} w='100%'>
       <div className="navbar-nav" style={{ flexDirection: 'row', width: '100%' }}>
         {!connected && (
           <>
