@@ -9,7 +9,7 @@ import {
   Text
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-import React, { useState, useRef, } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { navigate } from '@reach/router'
 import { ImageTransition, InputTransition } from "../components/ImageTransition";
 import { useStore } from '../store';
