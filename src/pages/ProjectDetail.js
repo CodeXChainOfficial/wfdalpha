@@ -394,18 +394,21 @@ function WefundApprove(project_id){
               width="100%"
               justify="center"
               alignItems={'center'}
+              pl={'10px'}
+              pr={'10px'}
               zIndex={'1'}
+              mt={'100px'}
             >
               <VStack>
                 <Flex
                   alignContent={'center'}
                   direction={{ base: 'column', md: 'column', lg: 'row' }}
+                  pl={'10px'}
+                  pr={'10px'}
                 >
-                  
                   <VStack
-                    width={{ lg: '880px' }}
+                    width={{base:'xs',sm:'md',md:'2xl',lg:'2xl', xl:'3xl'}} 
                     height={{ lg: '484px' }}
-                    paddingLeft={{ lg: '55px' }}
                   >
                     <Flex
                       style={{ fontFamily: 'PilatExtended-Bold' }}
@@ -509,7 +512,7 @@ function WefundApprove(project_id){
                       isCommunityWallet(state, oneprojectData.project_id) && (
                         <Flex justify={'center'}>
                           <ButtonTransition
-                            unitid='visit'
+                            unitid='voteyes'
                             width="160px"
                             height="50px"
                             selected={false}
@@ -518,9 +521,8 @@ function WefundApprove(project_id){
                           >
                             Vote Yes
                           </ButtonTransition>
-
                           <ButtonTransition
-                            unitid='view'
+                            unitid='voteno'
                             selected={false}
                             width="160px"
                             height="50px"
@@ -533,11 +535,12 @@ function WefundApprove(project_id){
                       )}
                       {oneprojectData.project_status === '2' && (
                         <ButtonTransition
-                          unitid='visit'
+                          unitid='backproject'
                           width="160px"
                           height="50px"
                           selected={false}
                           rounded="33px"
+                          mt="15px"
                           mb="10px"
                           onClick={onNext}
                         >
@@ -595,7 +598,7 @@ function WefundApprove(project_id){
                           border3="linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"
                           background3="linear-gradient(180deg, #171347 0%, #171347 100%)"
                           selected={false}
-                          width="170px"
+                          width="200px"
                           height="50px"
                           rounded="33px"
                         >
@@ -631,7 +634,7 @@ function WefundApprove(project_id){
                           border3="linear-gradient(180deg, #FE8600 0%, #F83E00 100%)"
                           background3="linear-gradient(180deg, #171347 0%, #171347 100%)"
                           selected={false}
-                          width="170px"
+                          width="200px"
                           height="50px"
                           rounded="33px"
                         >
@@ -663,7 +666,7 @@ function WefundApprove(project_id){
                           border3="linear-gradient(180deg, #DEDBDB 0%, #DEDBDB 100%)"
                           background3="linear-gradient(180deg, #171347 0%, #171347 100%)"
                           selected={false}
-                          width="250px"
+                          width="200px"
                           height="50px"
                           rounded="33px"
                         >
@@ -682,16 +685,15 @@ function WefundApprove(project_id){
                   </VStack>
                   {/* --------The Side Details--------- */}
                   <VStack
-                    width={{ lg: '450px' }}
                     height={{ lg: '484px' }}
-                    paddingLeft={{ lg: '55px' }}
+                    paddingLeft={{ lg: '15px' }}
+                    mt={'10px'}
                   >
                     <Text  alignSelf={'flex-start'}>
                       Details
                     </Text>
-
                     <HStack width={'100%'}>
-                      <Flex width={'50%'} alignSelf={'flex-start'}>
+                      <Flex width={'40%'} alignSelf={'flex-start'}>
                         <Text
                         color={'rgba(255, 255, 255, 0.84)'}
                         fontFamily={'Pilat-Extended'}
@@ -699,7 +701,7 @@ function WefundApprove(project_id){
                           Status
                         </Text>
                       </Flex>
-                      <Flex width={'50%'} alignSelf={'flex-end'}>
+                      <Flex width={'40%'} alignSelf={'flex-end'}>
                         <Text 
                           color={' #FE8600'}
                           fontFamily={'Pilat-Extended'}
@@ -710,7 +712,7 @@ function WefundApprove(project_id){
                       </Flex>
                     </HStack>
                     <HStack width={'100%'}>
-                      <Flex width={'50%'} alignSelf={'flex-start'}>
+                      <Flex width={'40%'} alignSelf={'flex-start'}>
                         <Text
                         color={'rgba(255, 255, 255, 0.84)'}
                         fontFamily={'Pilat-Extended'}
@@ -718,7 +720,7 @@ function WefundApprove(project_id){
                           Platform
                         </Text>
                       </Flex>
-                      <Flex width={'50%'} alignSelf={'flex-end'}>
+                      <Flex width={'40%'} alignSelf={'flex-end'}>
                         <Text 
                           color={' #FE8600'}
                           fontFamily={'Pilat-Extended'}
@@ -729,15 +731,15 @@ function WefundApprove(project_id){
                       </Flex>
                     </HStack>
                     <HStack width={'100%'}>
-                      <Flex width={'50%'} alignSelf={'flex-start'}>
+                      <Flex width={'40%'} alignSelf={'flex-start'}>
                         <Text
                         color={'rgba(255, 255, 255, 0.84)'}
                         fontFamily={'Pilat-Extended'}
                         fontSize={'18px'}>
-                          Backer
+                          Backers
                         </Text>
                       </Flex>
-                      <Flex width={'50%'} alignSelf={'flex-end'}>
+                      <Flex width={'40%'} alignSelf={'flex-end'}>
                         <Text 
                           color={' #FE8600'}
                           fontFamily={'Pilat-Extended'}
@@ -748,7 +750,7 @@ function WefundApprove(project_id){
                       </Flex>
                     </HStack>
                     <HStack width={'100%'}>
-                      <Flex width={'50%'} alignSelf={'flex-start'}>
+                      <Flex width={'40%'} alignSelf={'flex-start'}>
                         <Text
                         color={'rgba(255, 255, 255, 0.84)'}
                         fontFamily={'Pilat-Extended'}
@@ -756,7 +758,7 @@ function WefundApprove(project_id){
                           Funding Pool
                         </Text>
                       </Flex>
-                      <Flex width={'50%'} alignSelf={'flex-end'}>
+                      <Flex width={'40%'} alignSelf={'flex-end'}>
                         <Text 
                           color={' #FE8600'}
                           fontFamily={'Pilat-Extended'}
@@ -767,7 +769,7 @@ function WefundApprove(project_id){
                       </Flex>
                     </HStack>
                     <HStack width={'100%'}>
-                      <Flex width={'50%'} alignSelf={'flex-start'}>
+                      <Flex width={'40%'} alignSelf={'flex-start'}>
                         <Text
                         color={'rgba(255, 255, 255, 0.84)'}
                         fontFamily={'Pilat-Extended'}
@@ -775,7 +777,7 @@ function WefundApprove(project_id){
                           Category
                         </Text>
                       </Flex>
-                      <Flex width={'50%'} alignSelf={'flex-end'}>
+                      <Flex width={'40%'} alignSelf={'flex-end'}>
                         <Text 
                           color={' #FE8600'}
                           fontFamily={'Pilat-Extended'}
@@ -796,7 +798,7 @@ function WefundApprove(project_id){
                       <VStack alignSelf={'flex-start'}>
                         <Flex>
                           <Text>
-                            Progress : {totalBackedMoney} out of{' '}
+                            Progress: {totalBackedMoney} out of{' '}
                             {oneprojectData.project_collected} UST
                           </Text>
                         </Flex>
@@ -840,7 +842,7 @@ function WefundApprove(project_id){
                         marginBottom={'20px'}
                         color={'rgba(255, 255, 255, 1)'}
                       >
-                        Introducing
+                        Introduction
                       </chakra.h2>
                       {/* ------------Description of Project------------ */}
                       <chakra.p
@@ -848,35 +850,32 @@ function WefundApprove(project_id){
                         marginBottom={'20px'}
                         color={'rgba(255, 255, 255, 0.5)'}
                       >
-                        WeFund is a community crowdfunding incubator for blockchain and real-world projects
+                        WeFund is a community crowdfunding incubator for blockchain and real-world projects.
                       </chakra.p>
                       <chakra.p
                         fontSize={'18px'}
                         marginBottom={'20px'}
                         color={'rgba(255, 255, 255, 0.5)'}
                       >
-                        WeFund Mission is: 
-                        Host high-quality projects that align with WeFund's investor community.
-                        </chakra.p>
-                        <chakra.p fontSize={'18px'}
+                        WeFund's mission is to host high-quality projects that align with WeFund's investor community.
+                      </chakra.p>
+                      <chakra.p fontSize={'18px'}
                         marginBottom={'20px'}
                         color={'rgba(255, 255, 255, 0.5)'}
                       >
                         Community-driven decisions on the platform for 100% transparency.
-                        </chakra.p>
-                        <chakra.p fontSize={'18px'}
+                      </chakra.p>
+                      <chakra.p fontSize={'18px'}
                         marginBottom={'20px'}
                         color={'rgba(255, 255, 255, 0.5)'}
                       >
                         Project funds managed exclusively on Terra's Anchor protocol using smart contracts and following project milestones.
                       </chakra.p>
-              
-                  
                       <chakra.p
                         fontSize={'18px'}
                         marginBottom={'20px'}
                         color={'rgba(255, 255, 255, 0.5)'}
-                        w={{ base: '400px', lg: '1000px' }}
+                        w={'90%'}
                       >
                         {oneprojectData.project_description}
                       </chakra.p>
@@ -925,54 +924,50 @@ function WefundApprove(project_id){
                           borderTop={'1.5px solid rgba(255, 255, 255, 0.15)'}
                           spacing={10}
                           paddingLeft={'45px'}
+                          paddingRight={'45px'}
                           paddingTop={'35px'}
                           paddingBottom={'35px'}
                         >
-                          <Image
-                            height="35px"
-                            objectFit="cover"
-                            src="/media/WeFund-Logos-only.png"
-                            alt="UST Avatar"
-                          />
                           <VStack textAlign={'left'}>
                             <Text
                               fontWeight={'bold'}
                               textAlign={'left'}
                               alignSelf={'flex-start'}
                             >
-                               Andrea Bello Co Founder & CEO & Co-CTO
+                              Andrea Bello Co-Founder &amp; CEO &amp; Co-CTO
                             </Text>
                             <Text textAlign={'left'} fontWeight={'100'}>
-                              Most recently behind the development of a smart
-                              contract (Fan$quad) that was deployed Col-4 during
-                              a hackathon organized by Terraformlabs and former
-                              CTO of a Guild Game, successfully raising a $10
-                              million Seed round. Founder of Mosquito Solution,
-                              an innovative natural misting system startup
-                              created and launched within 1 year, operating in
-                              Bali, Indonesia. Founder of Bello Service, Domotic
-                              System for smart-home efficiency, reducing
-                              electrical consumption by 30%. R&D engineer at ABB
-                              UPS system, an expert in coding C programming. 
-                              </Text>
-                              <Text
+                              He is the person behind the development of the Fan$quad smart contract
+                              that was deployed on Col-4 during the hackathon organized by Terraform Labs.
+                              He has a wealth of experience in coding, with a deep understanding of
+                              C, C++, Javascript, VBA, Java, Python, Rust language (to name a few).
+                              In 2018 he moved his focus into Solidity, PHP, &amp; HTML 5, to follow his
+                              vision of creating advanced Web 3.0 applications integrated with the blockchain.
+                              His role is to ensure delivery of smart contracts, web app, and technical
+                              infrastructure, as well as managing the business side of the project.
+                              From the business side, he had several businesses before such as a Natural Mosquito Solution
+                              based on Bali, hotel &amp; restaurant (Ristorante-Bar Lanca) in Switzerland,
+                              and a smart-home startup to reduce electricity consumption.
+                              Most of the businesses he founded had an ROI within less than 1 year.
+                            </Text>
+                            <Text
                               fontWeight={'bold'}
                               textAlign={'left'}
                               alignSelf={'flex-start'}
                             >
-                              Ika Afifah Co Founder & CMO Previous CMO at Gamesta
+                              Ika Afifah Co-Founder &amp; CMO
                             </Text> 
-                            <Text textAlign={'left'} fontWeight={'100'}>Prior
-                              to Guild Game, she worked at Tencent as an
-                              operation specialist, in a partnership division.
-                              Before Tencent, she was senior partnership manager
-                              at Bigo. She previously held a senior account
-                              executive position at one of the digital marketing
-                              agencies under Jet Group and was a manager at
-                              Waves who successfully helped founders to raise
-                              $1.2M in pre-seed funding. 
-                              </Text>
-                              <Text
+                            <Text textAlign={'left'} fontWeight={'100'}>
+                              A dynamic individual who worked at Tencent as an operation specialist, in the partnership division.
+                              Before Tencent, she was senior partnership manager at Bigo.
+                              She previously held a senior account executive position at one of
+                              the digital marketing agencies under Jet Group and was a manager
+                              at Waves, who successfully helped founders to raise $1.2M in pre-seed funding,
+                              before turning her attention to crypto.
+                              She is one of the founding partners and driving forces behind the concept of WeFund.
+                              She was on the core team behind the hackathon project of Fan$quad together with the other ex co-founder.
+                            </Text>
+                            <Text
                               fontWeight={'bold'}
                               textAlign={'left'}
                               alignSelf={'flex-start'}
@@ -984,14 +979,13 @@ function WefundApprove(project_id){
                               technology enthusiast. Came from a career in
                               Silicon Valley building web applications during
                               the dot-com boom. Wanting to do it all over again,
-                              this time helping to build Web 3.0. 
-                              </Text>
-                              <Text
+                              this time helping to build Web 3.0.
+                            </Text>
+                            <Text
                               fontWeight={'bold'}
                               textAlign={'left'}
                               alignSelf={'flex-start'}
                             >
-                              
                               Austin Taylor COO
                             </Text>
                             <Text textAlign={'left'} fontWeight={'100'}>
@@ -1020,10 +1014,10 @@ function WefundApprove(project_id){
                       flexDirection="column"
                       background={'rgba(255, 255, 255, 0.05)'}
                       border={'1.5px solid rgba(255, 255, 255, 0.15)'}
-                      display={{base:'none',md:'none', lg:'block'}}
+                      display={{base:'none',md:'block', lg:'block'}}
                     >
-                      <Flex mt='60px' justify='center' align='center' direction='column' maxWidth={{base:'0px',md:'0px',lg:'999px'}} maxHeight={{base:'0px',md:'0px',lg:'999px'}} 
-                      display={{base:'none',md:'none', lg:'block'}} >
+                      <Flex mt='60px' justify='center' align='center' direction='column' 
+                      display={{base:'none',md:'block', lg:'block'}}>
                         {/* <Chart
                           chartType="Gantt"
                           width="100%"
@@ -1032,14 +1026,18 @@ function WefundApprove(project_id){
                           data={data}
                           options={options}
                         /> */}
-                        <Text fontSize='16px' fontWeight={'300'} mb={'20px'}>Project Milestones List</Text>
-                        <Table variant='simple'>
-                          <TableCaption style={{color:'#00A3FF'}}>Milestones that project have. Details might be more on Project own's website. Project Milestone up for voting would be listed for voting. 
-                          Rejected Milestones means project funds would not be released or project suspended. Voted and Approved would result in project rewarded for milestone</TableCaption>
+                        <Text fontSize='16px' fontWeight={'300'} mb={'20px'}>Project Milestones</Text>
+                        <Table variant='simple' size={{base:'sm', sm:'sm', md:'sm', lg:'sm', xl:'md'}}>
+                          <TableCaption style={{color:'#00A3FF'}}>
+                            Project milestones. More details may be available on each project's website.
+                            Project milestones will be listed and up for voting by the community.
+                            Rejected milestone means project funds will not be released, or project has been suspended.
+                            Voted and Approved will result in project being awarded funds for corresponding milestone.
+                          </TableCaption>
                           <Thead bgColor={'rgba(255, 255, 255, 0.12)'} borderRadius={'10px 10px 0px 0px'}>
                             <Tr>
-                              <Th style={{color:'#00A3FF'}}>Milestone No</Th>
-                              <Th style={{color:'#00A3FF'}}>Name </Th>
+                              <Th style={{color:'#00A3FF'}}>Milestone No.</Th>
+                              <Th style={{color:'#00A3FF'}}>Name</Th>
                               <Th style={{color:'#00A3FF'}}>Proposed Start Date</Th>
                               <Th style={{color:'#00A3FF'}}>Proposed End Date</Th>
                               <Th style={{color:'#00A3FF'}}>Milestone Fund Amount</Th>
@@ -1051,21 +1049,20 @@ function WefundApprove(project_id){
                             {oneprojectData != '' && 
                             oneprojectData.milestone_states.map((milestone, index) => (
                             <Tr key={index}>
-                            <Td >{milestone.milestone_step}</Td>
-                            <Td >{milestone.milestone_name} </Td>
-                            <Td >{milestone.milestone_startdate}</Td>
-                            <Td >{milestone.milestone_enddate}</Td>
-                            <Td >{milestone.milestone_amount}</Td>
-                            <Td >
-                              {milestone.milestone_votingavailable &&
-                              <Button onClick={onOpen} colorScheme={'teal'}>Vote & Details</Button>}
-                            </Td>
-                            <Td >{milestone.milestone_statusmessage}</Td>
+                              <Td >{milestone.milestone_step}</Td>
+                              <Td >{milestone.milestone_name} </Td>
+                              <Td >{milestone.milestone_startdate}</Td>
+                              <Td >{milestone.milestone_enddate}</Td>
+                              <Td >{milestone.milestone_amount}</Td>
+                              <Td >
+                                {milestone.milestone_votingavailable &&
+                                <Button onClick={onOpen} colorScheme={'teal'}>Vote &amp; Details</Button>}
+                              </Td>
+                              <Td >{milestone.milestone_statusmessage}</Td>
                             </Tr>
                             ))}
                           </Tbody>
                         </Table>
-
                       </Flex>
                     </Flex>
                   </VStack>
@@ -1076,47 +1073,46 @@ function WefundApprove(project_id){
           </Box>
         </Flex>
         <Footer />
-        <Notification  ref={notificationRef}/>     
+        <Notification ref={notificationRef}/>
       </div>
       {/*--This is Where to Vote Pop Up is--*/}
       <Modal onClose={onVoteBoxClose} isOpen={isVoteBoxOpen} isCentered>
         <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Vote The Milestone of Project</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <Text textAlign={'left'}>
-                Project Project Milestone Description <br/>
-                Aliquip mollit sunt qui irure. Irure ullamco Lorem
-                excepteur dolor qui ea ad quis. Enim fugiat cillum enim
-                ad occaecat sint qui elit labore mollit sunt laborum
-                fugiat consequat. Voluptate labore sunt duis eu
-                deserunt. Occaecat do ut ut labore cillum enim dolore ad
-                enim enim id. Aliquip do veniam ad excepteur ad cillum
-                qui deserunt nostrud sunt aliqua duis sunt occaecat.
-                Laborum incididunt commodo ullamco proident quis.
-              </Text>
-            </ModalBody>
-            <ModalFooter>
-                <Button colorScheme='grey' mr={3} onClick={onVoteBoxClose}>
-                  Close
-                </Button>
-                <Button colorScheme='blue' mr={3} 
-                  onClick={()=>{
-                    onClose(); MilestoneVote(oneprojectData.project_id, true);}}
-                >
-                  Vote Yes
-                </Button>
-                <Button colorScheme='red' mr={3}
-                  onClick={()=>{
-                    onClose(); MilestoneVote(oneprojectData.project_id, false);}}
-                >
-                  Vote No
-                </Button>
-            </ModalFooter>
-          </ModalContent>
+        <ModalContent>
+          <ModalHeader>Vote for Each Milestone of the Project</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text textAlign={'left'}>
+              Project Project Milestone Description <br/>
+              Aliquip mollit sunt qui irure. Irure ullamco Lorem
+              excepteur dolor qui ea ad quis. Enim fugiat cillum enim
+              ad occaecat sint qui elit labore mollit sunt laborum
+              fugiat consequat. Voluptate labore sunt duis eu
+              deserunt. Occaecat do ut ut labore cillum enim dolore ad
+              enim enim id. Aliquip do veniam ad excepteur ad cillum
+              qui deserunt nostrud sunt aliqua duis sunt occaecat.
+              Laborum incididunt commodo ullamco proident quis.
+            </Text>
+          </ModalBody>
+          <ModalFooter>
+              <Button colorScheme='grey' mr={3} onClick={onVoteBoxClose}>
+                Close
+              </Button>
+              <Button colorScheme='blue' mr={3}
+                onClick={()=>{
+                  onClose(); MilestoneVote(oneprojectData.project_id, true);}}
+              >
+                Vote Yes
+              </Button>
+              <Button colorScheme='red' mr={3}
+                onClick={()=>{
+                  onClose(); MilestoneVote(oneprojectData.project_id, false);}}
+              >
+                Vote No
+              </Button>
+          </ModalFooter>
+        </ModalContent>
       </Modal>
     </ChakraProvider>
-    
   )
 }
