@@ -32,16 +32,14 @@ export default function Roadmap() {
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right">
-            <Text className="RoadmapHeading">January 2022</Text>
+            <Text className="RoadmapHeading">Q1 2022</Text>
             <Image src="/media/beautifulDash.svg" />
-            <Text className="RoadmapTitle">Platform V2</Text>
             <UnorderedList className="RoadmapDesc">
-              <ListItem>Community registration system</ListItem>
-              <ListItem>Community project approval by voting power</ListItem>
-              <ListItem>Project creation with milestone system</ListItem>
-              <ListItem>Multi-stage fundraising</ListItem>
-              <ListItem>Milestone funds released with backers approval through voting power</ListItem>
-              <ListItem>Customer service</ListItem>
+              <ListItem>Complete fundraising</ListItem>
+              <ListItem>Having a successful TGE</ListItem>
+              <ListItem>Platform launch 1.0</ListItem>
+              <ListItem>Hackathon by weFund for crypto projects</ListItem>
+              <ListItem>Fundraising for the project hosted on WeFund</ListItem>
             </UnorderedList>
           </Flex>
         </Flex>
@@ -49,10 +47,14 @@ export default function Roadmap() {
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right">
-            <Text className="RoadmapTitle">WeFund Investment Status</Text>
+            <Text className="RoadmapHeading">Q2 2022</Text>
+            <Image src="/media/beautifulDash.svg" />
+            <Text className="RoadmapTitle">success</Text>
             <UnorderedList className="RoadmapDesc">
-              <ListItem>Seed phase until end of January</ListItem>
-              <ListItem>Pre-sale begins</ListItem>
+              <ListItem>Fundraising for the project hosted on WeFund</ListItem>
+              <ListItem>Platform update 2.0</ListItem>
+              <ListItem>Have 10 projects hosted on WeFund</ListItem>
+              <ListItem>Real-world project implementation</ListItem>
             </UnorderedList>
           </Flex>
         </Flex>
@@ -60,11 +62,12 @@ export default function Roadmap() {
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right">
-            <Text className="RoadmapTitle">Project Incubation</Text>
+            <Text className="RoadmapHeading">Q3 2022</Text>
+            <Image src="/media/beautifulDash.svg" />
             <UnorderedList className="RoadmapDesc">
-              <ListItem>Bakso Mania Seed Phase</ListItem>
-              <ListItem>Pandai Crypto Seed Phase</ListItem>
-              <ListItem>LynxVR Seed Phase</ListItem>
+              <ListItem>Have successful fundraising for the first 10 projects</ListItem>
+              <ListItem>Platform update 3.0</ListItem>
+              <ListItem>Starting real-</ListItem>
             </UnorderedList>
           </Flex>
         </Flex>
@@ -146,7 +149,9 @@ export default function Roadmap() {
               <ListItem>Sport industry first project - Seed phase</ListItem>
               <ListItem>Game industry first project - Seed phase</ListItem>
               <ListItem>Creative industry first project - Seed phase</ListItem>
-              <ListItem>Real estate industry first project - Seed phase</ListItem>
+              <ListItem>
+                Real estate industry first project - Seed phase
+              </ListItem>
             </UnorderedList>
           </Flex>
         </Flex>
@@ -159,7 +164,7 @@ export default function Roadmap() {
         <Flex id="roadmapBox1">
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right">
-            <Text className="RoadmapHeading">January 2022</Text>
+            <Text className="RoadmapHeading">Q1 2022</Text>
             <Image src="/media/beautifulDash.svg" />
             <Text className="RoadmapTitle">Platform V2</Text>
             <UnorderedList className="RoadmapDesc">
@@ -167,7 +172,10 @@ export default function Roadmap() {
               <ListItem>Community project approval by voting power</ListItem>
               <ListItem>Project creation with milestone system</ListItem>
               <ListItem>Multi-stage fundraising</ListItem>
-              <ListItem>Milestone funds released with backers approval through voting power</ListItem>
+              <ListItem>
+                Milestone funds released with backers approval through voting
+                power
+              </ListItem>
               <ListItem>Customer service</ListItem>
             </UnorderedList>
           </Flex>
@@ -264,7 +272,9 @@ export default function Roadmap() {
               <ListItem>Sport industry first project - Seed phase</ListItem>
               <ListItem>Game industry first project - Seed phase</ListItem>
               <ListItem>Creative industry first project - Seed phase</ListItem>
-              <ListItem>Real estate industry first project - Seed phase</ListItem>
+              <ListItem>
+                Real estate industry first project - Seed phase
+              </ListItem>
             </UnorderedList>
           </Flex>
         </Flex>
