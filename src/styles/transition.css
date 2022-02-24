@@ -310,7 +310,9 @@ body {
   font-family: 'PilatExtended-Bold';
 }
 #missionList {
-  width: 70em;
+  max-width: 70em;
+  padding-left: 10px;
+  padding-right: 10px;
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -325,6 +327,8 @@ body {
   background: linear-gradient(45deg, #360847, #18075b);
 }
 .missionCard:hover {
+  position: relative;
+  z-index: 5;
   background: linear-gradient(180deg, #00a3ff 0%, #0048ff5b 100%);
 }
 .missionTitle {
@@ -464,7 +468,9 @@ body {
 }
 
 #aboutFirstSection {
-  width: 70em;
+  max-width: 70em;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
