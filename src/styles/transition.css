@@ -259,13 +259,7 @@ body {
 #roadmapBox1,
 #roadmapBox2,
 #roadmapBox3,
-#roadmapBox4,
-#roadmapBox5,
-#roadmapBox6,
-#roadmapBox7,
-#roadmapBox8,
-#roadmapBox9,
-#roadmapBox10 {
+#roadmapBox4 {
   width: 50em;
   display: flex;
   position: absolute;
@@ -277,34 +271,16 @@ body {
   height: 1em;
 }
 #roadmapBox1 {
-  top: 3%;
+  top: 5%;
 }
 #roadmapBox2 {
-  top: 22%;
+  top: 30%;
 }
 #roadmapBox3 {
-  top: 29%;
+  top: 55%;
 }
 #roadmapBox4 {
-  top: 37%;
-}
-#roadmapBox5 {
-  top: 44%;
-}
-#roadmapBox6 {
-  top: 56%;
-}
-#roadmapBox7 {
-  top: 64%;
-}
-#roadmapBox8 {
-  top: 71%;
-}
-#roadmapBox9 {
-  top: 80%;
-}
-#roadmapBox10 {
-  top: 88%;
+  top: 77%;
 }
 #rotateHandGo {
   -webkit-transform: scaleX(-1);
@@ -825,13 +801,7 @@ body {
   #roadmapBox1,
   #roadmapBox2,
   #roadmapBox3,
-  #roadmapBox4,
-  #roadmapBox5,
-  #roadmapBox6,
-  #roadmapBox7,
-  #roadmapBox8,
-  #roadmapBox9,
-  #roadmapBox10 {
+  #roadmapBox4 {
     width: 45em;
   }
   #sphere {
@@ -880,13 +850,7 @@ body {
   #roadmapBox1,
   #roadmapBox2,
   #roadmapBox3,
-  #roadmapBox4,
-  #roadmapBox5,
-  #roadmapBox6,
-  #roadmapBox7,
-  #roadmapBox8,
-  #roadmapBox9,
-  #roadmapBox10 {
+  #roadmapBox4 {
     width: 40em;
   }
   #sphere {
@@ -973,12 +937,7 @@ body {
   #roadmapBox1,
   #roadmapBox2,
   #roadmapBox3,
-  #roadmapBox4,
-  #roadmapBox5,
-  #roadmapBox6,
-  #roadmapBox8,
-  #roadmapBox9,
-  #roadmapBox10 {
+  #roadmapBox4 {
     width: 100%;
     display: flex;
     position: absolute;
@@ -1146,11 +1105,6 @@ body {
     font-size: 16px;
     line-height: 18px;
   }
-  /* .projectDesc {
-    font-size: 13px;
-    padding-top: 5px;
-    margin-bottom: 10px;
-  } */
   .RoadmapHeading {
     font-size: 13px;
   }
@@ -1161,12 +1115,6 @@ body {
   .projectLabel {
     font-size: 10px;
   }
-  /* .projectDesc {
-    padding-top: 10px;
-    margin-top: 0px;
-    font-size: 10px;
-    width: 100%;
-  } */
   #missionList {
     margin: 0;
     padding: 0;
@@ -1240,38 +1188,6 @@ body {
     height: 250px;
     position: absolute;
   }
-  /* .PROJECT_ITEMS_ROW1,
-  .PROJECT_ITEMS_ROW2 {
-    width: 100%;
-    height: auto;
-    padding: 5px;
-    text-align: left;
-    margin-bottom: 1em;
-    border-radius: 5px;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-  .projectItemContentCol {
-    width: 100%;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .projectItemImageCol {
-    width: 100%;
-    height: 250px;
-  }
-  .projectItemImageCol img {
-    border-radius: 10px !important;
-    object-fit: cover !important;
-  } */
-  /* 
-  .projectState {
-    font-size: 9px !important;
-    line-height: 10px;
-    font-weight: 400;
-  }*/
   .projectTitle {
     font-weight: 700;
     line-height: 16px;
@@ -1288,18 +1204,12 @@ body {
     margin-bottom: 5px;
   }
   #roadMapLineId {
-    height: 70em;
+    height: 30em;
   }
   #roadmapBox1,
   #roadmapBox2,
   #roadmapBox3,
-  #roadmapBox4,
-  #roadmapBox5,
-  #roadmapBox6,
-  #roadmapBox7,
-  #roadmapBox8,
-  #roadmapBox9,
-  #roadmapBox10 {
+  #roadmapBox4 {
     width: 100%;
     display: flex;
     position: absolute;
@@ -1328,34 +1238,16 @@ body {
     height: 0.8em;
   }
   #roadmapBox1 {
-    top: 4%;
+    top: 5%;
   }
   #roadmapBox2 {
-    top: 23%;
-  }
-  #roadmapBox3 {
     top: 30%;
   }
+  #roadmapBox3 {
+    top: 60%;
+  }
   #roadmapBox4 {
-    top: 38%;
-  }
-  #roadmapBox5 {
-    top: 45%;
-  }
-  #roadmapBox6 {
-    top: 57%;
-  }
-  #roadmapBox7 {
-    top: 66%;
-  }
-  #roadmapBox8 {
-    top: 75%;
-  }
-  #roadmapBox9 {
-    top: 82%;
-  }
-  #roadmapBox10 {
-    top: 92%;
+    top: 80%;
   }
   .FlexViewMobile {
     height: 10em;
