@@ -201,16 +201,9 @@ body {
 .aboutUsBox:hover {
   background: linear-gradient(180deg, #00a3ff 0%, #0047ff 100%);
 }
-#RoadMapMobile {
+/* #RoadMapMobile {
   display: none;
-}
-#RoadMapDesktop {
-  margin-top: 2em;
-  position: relative;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
+} */
 .RoadmapContent {
   width: 50%;
   text-align: left;
@@ -256,55 +249,9 @@ body {
   line-height: 1.2em;
   margin-bottom: 10px;
 }
-#roadmapBox1,
-#roadmapBox2,
-#roadmapBox3,
-#roadmapBox4,
-#roadmapBox5,
-#roadmapBox6,
-#roadmapBox7,
-#roadmapBox8,
-#roadmapBox9,
-#roadmapBox10 {
-  width: 50em;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  justify-content: space-between;
-}
 #circleD {
   width: 1em;
   height: 1em;
-}
-#roadmapBox1 {
-  top: 3%;
-}
-#roadmapBox2 {
-  top: 22%;
-}
-#roadmapBox3 {
-  top: 29%;
-}
-#roadmapBox4 {
-  top: 37%;
-}
-#roadmapBox5 {
-  top: 44%;
-}
-#roadmapBox6 {
-  top: 56%;
-}
-#roadmapBox7 {
-  top: 64%;
-}
-#roadmapBox8 {
-  top: 71%;
-}
-#roadmapBox9 {
-  top: 80%;
-}
-#roadmapBox10 {
-  top: 88%;
 }
 #rotateHandGo {
   -webkit-transform: scaleX(-1);
@@ -842,18 +789,6 @@ body {
     align-items: flex-start;
     justify-content: center;
   }
-  #roadmapBox1,
-  #roadmapBox2,
-  #roadmapBox3,
-  #roadmapBox4,
-  #roadmapBox5,
-  #roadmapBox6,
-  #roadmapBox7,
-  #roadmapBox8,
-  #roadmapBox9,
-  #roadmapBox10 {
-    width: 45em;
-  }
   #sphere {
     width: 40%;
   }
@@ -897,18 +832,6 @@ body {
     height: 220px;
     padding: 30px 0;
   }
-  #roadmapBox1,
-  #roadmapBox2,
-  #roadmapBox3,
-  #roadmapBox4,
-  #roadmapBox5,
-  #roadmapBox6,
-  #roadmapBox7,
-  #roadmapBox8,
-  #roadmapBox9,
-  #roadmapBox10 {
-    width: 40em;
-  }
   #sphere {
     display: none;
   }
@@ -929,7 +852,6 @@ body {
   #aboutSection {
     padding: 68px 40px;
   }
-
   .circleAboutText {
     font-size: 13px;
     margin-top: 5px;
@@ -967,20 +889,9 @@ body {
     height: 200px;
     padding: 20px 0;
   }
-  #RoadMapDesktop {
-    display: none;
-  }
   #aboutSection {
     margin-top: 60px;
     margin-bottom: 50px;
-  }
-  #RoadMapMobile {
-    width: 85%;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
   }
   .RoadmapContent {
     width: 100%;
@@ -989,21 +900,6 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-  }
-  #roadmapBox1,
-  #roadmapBox2,
-  #roadmapBox3,
-  #roadmapBox4,
-  #roadmapBox5,
-  #roadmapBox6,
-  #roadmapBox8,
-  #roadmapBox9,
-  #roadmapBox10 {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    justify-content: space-between;
   }
   #footerBottomInnerStyleBox {
     width: 100%;
@@ -1166,27 +1062,12 @@ body {
     font-size: 16px;
     line-height: 18px;
   }
-  /* .projectDesc {
-    font-size: 13px;
-    padding-top: 5px;
-    margin-bottom: 10px;
-  } */
   .RoadmapHeading {
     font-size: 13px;
-  }
-  #RoadMapMobile {
-    margin-top: 2em;
-    margin-bottom: 0;
   }
   .projectLabel {
     font-size: 10px;
   }
-  /* .projectDesc {
-    padding-top: 10px;
-    margin-top: 0px;
-    font-size: 10px;
-    width: 100%;
-  } */
   #missionList {
     margin: 0;
     padding: 0;
@@ -1307,25 +1188,6 @@ body {
     margin-top: -5px;
     margin-bottom: 5px;
   }
-  #roadMapLineId {
-    height: 70em;
-  }
-  #roadmapBox1,
-  #roadmapBox2,
-  #roadmapBox3,
-  #roadmapBox4,
-  #roadmapBox5,
-  #roadmapBox6,
-  #roadmapBox7,
-  #roadmapBox8,
-  #roadmapBox9,
-  #roadmapBox10 {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
   .RoadmapTitle {
     color: white;
     font-size: 13px;
@@ -1346,36 +1208,6 @@ body {
   #circleD {
     width: 0.8em;
     height: 0.8em;
-  }
-  #roadmapBox1 {
-    top: 4%;
-  }
-  #roadmapBox2 {
-    top: 23%;
-  }
-  #roadmapBox3 {
-    top: 30%;
-  }
-  #roadmapBox4 {
-    top: 38%;
-  }
-  #roadmapBox5 {
-    top: 45%;
-  }
-  #roadmapBox6 {
-    top: 57%;
-  }
-  #roadmapBox7 {
-    top: 66%;
-  }
-  #roadmapBox8 {
-    top: 75%;
-  }
-  #roadmapBox9 {
-    top: 82%;
-  }
-  #roadmapBox10 {
-    top: 92%;
   }
   .FlexViewMobile {
     height: 10em;
