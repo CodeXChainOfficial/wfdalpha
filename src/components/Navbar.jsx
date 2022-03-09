@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from '@reach/router'
+import ConnectWallet from './ConnectWallet'
 import {
   Box,
   Text,
@@ -11,13 +13,14 @@ import {
 } from '@chakra-ui/react'
 import theme from '../theme'
 import '../styles/Navbar.css'
-import { Link } from '@reach/router'
-import ConnectWallet from './ConnectWallet'
 import { RiAccountPinBoxFill } from 'react-icons/ri'
 import { Container } from '../components/Container'
 import { ButtonBackTransition } from '../components/ImageTransition'
+import { useStore } from '../store'
 
 export default function Navbar() {
+  const {state, dispatch} = useStore();
+
   return (
     <ChakraProvider resetCSS theme={theme}>
       <Container>
@@ -32,14 +35,10 @@ export default function Navbar() {
             backdropFilter="blur(54px)"
             borderBottom="2px solid rgba(255, 255, 255, 0.103)"
           >
-            <Flex w="50%" h="100%" align="center" justify="space-between">
+            <Flex w="40%" h="100%" align="center" justify="space-between">
               <Flex ml="90px">
                 <Link className="navbar-brand" to="/">
-                  <Image
-                    alt="Wefund"
-                    src="/media/WeFund-Logos-only.png"
-                    h="30px"
-                  />
+                  <Image alt="WeFund" src="/media/WeFund-Logos-only.png" h="30px" />
                 </Link>
                 <Flex ml="10px" border="1px solid rgba(255,255,255, 0.2)" />
               </Flex>
@@ -64,13 +63,13 @@ export default function Navbar() {
                   </Box>
                 </Link>
               </ButtonBackTransition>
-
               <Flex w="197px" ml="20px" mr={'10px'}>
                 <ConnectWallet />
               </Flex>
               <Link to="walletInfo">
                 <Icon as={RiAccountPinBoxFill} fontSize={'45px'} />
               </Link>
+
             </Flex>
           </Flex>
         </VStack>
@@ -87,11 +86,7 @@ export default function Navbar() {
           >
             <Flex ml="30px" align="center">
               <Link className="navbar-brand" to="/">
-                <Image
-                  alt="Wefund"
-                  src="/media/WeFund-Logos-only.png"
-                  h="25px"
-                />
+                <Image alt="WeFund" src="/media/WeFund-Logos-only.png" h="25px" />
               </Link>
             </Flex>
             <HStack>
@@ -122,6 +117,9 @@ export default function Navbar() {
             </HStack>
           </Flex>
         </VStack>
+        {state.net == 'testnet' &&
+        <Flex w='100%' h='30px' background="yellow" justify='center' color="red">Testnet</Flex>
+        }
       </Container>
     </ChakraProvider>
   )
@@ -171,10 +169,10 @@ const NAV_ITEMS = [
   //    label: 'Contact',
   //    href: '#',
   //  },
-  {
-    label: 'Blog',
-    href: '/blog',
-  },
+   {
+     label: 'Blog',
+     href: '/blog',
+   },
   // {
   //   label: 'FAQ',
   //   href: 'faq',
