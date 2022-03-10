@@ -36,7 +36,7 @@ export default function Roadmap() {
       >
         <Image
           src="/media/RoadmapLine.svg"
-          height={{ md: '210em', lg: '200em' }}
+          height={{ md: '175em', lg: '200em' }}
           data-aos="zoom-in-up"
         />
         <Flex
@@ -49,10 +49,35 @@ export default function Roadmap() {
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right">
-            <Text className="RoadmapHeading">January 2022</Text>
+            <Text
+              mb={'5px'}
+              mt={'-10px'}
+              color="#fe8600"
+              fontWeight="bolder"
+              fontFamily={'PilatExtended-Bold'}
+              fontSize={{ md: '18px', lg: '22px' }}
+            >
+              January 2022
+            </Text>
             <Image src="/media/beautifulDash.svg" />
-            <Text className="RoadmapTitle">Platform V2</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Platform V2
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem color={'green.300'}>
                 Community registration system
               </ListItem>
@@ -74,15 +99,31 @@ export default function Roadmap() {
         <Flex
           position={'absolute'}
           alignItems={'flex-start'}
-          top={{ md: '30em', lg: '33em' }}
+          top={{ md: '24em', lg: '33em' }}
           justifyContent={'space-between'}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right">
-            <Text className="RoadmapTitle">WeFund Investment Status</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              WeFund Investment Status
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem color={'green.300'}>
                 Seed phase until end of January
               </ListItem>
@@ -94,14 +135,30 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '38em', lg: '41em' }}
+          top={{ md: '30em', lg: '41em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right">
-            <Text className="RoadmapTitle">Project Incubation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Project Incubation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem>Bakso Mania Seed Phase</ListItem>
               <ListItem>Pandai Crypto Seed Phase</ListItem>
               <ListItem>LynxVR Seed Phase</ListItem>
@@ -112,14 +169,30 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '47em', lg: '50em' }}
+          top={{ md: '38em', lg: '50em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right">
-            <Text className="RoadmapTitle">Documentation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Documentation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem color={'green.300'}>Release Whitepaper 2.0</ListItem>
               <ListItem color={'green.300'}>Update Litepaper</ListItem>
             </UnorderedList>
@@ -129,14 +202,40 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '56em', lg: '61em' }}
+          top={{ md: '45em', lg: '61em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2" data-aos="fade-left">
-            <Text className="RoadmapHeading">February 2022</Text>
+            <Text
+              mb={'5px'}
+              mt={'-10px'}
+              color="#fe8600"
+              fontWeight="bolder"
+              fontFamily={'PilatExtended-Bold'}
+              fontSize={{ md: '18px', lg: '22px' }}
+            >
+              February 2022
+            </Text>
             <Image src="/media/beautifulDash.svg" />
-            <Text className="RoadmapTitle">Platform V3</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Platform V3
+            </Text>
+            <UnorderedList
+              mb="20px"
+              dir="rtl"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem color={'green.300'}>
                 Set up community allocation
               </ListItem>
@@ -153,12 +252,29 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '70em', lg: '76em' }}
+          top={{ md: '58em', lg: '76em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2" data-aos="fade-left">
-            <Text className="RoadmapTitle">WeFund Investment Status</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              WeFund Investment Status
+            </Text>
+            <UnorderedList
+              mb="20px"
+              dir="rtl"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem>Presale phase until end of February</ListItem>
               <ListItem>Marketing for IWO (ICO/IDO)</ListItem>
             </UnorderedList>
@@ -170,12 +286,29 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '79em', lg: '83em' }}
+          top={{ md: '64em', lg: '83em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2" data-aos="fade-left">
-            <Text className="RoadmapTitle">Project Incubation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Project Incubation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              dir="rtl"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem>Real World Projects (Details coming soon)</ListItem>
             </UnorderedList>
           </Flex>
@@ -186,12 +319,29 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '86em', lg: '88em' }}
+          top={{ md: '71em', lg: '88em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2" data-aos="fade-left">
-            <Text className="RoadmapTitle">Documentation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Documentation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              dir="rtl"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem>Release Whitepaper 3.0</ListItem>
               <ListItem>Update Litepaper</ListItem>
             </UnorderedList>
@@ -203,16 +353,41 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '93em', lg: '95em' }}
+          top={{ md: '78em', lg: '95em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right">
-            <Text className="RoadmapHeading">March 2022</Text>
+            <Text
+              mb={'5px'}
+              mt={'-10px'}
+              color="#fe8600"
+              fontWeight="bolder"
+              fontFamily={'PilatExtended-Bold'}
+              fontSize={{ md: '18px', lg: '22px' }}
+            >
+              March 2022
+            </Text>
             <Image src="/media/beautifulDash.svg" />
-            <Text className="RoadmapTitle">WeFund Investment Status</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              WeFund Investment Status
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem>IWO (ICO/IDO)</ListItem>
             </UnorderedList>
           </Flex>
@@ -221,14 +396,30 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '103em', lg: '105em' }}
+          top={{ md: '87em', lg: '105em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent">
-            <Text className="RoadmapTitle">Project Incubation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Project Incubation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem>Sport industry first project - Seed phase</ListItem>
               <ListItem>Game industry first project - Seed phase</ListItem>
               <ListItem>Creative industry first project - Seed phase</ListItem>
@@ -242,14 +433,30 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '121em', lg: '120em' }}
+          top={{ md: '102em', lg: '120em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent">
-            <Text className="RoadmapTitle">Q1 2022</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Q1 2022
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem color={'green.300'}>
                 Community registration system
               </ListItem>
@@ -278,14 +485,30 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '150em', lg: '145em' }}
+          top={{ md: '123em', lg: '145em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent">
-            <Text className="RoadmapTitle">Q2 2022</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Q2 2022
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem>
                 Closing private round for WeFund (seed and presale)
               </ListItem>
@@ -307,14 +530,30 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '180em', lg: '170em' }}
+          top={{ md: '146em', lg: '170em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent">
-            <Text className="RoadmapTitle">Q3 2022</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Q3 2022
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem>
                 Have successful fundraising for the first 10 projects
               </ListItem>
@@ -332,14 +571,30 @@ export default function Roadmap() {
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
-          top={{ md: '195em', lg: '185em' }}
+          top={{ md: '160em', lg: '185em' }}
           width={{ md: '40em', lg: '50em' }}
         >
           <Flex className="RoadmapContent2"></Flex>
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent">
-            <Text className="RoadmapTitle">Q4 2022</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="18px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Q4 2022
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={{ md: '15px', lg: '18px' }}
+            >
               <ListItem>
                 Have successful fundraising for the first 10 projects
               </ListItem>
@@ -358,26 +613,51 @@ export default function Roadmap() {
         mt="2em"
         width={'85%'}
         position="relative"
-        flexDirection={'column'}
         alignItems="flex-start"
+        flexDirection={'column'}
         justifyContent={'flex-start'}
         display={{ base: 'flex', md: 'none', lg: 'none' }}
       >
         <Image src="/media/RoadmapLine.svg" height={'105em'} />
         <Flex
           top={'3em'}
-          width={'100%'}
           left=".2em"
+          width={'100%'}
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapHeading">January 2022</Text>
-            <Image src="/media/beautifulDash.svg" />
-            <Text className="RoadmapTitle">Platform V2</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'5px'}
+              mt={'-10px'}
+              color="#fe8600"
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily={'PilatExtended-Bold'}
+            >
+              January 2022
+            </Text>
+            <Image src="/media/beautifulDash.svg" height={'20px'} />
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Platform V2
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem color={'green.300'}>
                 Community registration system
               </ListItem>
@@ -397,17 +677,33 @@ export default function Roadmap() {
           </Flex>
         </Flex>
         <Flex
+          left=".2em"
           top={'15em'}
           width={'100%'}
-          left=".2em"
           position={'absolute'}
           alignItems={'flex-start'}
           justifyContent={'space-between'}
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">WeFund Investment Status</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              WeFund Investment Status
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem>Seed phase until end of January</ListItem>
               <ListItem>Pre-sale begins</ListItem>
             </UnorderedList>
@@ -423,8 +719,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">Project Incubation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Project Incubation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem>Bakso Mania Seed Phase</ListItem>
               <ListItem>Pandai Crypto Seed Phase</ListItem>
               <ListItem>LynxVR Seed Phase</ListItem>
@@ -441,8 +753,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">Documentation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Documentation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem color={'green.300'}>Release Whitepaper 2.0</ListItem>
               <ListItem color={'green.300'}>Update Litepaper</ListItem>
             </UnorderedList>
@@ -458,10 +786,35 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapHeading">February 2022</Text>
-            <Image src="/media/beautifulDash.svg" />
-            <Text className="RoadmapTitle">Platform V3</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'5px'}
+              mt={'-10px'}
+              color="#fe8600"
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily={'PilatExtended-Bold'}
+            >
+              February 2022
+            </Text>
+            <Image src="/media/beautifulDash.svg" height={'20px'} />
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Platform V3
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem color={'green.300'}>
                 Set up community allocation
               </ListItem>
@@ -482,8 +835,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">WeFund Investment Status</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              WeFund Investment Status
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem>Presale phase until end of February</ListItem>
               <ListItem>Marketing for IWO (ICO/IDO)</ListItem>
             </UnorderedList>
@@ -499,8 +868,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">Project Incubation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Project Incubation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem>Real World Projects (Details coming soon)</ListItem>
             </UnorderedList>
           </Flex>
@@ -515,8 +900,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">Documentation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Documentation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem>Release Whitepaper 3.0</ListItem>
               <ListItem>Update Litepaper</ListItem>
             </UnorderedList>
@@ -532,10 +933,35 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapHeading">March 2022</Text>
-            <Image src="/media/beautifulDash.svg" />
-            <Text className="RoadmapTitle">WeFund Investment Status</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'5px'}
+              mt={'-10px'}
+              color="#fe8600"
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily={'PilatExtended-Bold'}
+            >
+              March 2022
+            </Text>
+            <Image src="/media/beautifulDash.svg" height={'20px'} />
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              WeFund Investment Status
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem>IWO (ICO/IDO)</ListItem>
             </UnorderedList>
           </Flex>
@@ -550,8 +976,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">Project Incubation</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Project Incubation
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem>Sport industry first project - Seed phase</ListItem>
               <ListItem>Game industry first project - Seed phase</ListItem>
               <ListItem>Creative industry first project - Seed phase</ListItem>
@@ -571,8 +1013,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">Q1 2022</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Q1 2022
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem color={'green.300'}>
                 Community registration system
               </ListItem>
@@ -607,8 +1065,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">Q2 2022</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Q2 2022
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem>
                 Closing private round for WeFund (seed and presale)
               </ListItem>
@@ -636,8 +1110,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">Q3 2022</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Q3 2022
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontFamily="Sk-Modernist-Regular"
+              fontSize={'11px'}
+            >
               <ListItem>
                 Have successful fundraising for the first 10 projects
               </ListItem>
@@ -661,8 +1151,24 @@ export default function Roadmap() {
         >
           <Image src="/media/circle.svg" id="circleD" data-aos="zoom-in-up" />
           <Flex className="RoadmapContent" data-aos="fade-right" width={'100%'}>
-            <Text className="RoadmapTitle">Q4 2022</Text>
-            <UnorderedList className="RoadmapDesc">
+            <Text
+              mb={'15px'}
+              mt={'-5px'}
+              color={'white'}
+              fontSize="13px"
+              fontWeight="bolder"
+              fontFamily="Sk-Mondernist-Bold"
+            >
+              Q4 2022
+            </Text>
+            <UnorderedList
+              mb="20px"
+              mr={'15px'}
+              mt={'-10px'}
+              color="#aea3b2"
+              fontSize={'11px'}
+              fontFamily="Sk-Modernist-Regular"
+            >
               <ListItem>
                 Have successful fundraising for the first 10 projects
               </ListItem>

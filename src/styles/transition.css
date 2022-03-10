@@ -201,9 +201,6 @@ body {
 .aboutUsBox:hover {
   background: linear-gradient(180deg, #00a3ff 0%, #0047ff 100%);
 }
-/* #RoadMapMobile {
-  display: none;
-} */
 .RoadmapContent {
   width: 50%;
   text-align: left;
@@ -219,30 +216,6 @@ body {
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-}
-.RoadmapHeading {
-  font-size: 22px;
-  color: #fe8600;
-  margin-top: -10px;
-  margin-bottom: 5px;
-  font-weight: bolder;
-  font-family: 'PilatExtended-Bold';
-}
-.RoadmapTitle {
-  color: white;
-  font-size: 18px;
-  margin-top: -5px;
-  font-weight: bolder;
-  margin-bottom: 15px;
-  font-family: 'Sk-Modernist-Bold';
-}
-.RoadmapDesc {
-  font-size: 18px;
-  color: #aea3b2;
-  margin-top: -10px;
-  margin-bottom: 20px;
-  margin-right: 15px;
-  font-family: 'Sk-Modernist-Regular';
 }
 .RoadmapDesc li {
   list-style: none;
@@ -375,7 +348,6 @@ body {
 }
 .projectItemContentCol {
   width: 63%;
-  /* align-items: flex-end; */
   flex-direction: column;
   justify-content: space-between;
 }
@@ -1062,9 +1034,6 @@ body {
     font-size: 16px;
     line-height: 18px;
   }
-  .RoadmapHeading {
-    font-size: 13px;
-  }
   .projectLabel {
     font-size: 10px;
   }
@@ -1141,38 +1110,6 @@ body {
     height: 250px;
     position: absolute;
   }
-  /* .PROJECT_ITEMS_ROW1,
-  .PROJECT_ITEMS_ROW2 {
-    width: 100%;
-    height: auto;
-    padding: 5px;
-    text-align: left;
-    margin-bottom: 1em;
-    border-radius: 5px;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-  .projectItemContentCol {
-    width: 100%;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .projectItemImageCol {
-    width: 100%;
-    height: 250px;
-  }
-  .projectItemImageCol img {
-    border-radius: 10px !important;
-    object-fit: cover !important;
-  } */
-  /* 
-  .projectState {
-    font-size: 9px !important;
-    line-height: 10px;
-    font-weight: 400;
-  }*/
   .projectTitle {
     font-weight: 700;
     line-height: 16px;
@@ -1187,19 +1124,6 @@ body {
     font-weight: 400;
     margin-top: -5px;
     margin-bottom: 5px;
-  }
-  .RoadmapTitle {
-    color: white;
-    font-size: 13px;
-    margin-top: -5px;
-    font-weight: bolder;
-    margin-bottom: 10px;
-    font-family: 'Sk-Modernist-Bold';
-  }
-  .RoadmapDesc {
-    font-size: 11px;
-    margin-top: -5px;
-    margin-bottom: 10px;
   }
   .RoadmapDesc li {
     line-height: 1em;
