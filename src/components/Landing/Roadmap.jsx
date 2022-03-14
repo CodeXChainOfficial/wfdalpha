@@ -66,7 +66,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Platform V2
             </Text>
@@ -112,7 +112,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               WeFund Investment Status
             </Text>
@@ -147,7 +147,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Project Incubation
             </Text>
@@ -181,7 +181,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Documentation
             </Text>
@@ -223,7 +223,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Platform V3
             </Text>
@@ -262,7 +262,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               WeFund Investment Status
             </Text>
@@ -296,7 +296,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Project Incubation
             </Text>
@@ -329,7 +329,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Documentation
             </Text>
@@ -376,7 +376,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               WeFund Investment Status
             </Text>
@@ -408,7 +408,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Project Incubation
             </Text>
@@ -445,7 +445,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Q1 2022
             </Text>
@@ -497,7 +497,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Q2 2022
             </Text>
@@ -542,7 +542,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Q3 2022
             </Text>
@@ -583,7 +583,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="18px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Q4 2022
             </Text>
@@ -646,7 +646,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Platform V2
             </Text>
@@ -692,7 +692,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               WeFund Investment Status
             </Text>
@@ -725,7 +725,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Project Incubation
             </Text>
@@ -759,7 +759,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Documentation
             </Text>
@@ -803,7 +803,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Platform V3
             </Text>
@@ -841,7 +841,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               WeFund Investment Status
             </Text>
@@ -874,7 +874,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Project Incubation
             </Text>
@@ -906,7 +906,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Documentation
             </Text>
@@ -950,7 +950,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               WeFund Investment Status
             </Text>
@@ -982,7 +982,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Project Incubation
             </Text>
@@ -1019,7 +1019,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Q1 2022
             </Text>
@@ -1071,7 +1071,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Q2 2022
             </Text>
@@ -1116,7 +1116,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Q3 2022
             </Text>
@@ -1157,7 +1157,7 @@ export default function Roadmap() {
               color={'white'}
               fontSize="13px"
               fontWeight="bolder"
-              fontFamily="Sk-Mondernist-Bold"
+              fontFamily="Sk-Modernist-Bold"
             >
               Q4 2022
             </Text>
