@@ -222,7 +222,7 @@ export default function Works() {
               lineHeight={'16px'}
               fontSize={{ base: '11px', md: '12px', lg: '14px' }}
             >
-              Remaining funds
+              Remaining funds 
               <span style={{ color: '#63CDFA' }}>returned </span> to backers
               with <span style={{ color: '#63CDFA' }}>Anchor yield</span>{' '}
               benefit
