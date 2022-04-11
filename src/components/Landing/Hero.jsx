@@ -26,7 +26,7 @@ export default function Hero() {
         pos={'relative'}
         src="/media/Home/logo.svg"
         mt={{ base: '20vh', md: '20vh', lg: '25vh' }}
-        width={{ base: '80%', md: '50%', lg: '50%' }}
+        width={{ base: '65%', sm:'50%', md: '45%', lg: '40%', xl: '35%', '2xl': '20%' }}
       />
       <Text
         zIndex="2"
@@ -35,7 +35,7 @@ export default function Hero() {
         paddingLeft={'25px'}
         paddingRight={'25px'}
         mt={{ base: '0', md: '.3em', lg: '.1em' }}
-        fontSize={{ base: '25px', md: '32px', lg: '40px' }}
+        fontSize={{ base: '21px', sm:'25px', md: '32px', lg: '40px' }}
         lineHeight={{ base: '30px', md: '1em', lg: '1.1em' }}
       >
         CROWDFUNDING

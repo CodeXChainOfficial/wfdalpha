@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, Text, Flex } from '@chakra-ui/react'
+import { Box, Text, Flex, VStack} from '@chakra-ui/react'
 import Partner from './partner'
 
 import Carousel from 'react-multi-carousel'
@@ -72,7 +72,7 @@ export default function Partners() {
           position={'relative'}
           alignContent={'center'}
           justifyContent={'space-between'}
-          width={{ base: '75%', md: '63vw', lg: '50vw' }}
+          width={{ base: '75%', md: '49vw', lg: '50vw' }}
         >
           <Partner
             link="https://kommunitas.net/"
@@ -107,7 +107,7 @@ export default function Partners() {
           flexDirection="column"
           alignContent={'center'}
           justifyContent={'center'}
-          width={{ base: '100%', md: '86vw', lg: '86vw' }}
+          width={{ base: '100%', md: '75vw', lg: '71vw', xl: '82vw' }}
         >
           <Carousel
             showDots
@@ -167,7 +167,7 @@ export default function Partners() {
           flexDirection="column"
           alignContent={'center'}
           justifyContent={'center'}
-          width={{ base: '100%', md: '86vw', lg: '86vw' }}
+          width={{ base: '100%', md: '75vw', lg: '71vw', xl: '82vw' }}
         >
           <Carousel
             showDots
@@ -223,7 +223,7 @@ export default function Partners() {
           flexDirection="column"
           alignContent={'center'}
           justifyContent={'center'}
-          width={{ base: '100%', md: '86vw', lg: '86vw' }}
+          width={{ base: '100%', md: '75vw', lg: '71vw', xl: '82vw' }}
         >
           <Carousel
             showDots
@@ -238,6 +238,7 @@ export default function Partners() {
             responsive={responsive}
             transitionDuration={500}
           >
+           <VStack>
             <Partner
               link="https://thejakartapost.com/front-row/2022/02/14/wefund-to-bring-forth-open-democratized-crowdfunding.html"
               img="/media/partners/Jakpost.png"
@@ -246,6 +247,8 @@ export default function Partners() {
               link="https://cnnindonesia.com/teknologi/20220218213931-303-761215/wefund-manfaatkan-blockchain-terra-untuk-crowdfunding"
               img="/media/partners/CNN_Indonesia.png"
             />
+            </VStack>
+            <VStack>
             <Partner
               link="https://cryptodaily.io/wefund-project-overview/"
               img="/media/partners/Cryptodaily.png"
@@ -254,6 +257,8 @@ export default function Partners() {
               link="https://www.youtube.com/watch?v=srwWRK86ZTk"
               img="/media/partners/lunatic.png"
             />
+            </VStack>
+            <VStack>
             <Partner
               link="https://twitter.com/ETH_Daily/status/1462292597200719875"
               img="/media/partners/ethdaily.png"
@@ -262,6 +267,8 @@ export default function Partners() {
               link="https://twitter.com/bsc_daily/status/1465644599855124489"
               img="/media/partners/bscdaily.png"
             />
+            </VStack>
+            <VStack>
             <Partner
               link="https://twitter.com/PolygonDaily/status/1483137329175068672"
               img="/media/partners/polygondaily.png"
@@ -270,6 +277,8 @@ export default function Partners() {
               link="https://twitter.com/TerraLUNADaily/status/1461214295656517641"
               img="/media/partners/terradaily.png"
             />
+            </VStack>
+            <VStack>
             <Partner
               link="https://twitter.com/tyranoanalytics"
               img="/media/partners/tyrano.jpg"
@@ -278,6 +287,8 @@ export default function Partners() {
               link="https://twitter.com/solana_daily/status/1460133912861048841"
               img="/media/partners/solanadaily.jpg"
             />
+            </VStack>
+            <VStack>
             <Partner
               link="https://twitter.com/cardano_daily"
               img="/media/partners/cardanodaily.png"
@@ -286,6 +297,7 @@ export default function Partners() {
               link="https://twitter.com/bullcryptonews1/"
               img="/media/partners/bull.jpg"
             />
+            </VStack>
             <Partner
               link="https://twitter.com/"
               img="/media/partners/fantom.jpg"

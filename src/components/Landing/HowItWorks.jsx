@@ -56,7 +56,7 @@ export default function Works() {
           height={'100%'}
           fontWeight="bold"
           alignItems="center"
-          padding={'10px 10px 10px 10px'}
+          padding={'30px 10px 10px 10px'}
           position={'relative'}
           backgroundSize={'cover'}
           justifyContent={'center'}
