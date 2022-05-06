@@ -106,6 +106,10 @@ export default {
             template: 'src/pages/Cards',
         },
         {
+            path: 'launchpad',
+            template: 'src/pages/Launchpad',
+        },
+        {
             path: '404',
             template: 'src/pages/NotFound',
         },

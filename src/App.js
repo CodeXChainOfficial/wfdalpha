@@ -20,6 +20,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 
 import Navbar from './components/Navbar'
 import Index from 'pages/Index'
+import Launchpad from 'pages/Launchpad'
 import Faq from 'pages/Faq'
 import WalletInfo from 'pages/WalletInfo'
 import ExplorerProject from 'pages/ExploreComingSoon'
@@ -112,6 +113,7 @@ export default class App extends Component {
                 <Router>
                   <Index path="/" />
                   <Faq path="faq" />
+                  <Launchpad path="launchpad" />
                   <CreateProject path="create" />
                   <ModifyProject path="modify" />
                   <BackProject path="back" />
