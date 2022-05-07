@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function KYCBanner() {
   return (
-    <Box backgroundImage="/media/Home/grid-2.svg">
+    <Box backgroundImage="/media/Home/2.png">
       <Container maxW={'container.xl'} paddingY={'150px'}>
         <Center>
           <Stack>
