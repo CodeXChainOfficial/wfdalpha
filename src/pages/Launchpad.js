@@ -10,7 +10,9 @@ import { Container } from '../components/Container'
 import theme from '../theme'
 import Footer from '../components/Footer'
 import Overall from '../components/Launchpad/Overall'
+import UpcomingProject from '../components/Launchpad/UpcomingProject'
 import KYCBanner from '../components/Launchpad/KYCBanner'
+
 
 
 export default function Launchpad() {
@@ -22,6 +24,7 @@ export default function Launchpad() {
     <ChakraProvider resetCSS theme={theme}>
       <Container>
         <Overall />
+        <UpcomingProject />
         <KYCBanner />
         <Footer />
       </Container>
