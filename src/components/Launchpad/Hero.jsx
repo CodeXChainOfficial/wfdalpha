@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Flex, Text, Stack, Container, Box } from '@chakra-ui/react'
+import { HStack, Image, Flex, Text, Stack, Container, Box } from '@chakra-ui/react'
 import { ImageTransition } from '../ImageTransition'
 
 export default function Hero() {
@@ -25,7 +25,7 @@ export default function Hero() {
         <Stack>
           <Text
             fontFamily="PilatExtended-Bold"
-            fontSize={{ base: '36px', md: '58px' }}
+            fontSize={{ base: '15px', md: '58px' }}
             lineHeight={{ base: '30px', md: '1em', lg: '1.1em' }}
             letterSpacing={{ base: '0.1em' }}
             textTransform={'uppercase'}
@@ -34,7 +34,7 @@ export default function Hero() {
           </Text>
           <Text
             fontFamily="PilatExtended-Black"
-            fontSize={{ base: '45px', md: '64px' }}
+            fontSize={{ base: '20px', md: '64px' }}
             lineHeight={{ base: '30px', md: '1em', lg: '1.1em' }}
             letterSpacing={{ base: '0.1em' }}
             textTransform={'uppercase'}
@@ -44,7 +44,7 @@ export default function Hero() {
           </Text>
           <Text
             fontFamily="PilatExtended-Black"
-            fontSize={{ base: '45px', md: '64px' }}
+            fontSize={{ base: '25px', md: '64px' }}
             lineHeight={{ base: '30px', md: '1em', lg: '1.1em' }}
             letterSpacing={{ base: '0.1em' }}
             textShadow="0px 10px 10px rgba(9, 2, 90, 0.73)"
@@ -52,10 +52,11 @@ export default function Hero() {
             INCUBATOR
           </Text>
         </Stack>
-        <Flex
+        <HStack
           w='100%'
           justify={'center'}
           mt='72px'
+          spacing='21px'
         >
           <ImageTransition
             unitid={'buywfd'}
@@ -66,14 +67,14 @@ export default function Hero() {
             border3="linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"
             background3="linear-gradient(180deg, #171347 0%, #171347 100%)"
             selected={false}
-            width={{ sm: '238px', md: '238px', lg: '242px' }}
-            height={{ sm: '48px', md: '48px', lg: '35px' }}
+            width={{ sm: '148px', md: '148px', lg: '242px' }}
+            height={{ sm: '34px', md: '34px', lg: '35px' }}
             rounded={'33px'}
             onClick={() => { }}
           >
             <Text
               w='100%'
-              fontSize={{ sm: '20px', md: '20px', lg: '15px' }}
+              fontSize={{ sm: '15px', md: '15px', lg: '15px' }}
               fontFamily={'Gilroy'}
               fontWeight={'800'}
               color='#002E87'
@@ -92,15 +93,14 @@ export default function Hero() {
             border3="linear-gradient(180deg, #00A3FF 0%, #0047FF 100%)"
             background3="linear-gradient(180deg, #171347 0%, #171347 100%)"
             selected={false}
-            width={{ sm: '238px', md: '238px', lg: '242px' }}
-            height={{ sm: '48px', md: '48px', lg: '35px' }}
+            width={{ sm: '148px', md: '148px', lg: '242px' }}
+            height={{ sm: '34px', md: '34px', lg: '35px' }}
             rounded={'33px'}
-            ml={'21px'}
             onClick={() => { }}
           >
             <Text
               w='100%'
-              fontSize={{ sm: '20px', md: '20px', lg: '15px' }}
+              fontSize={{ sm: '15px', md: '15px', lg: '15px' }}
               fontFamily={'Gilroy'}
               fontWeight={'800'}
               color='#FFFFFF'
@@ -110,7 +110,7 @@ export default function Hero() {
               CONNECT WALLET
             </Text>
           </ImageTransition>
-        </Flex>
+        </HStack>
       </Container>
       <Image
         bottom={'0'}
