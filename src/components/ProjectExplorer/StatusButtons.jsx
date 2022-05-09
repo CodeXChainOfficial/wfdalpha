@@ -46,7 +46,7 @@ export default function StatusButtons({
           </Text>
         </ButtonTransition>
       )}
-      {activeTab == "WhitelistOpen" && isCardHolder(state, data.project_id) && !isCommunityWallet(state)(
+      {activeTab == "WhitelistOpen" && isCardHolder(state, data.project_id) && !isCommunityWallet(state) && (
         <ButtonTransition
           unitid={'Whitelist' + index}
           selected={false}

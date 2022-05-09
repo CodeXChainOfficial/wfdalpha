@@ -14,7 +14,7 @@ import Hero from '../components/Launchpad/Hero'
 import Highlights from '../components/Launchpad/Highlights'
 import UpcomingProject from '../components/Launchpad/UpcomingProject'
 import KYCBanner from '../components/Launchpad/KYCBanner'
-
+import Staking from '../components/Launchpad/Staking'
 
 export default function Launchpad() {
   useEffect(() => {
@@ -28,6 +28,7 @@ export default function Launchpad() {
         <Highlights />
         <UpcomingProject />
         <KYCBanner />
+        <Staking />
         <Footer />
       </Container>
     </ChakraProvider>
