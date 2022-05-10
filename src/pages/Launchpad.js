@@ -15,6 +15,7 @@ import Highlights from '../components/Launchpad/Highlights'
 import UpcomingProject from '../components/Launchpad/UpcomingProject'
 import KYCBanner from '../components/Launchpad/KYCBanner'
 import Staking from '../components/Launchpad/Staking'
+import CompletedSales from '../components/Launchpad/CompletedSales'
 
 export default function Launchpad() {
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function Launchpad() {
         <Highlights />
         <UpcomingProject />
         <KYCBanner />
+        <CompletedSales />
         <Staking />
         <Footer />
       </Container>
