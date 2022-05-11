@@ -108,6 +108,8 @@ export default {
         {
             path: 'launchpad',
             template: 'src/pages/Launchpad',
+            path: 'angel-campaign',
+            template: 'src/pages/Angel-campaign',
         },
         {
             path: '404',
