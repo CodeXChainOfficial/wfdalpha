@@ -106,6 +106,10 @@ export default {
             template: 'src/pages/Cards',
         },
         {
+            path: 'angel-campaign',
+            template: 'src/pages/Angel-campaign',
+        },
+        {
             path: '404',
             template: 'src/pages/NotFound',
         },

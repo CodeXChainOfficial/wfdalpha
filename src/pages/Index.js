@@ -22,6 +22,7 @@ import Advisors from '../components/Landing/Advisors'
 import UpcomingProject from '../components/Landing/ComingSoonCarousel'
 import IncubationProject from '../components/Landing/IncubationProject'
 import Eco from '../components/Landing/Ecosystem'
+import Highlights from '../components/Landing/Highlight'
 
 export default () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ export default () => {
     <ChakraProvider resetCSS theme={theme}>
       <Container>
         <Hero />
+        <Highlights />
         <About />
         <Litepaper />
         <Problem />

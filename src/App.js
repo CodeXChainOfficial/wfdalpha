@@ -42,6 +42,7 @@ import Blog from 'pages/Blog'
 import Dashboard from 'pages/Dashboard'
 import Staking from 'pages/Staking'
 import Cards from 'pages/Cards'
+import AngelCampaign from 'pages/Angel-campaign'
 import NotFound from 'pages/NotFound'
 
 export default class App extends Component {
@@ -133,6 +134,7 @@ export default class App extends Component {
                   <Dashboard path="dashboard" />
                   <Staking path="staking" />
                   <Cards path="cards" />
+                  <AngelCampaign path="angel-campaign" />
                   <NotFound default />
                 </Router>
                 <ToastContainer/>
