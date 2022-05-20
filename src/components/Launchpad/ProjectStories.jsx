@@ -11,6 +11,11 @@ const stories = [
     image: '/media/Launchpad/secret-partner.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  },
+  {
+    image: '/media/Launchpad/secret-partner.png',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
   }
 ]
 
@@ -19,7 +24,7 @@ export default function ProjectStories() {
     <Box paddingY={'32px'}>
       <Container maxW={'container.xl'}>
         <Heading>Project Stories</Heading>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
+        <Text>Stories from our Projects</Text>
         <Box>
           <HStack marginY={'32px'}>
             {stories.map((story, i) => 

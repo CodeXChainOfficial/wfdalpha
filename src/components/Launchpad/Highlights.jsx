@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Image, Button } from '@chakra-ui/react'
+import { Flex, Text, Image, Button, Link } from '@chakra-ui/react'
 
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
@@ -23,7 +23,7 @@ const responsive = {
   },
 }
 
-export default function Problem() {
+export default function Highlights() {
   return (
     <Flex
       width="100%"
@@ -33,7 +33,7 @@ export default function Problem() {
       my={{ base: '5em', md: '8em', lg: '10em' }}
     >
       <Text
-        fontSize='48px'
+        fontSize={{base:'20px', md:'48px'}}
         fontWeight='700'
         color='#6ACEF5'
       >
@@ -90,23 +90,24 @@ export default function Problem() {
               >
                 <Text 
                   fontFamily='PilatExtended-Bold' 
-                  fontSize={{sm:'15px', md:'15px', lg:'32px' }}
+                  fontSize={{sm:'18px', md:'15px', lg:'32px' }}
                   fontWeight='400'
                 >
                   {item.title}
                 </Text>
                 <Text 
-                  fontFamily={'Poppins'} 
-                  fontSize={{sm:'8px', md:'8px', lg:'20px' }}
-                  fontWeight={'600'} 
+                  fontFamily={'Sk-Modernist-Regular'} 
+                  fontSize={{sm:'14px', md:'8px', lg:'20px' }}
                   textAlign='justify'
                   mt='43px'
                 >
                   {item.description}
                 </Text>
                 <Flex w='100%' justify={'center'}>
+                <Link href={item.link}>
                   <Button
                     mt='48px'
+                    mb= {{base:'20px', md: '5px'}}
                     w={{sm:'139px', md: '139px', lg: '243px'}}
                     h={{sm:'33px', md:'33px', lg: '43px'}}
                     bg={'linear-gradient(180deg, #6ACEF5 0%, #4C9BE8 100%)'}
@@ -116,10 +117,11 @@ export default function Problem() {
                       Join us
                     </Text>
                   </Button>
+                </Link>
                 </Flex>
               </Flex>
               <Flex
-                display={{sm:'none', md:'none', lg:'flex'}}
+                display={{base:'none', lg:'flex'}}
                 rounded='20px'
                 minW='407px'
                 p='19px'
@@ -137,24 +139,22 @@ export default function Problem() {
 
 const projects = [
   {
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    img: '/media/Launchpad/Highlights/1.png',
+    title: 'WeFund Beta Testing with Angel Protocol',
+    description: 'WeFund will enter the testing phase with Angel Protocol to ensure WeFund functionality in a public test while raising funds for charity.',
+    img: 'media/partners/Angelcampaign.png',
+    link: '/angel-campaign'
   },
   {
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    img: '/media/Launchpad/Highlights/1.png',
+    title: 'WeFund Beta Testing with Angel Protocol',
+    description: 'WeFund will enter the testing phase with Angel Protocol to ensure WeFund functionality in a public test while raising funds for charity.',
+    img: 'media/partners/Angelcampaign.png',
+    link: '/angel-campaign'
   },
   {
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    img: '/media/Launchpad/Highlights/1.png',
+    title: 'WeFund Beta Testing with Angel Protocol',
+    description: 'WeFund will enter the testing phase with Angel Protocol to ensure WeFund functionality in a public test while raising funds for charity.',
+    img: 'media/partners/Angelcampaign.png',
+    link: '/angel-campaign'
   },
-  {
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    img: '/media/Launchpad/Highlights/1.png',
-  },
-]
 
+]

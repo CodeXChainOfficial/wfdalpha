@@ -11,7 +11,7 @@ export default function Hero() {
       position="relative"
       alignItems="center"
       flexDirection="column"
-      bgGradient="Linear(#058cd8, #4d188f, #2a0a31)"
+      bgGradient="Linear(#2a0a31,#4d188f,#058cd8)"
       height={{ base: '30em', md: '90vh', lg: '90vh' }}
     >
       <Image
@@ -25,7 +25,7 @@ export default function Hero() {
         <Stack>
           <Text
             fontFamily="PilatExtended-Bold"
-            fontSize={{ base: '15px', md: '58px' }}
+            fontSize={{ base: '16px', md: '58px' }}
             lineHeight={{ base: '30px', md: '1em', lg: '1.1em' }}
             letterSpacing={{ base: '0.1em' }}
             textTransform={'uppercase'}
@@ -44,7 +44,7 @@ export default function Hero() {
           </Text>
           <Text
             fontFamily="PilatExtended-Black"
-            fontSize={{ base: '25px', md: '64px' }}
+            fontSize={{ base: '20px', md: '64px' }}
             lineHeight={{ base: '30px', md: '1em', lg: '1.1em' }}
             letterSpacing={{ base: '0.1em' }}
             textShadow="0px 10px 10px rgba(9, 2, 90, 0.73)"
@@ -74,7 +74,7 @@ export default function Hero() {
           >
             <Text
               w='100%'
-              fontSize={{ sm: '15px', md: '15px', lg: '15px' }}
+              fontSize={{ base: '10px', sm: '15px', md: '15px', lg: '15px' }}
               fontFamily={'Gilroy'}
               fontWeight={'800'}
               color='#002E87'
@@ -100,7 +100,7 @@ export default function Hero() {
           >
             <Text
               w='100%'
-              fontSize={{ sm: '15px', md: '15px', lg: '15px' }}
+              fontSize={{ base: '10px', sm: '15px', md: '15px', lg: '15px' }}
               fontFamily={'Gilroy'}
               fontWeight={'800'}
               color='#FFFFFF'

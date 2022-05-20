@@ -35,8 +35,8 @@ export default function Staking() {
         </Text>
       </Flex>
       <Text
-        fontFamily={'poppins'}
-        fontSize={{sm:'8px', md: '8px', lg:'21px'}}
+        fontFamily={'PilatExtended-Light'}
+        fontSize={{sm:'12px', md: '18px', lg:'21px'}}
         mt='32px'
         w='60%'
       >
@@ -109,10 +109,10 @@ export default function Staking() {
         justify='space-between'
         px={{sm:'36px', md:'36px', lg:'132px'}}
       >
-        <Card img='/media/card/Platinum.png' title='PLATINUM'/>
-        <Card img='/media/card/Gold.png' title='GOLD'/>
-        <Card img='/media/card/Silver.png' title='SILVER'/>
-        <Card img='/media/card/Bronze.png' title='BRONZE'/>
+        <Card img='/media/Card/Platinum.png' title='PLATINUM'/>
+        <Card img='/media/Card/Gold.png' title='GOLD'/>
+        <Card img='/media/Card/Silver.png' title='SILVER'/>
+        <Card img='/media/Card/Bronze.png' title='BRONZE'/>
       </Flex>
     </Flex>
   )

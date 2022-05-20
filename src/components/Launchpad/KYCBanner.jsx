@@ -9,7 +9,7 @@ export default function KYCBanner() {
         <Center>
           <Stack>
 
-            <Text marginY={'42px'} fontFamily={'PilatExtended-Bold'} fontWeight={700} fontSize={'36px'} textAlign={'center'}>To get ahead of the game, <br />
+            <Text marginY={'42px'} fontFamily={'PilatExtended-Bold'} fontWeight={700} fontSize={{base:'24px',md:'36px'}} textAlign={'center'}>To get ahead of the game, <br />
             <chakra.span color={'#63CDFA'}>Complete your KYC</chakra.span> early and skip the queue!</Text>
             <Center>
               <Button borderRadius={'full'} background={'linear-gradient(180deg, #21C9FF 0%, #1383D5 100%);'} color={'#002E87'} fontSize={'20px'} fontWeight={800} paddingX={'82px'}>GO TO KYC</Button>
