@@ -4,38 +4,6 @@ import React, { useState } from 'react';
 
 const projects = [
   {
-    image: '/media/partners/lynx-dark.png',
-    name: 'Lynx Verse',
-    status: 'Coming Soon',
-    registration_start: 'TBA',
-    platform_raise: 'TBA',
-    link: '',
-  },
-  {
-    image: '/media/partners/Kosu.png',
-    name: 'Kosu',
-    status: 'Coming Soon',
-    registration_start: 'TBA',
-    platform_raise: 'TBA',
-    link: '',
-  },
-  {
-    image: '/media/partners/Greenprotocol.png',
-    name: 'Green Protocol',
-    status: 'Coming Soon',
-    registration_start: 'TBA',
-    platform_raise: 'TBA',
-    link: '',
-  },
-  {
-    image: '/media/partners/Africred.jpeg',
-    name: 'Africred',
-    status: 'Coming Soon',
-    registration_start: 'TBA',
-    platform_raise: 'TBA',
-    link: '',
-  },
-  {
     image: '/media/Launchpad/secret-partner.png',
     name: 'Top Secret',
     status: 'Coming Soon',
@@ -105,16 +73,16 @@ function ProjectItem(props) {
   )
 }
 
-export default function UpcomingProject() {
+export default function CompletedProject() {
   const [selected, setSelected] = useState(0)
   return (
-    <Box id='Upcoming'>
+    <Box id='CompletedProject'>
       <Center marginTop={'48px'}>
         <Text
           color="#63CDFA"
           fontFamily="PilatExtended-Bold"
           fontSize={{ base: '18px', md: '25px', lg: '30px' }}>
-          UPCOMING <chakra.span color={'white'}>PROJECT</chakra.span> 
+          COMPLETED <chakra.span color={'white'}>PROJECT</chakra.span> 
         </Text>
       </Center>
       <Container maxWidth={'container.xl'} marginY={'84px'}>

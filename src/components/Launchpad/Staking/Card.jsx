@@ -32,7 +32,7 @@ export default function Card({img, title}) {
           fontSize={{base:'8px', lg:'20px'}}
           fontWeight='900'
         >
-          WFD-UST LP
+          WFD-USDT LP
         </Text>
         <Text
           fontSize={{base:'8px', lg:'16px'}}

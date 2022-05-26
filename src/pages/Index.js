@@ -5,26 +5,23 @@ import AOS from 'aos'
 import 'aos/dist/aos.css' // You can also use <link> for styles
 
 import 'react-multi-carousel/lib/styles.css'
-
+import { Container } from '../components/Container'
 
 import theme from '../theme'
 import Footer from '../components/Footer'
-import Team from '../components/Landing/Team'
-import Hero from '../components/Landing/Hero'
-import About from '../components/Landing/About'
-import Litepaper from '../components/Landing/Litepaper'
-import RoadMap from '../components/Landing/Roadmap'
-import Problem from '../components/Landing/Problem'
-import { Container } from '../components/Container'
-import Works from '../components/Landing/HowItWorks'
-import Partners from '../components/Landing/Partners'
-import Advisors from '../components/Landing/Advisors'
-import UpcomingProject from '../components/Landing/ComingSoonCarousel'
-import IncubationProject from '../components/Landing/IncubationProject'
-import Eco from '../components/Landing/Ecosystem'
-import Highlights from '../components/Landing/Highlight'
 
-export default () => {
+import Hero from '../components/Launchpad/Hero'
+import Highlights from '../components/Launchpad/Highlights'
+import UpcomingProject from '../components/Launchpad/UpcomingProject'
+import OngoingProject from '../components/Launchpad/OngoingProject'
+import CompletedProject from '../components/Launchpad/CompletedProject'
+import KYCBanner from '../components/Launchpad/KYCBanner'
+import Staking from '../components/Launchpad/Staking'
+import CompletedSales from '../components/Launchpad/CompletedSales'
+import ProjectStories from '../components/Launchpad/ProjectStories'
+import PTabs from '../components/Launchpad/ProjectTabs'
+
+export default function Launchpad() {
   useEffect(() => {
     AOS.init({ duration: 1000 })
   }, [])
@@ -34,15 +31,13 @@ export default () => {
       <Container>
         <Hero />
         <Highlights />
-        <About />
-        <Litepaper />
-        <Problem />
-        <Works />
+        <PTabs />
         <UpcomingProject />
-        <Eco />
-        <RoadMap />
-        <Team />
-        <Advisors />
+        <OngoingProject />
+        <CompletedProject />
+        <KYCBanner />
+        <CompletedSales />
+        <Staking />
         <Footer />
       </Container>
     </ChakraProvider>

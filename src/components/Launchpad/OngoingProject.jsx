@@ -105,16 +105,16 @@ function ProjectItem(props) {
   )
 }
 
-export default function UpcomingProject() {
+export default function OngoingProject() {
   const [selected, setSelected] = useState(0)
   return (
-    <Box id='Upcoming'>
+    <Box id='Ongoing'>
       <Center marginTop={'48px'}>
         <Text
           color="#63CDFA"
           fontFamily="PilatExtended-Bold"
           fontSize={{ base: '18px', md: '25px', lg: '30px' }}>
-          UPCOMING <chakra.span color={'white'}>PROJECT</chakra.span> 
+          ONGOING <chakra.span color={'white'}>PROJECT</chakra.span> 
         </Text>
       </Center>
       <Container maxWidth={'container.xl'} marginY={'84px'}>

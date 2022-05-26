@@ -25,6 +25,46 @@ const sales = [
     platform_raise: 'TBA',
     ath_since_tge: 'TBA',
     link: '',
+  },
+  {
+    image: '/media/Launchpad/secret-partner.png',
+    name: 'Top Secret',
+    registration_start: 'TBA',
+    platform_raise: 'TBA',
+    ath_since_tge: 'TBA',
+    link: '',
+  },
+  {
+    image: '/media/Launchpad/secret-partner.png',
+    name: 'Top Secret',
+    registration_start: 'TBA',
+    platform_raise: 'TBA',
+    ath_since_tge: 'TBA',
+    link: '',
+  },
+  {
+    image: '/media/Launchpad/secret-partner.png',
+    name: 'Top Secret',
+    registration_start: 'TBA',
+    platform_raise: 'TBA',
+    ath_since_tge: 'TBA',
+    link: '',
+  },
+  {
+    image: '/media/Launchpad/secret-partner.png',
+    name: 'Top Secret',
+    registration_start: 'TBA',
+    platform_raise: 'TBA',
+    ath_since_tge: 'TBA',
+    link: '',
+  },
+  {
+    image: '/media/Launchpad/secret-partner.png',
+    name: 'Top Secret',
+    registration_start: 'TBA',
+    platform_raise: 'TBA',
+    ath_since_tge: 'TBA',
+    link: '',
   }
 ]
 
@@ -62,7 +102,7 @@ function SaleItem(props) {
 
 export default function CompletedSales() {
   return (
-    <Box paddingY={'32px'}>
+    <Box paddingY={'32px'} id='CompletedSales'>
       <Container maxW={'container.xl'}>
         <Center marginTop={'48px'}>
           <Text
@@ -77,16 +117,16 @@ export default function CompletedSales() {
           borderStyle={'solid'} borderWidth={'3px'} borderColor={'#6ACEF5'}
           maxH={'800px'} marginY={'32px'} overflowY={'scroll'} css={{
             '&::-webkit-scrollbar': {
-              width: '18px',
+              width: '8px',
               backgroundColor: '#6ACEF5',
-              borderRadius: '12px'
+              borderRadius: '8px'
             },
             '&::-webkit-scrollbar-track': {
               backgroundColor: '#45108AA1',
             },
             '&::-webkit-scrollbar-thumb': {
               backgroundColor: '#45108AA1',
-              borderRadius: '12px',
+              borderRadius: '8px',
             },
           }}>
           <Box padding={{base:'8px', md: '30px'}}>
