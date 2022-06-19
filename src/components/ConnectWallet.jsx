@@ -1,13 +1,52 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react'
 import { ChakraProvider, Image, Flex, Box, Text, VStack, HStack } from '@chakra-ui/react'
 import { LCDClient, WasmAPI } from '@terra-money/terra.js'
-import {
-  useWallet,
-  useConnectedWallet,
-} from '@terra-money/wallet-provider'
+import { useWallet, useConnectedWallet } from '@terra-money/wallet-provider'
+import { BigNumber, ethers } from "ethers";
+import WalletConnect from "@walletconnect/client";
+import QRCodeModal from "@walletconnect/qrcode-modal";
+
 import { Wallet, CaretRight, Power, Check } from 'phosphor-react'
 import numeral from 'numeral'
 import { useStore } from '../store'
+
+const connector = new WalletConnect({
+  bridge: "https://bridge.walletconnect.org", // Required
+  qrcodeModal: QRCodeModal,
+});
+
+// Check if connection is already established
+if (!connector.connected) {
+  // create new session
+  connector.createSession();
+}
+
+// Subscribe to connection events
+connector.on("connect", (error, payload) => {
+  if (error) {
+    throw error;
+  }
+
+  // Get provided accounts and chainId
+  const { accounts, chainId } = payload.params[0];
+});
+
+connector.on("session_update", (error, payload) => {
+  if (error) {
+    throw error;
+  }
+
+  // Get updated accounts and chainId
+  const { accounts, chainId } = payload.params[0];
+});
+
+connector.on("disconnect", (error, payload) => {
+  if (error) {
+    throw error;
+  }
+
+  // Delete connector
+});
 
 export default function ConnectWallet() {
   let connectedWallet = ''
@@ -44,9 +83,7 @@ export default function ConnectWallet() {
     })
   }, [connectedWallet])
 
-  function connectTo(to) {
-
-console.log(wallet)
+  async function connectTo(to) {
     if (to == 'extension') {
       wallet.connect(wallet.availableConnectTypes[1])
     } else if (to == 'mobile') {
@@ -54,13 +91,36 @@ console.log(wallet)
     } else if (to == 'disconnect') {
       wallet.disconnect()
       dispatch({ type: 'setWallet', message: {} })
+    } else if(to == 'metamask') {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const accounts = await provider.send("eth_requestAccounts", []);
+      const account = accounts[0];
+  
+      const { chainId } = await provider.getNetwork()
+      let balance = await provider.getBalance(account);
+  
+      // dispatch({ type: ActionKind.setEthBalance, payload: balance });
+      // dispatch({ type: ActionKind.setMetamaskConnected, payload: true });
+    } else if(to == 'trust'){
+      const request = connector._formatRequest({
+        method: 'get_accounts',
+      });
+      
+      connector
+        ._sendCallRequest(request)
+        .then(result => {
+          // Returns the accounts
+          console.log(result);
+        })
+        .catch(error => {
+          // Error returned when rejected
+          console.error(error);
+        });
     }
-    // location.reload();
   }
 
   async function contactBalance() {
-    if (connectedWallet?.walletAddress && lcd) 
-    {
+    if (connectedWallet?.walletAddress && lcd) {
       dispatch({ type: 'setWallet', message: connectedWallet })
 
       let coins
@@ -73,9 +133,9 @@ console.log(wallet)
       dispatch({ type: 'setAllNativeCoins', message: coins })
 
       let uusd;
-      if(typeof coins[0]._coins === 'undefined' ||
-          typeof coins[0]._coins.uusd == 'undefined' )
-          uusd = 0;
+      if (typeof coins[0]._coins === 'undefined' ||
+        typeof coins[0]._coins.uusd == 'undefined')
+        uusd = 0;
       else
         uusd = coins[0]._coins.uusd.amount;
 
@@ -136,25 +196,25 @@ console.log(wallet)
   //--------------for referral-----------------------------
   const crypto = require('crypto');
 
-   function encrypt3DES(data, key) {
+  function encrypt3DES(data, key) {
     const md5Key = crypto.createHash('md5').update(key).digest("hex").substr(0, 24);
     const cipher = crypto.createCipheriv('des-ede3', md5Key, '');
-  
+
     let encrypted = cipher.update(data, 'utf8', 'base64');
     encrypted += cipher.final('base64');
     return encrypted;
   }
-  
+
   function decrypt3DES(data, key) {
     const md5Key = crypto.createHash('md5').update(key).digest("hex").substr(0, 24);
     const decipher = crypto.createDecipheriv('des-ede3', md5Key, '');
-  
+
     let encrypted = decipher.update(data, 'base64', 'utf8');
     encrypted += decipher.final('utf8');
     return encrypted;
   }
 
-  async function confirmReferral(){
+  async function confirmReferral() {
     let referralLink = 'https://wefund.app/?referral=' + encrypt3DES(connectedWallet.walletAddress, "wefundkeyreferral");
     dispatch({ type: 'setReferralLink', message: referralLink })
 
@@ -165,13 +225,13 @@ console.log(wallet)
       referral_code = urlParams.get('referral');
 
       let base = '';
-      if(referral_code != null){
+      if (referral_code != null) {
         referral_code = referral_code.split(' ').join('+');
-        try{
+        try {
           base = decrypt3DES(referral_code, "wefundkeyreferral");
 
         }
-        catch(e){
+        catch (e) {
           console.log(e);
         }
       }
@@ -186,16 +246,16 @@ console.log(wallet)
       };
 
       await fetch(state.request + '/checkreferral', requestOptions)
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch({
-          type: 'setReferralCount',
-          message: data.data,
+        .then((res) => res.json())
+        .then((data) => {
+          dispatch({
+            type: 'setReferralCount',
+            message: data.data,
+          })
         })
-      })
-      .catch((e) =>{
-        console.log("Error:"+e);
-      })      
+        .catch((e) => {
+          console.log("Error:" + e);
+        })
     }
   }
 
@@ -208,110 +268,107 @@ console.log(wallet)
     // window.addEventListener('scroll', handleScroll)
   }, [connectedWallet])
 
+  const ConnectionItem = ({ label, link }) => {
+    return (
+      <button
+        onClick={() => connectTo(link)}
+        className="dropdown-item"
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
+        <CaretRight size={16} /> {label}
+      </button>
+    )
+  }
   return (
     <>
-      <VStack display={{ base: 'none', md: 'none', lg: 'block'}}>
-      <div className="navbar-nav" style={{ flexDirection: 'row', width: '100%' }}>
-        {!connected && (
-          <>
-            <button
-              className="btn btn-orange  nav-item dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              style={{
-                color: 'white',
-                backGroundColor: 'red',
-                width: '100%',
-                background:
-                  'linear-gradient(180deg, rgba(254, 134, 0, 0.2) 0%, rgba(254, 134, 0, 0) 100%)',
-                backdropFilter: 'blur(54px)',
-                borderRadius: '30px',
-              }}
-            >
-              Connect Wallet +&nbsp;
-            </button>
-            <ul
-              className="dropdown-menu dropdown-menu-end"
-              aria-labelledby="dropdownMenuButton1"
-            >
+      <VStack display={{ base: 'none', md: 'none', lg: 'block' }}>
+        <div className="navbar-nav" style={{ flexDirection: 'row', width: '100%' }}>
+          {!connected && (
+            <>
               <button
-                onClick={() => connectTo('extension')}
-                className="dropdown-item"
+                className="btn btn-orange  nav-item dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
                 style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
+                  color: 'white',
+                  backGroundColor: 'red',
+                  width: '100%',
+                  background:
+                    'linear-gradient(180deg, rgba(254, 134, 0, 0.2) 0%, rgba(254, 134, 0, 0) 100%)',
+                  backdropFilter: 'blur(54px)',
+                  borderRadius: '30px',
                 }}
               >
-                <CaretRight size={16} /> Terra Station (Browser)
+                Connect Wallet +&nbsp;
               </button>
+              <ul
+                className="dropdown-menu dropdown-menu-end"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <ConnectionItem label="Terra Station (Browser)" link="extension" />
+                <ConnectionItem label="Terra Station (QR Code)" link="mobile" />
+                <ConnectionItem label="Metamask" link="metamask" />
+                <ConnectionItem label="TrustWallet" link="trust" />
+              </ul>
+            </>
+          )}
+          {connected && (
+            <>
               <button
-                onClick={() => connectTo('mobile')}
-                className="dropdown-item"
+                className="btn btn-orange nav-item dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+                id="dropdownMenuButton1"
                 style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
+                  color: 'white',
+                  backGroundColor: 'red',
+                  width: '100%',
+                  background:
+                    'linear-gradient(180deg, rgba(254, 134, 0, 0.2) 0%, rgba(254, 134, 0, 0) 100%)',
+                  backdropFilter: 'blur(54px)',
+                  borderRadius: '30px',
                 }}
               >
-                <CaretRight size={16} /> Terra Station (QR Code)
+                &nbsp;&nbsp;{returnBank() ? returnBank() : 'loading'}&nbsp;&nbsp;
               </button>
-            </ul>
-          </>
-        )}
-        {connected && (
-          <>
-            <button
-              className="btn btn-orange nav-item dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              type="button"
-              id="dropdownMenuButton1"
-              style={{
-                color: 'white',
-                backGroundColor: 'red',
-                width: '100%',
-                background:
-                  'linear-gradient(180deg, rgba(254, 134, 0, 0.2) 0%, rgba(254, 134, 0, 0) 100%)',
-                backdropFilter: 'blur(54px)',
-                borderRadius: '30px',
-              }}
-            >
-              &nbsp;&nbsp;{returnBank() ? returnBank() : 'loading'}&nbsp;&nbsp;
-            </button>
-            <ul
-              className="dropdown-menu dropdown-menu-end"
-              aria-labelledby="dropdownMenuButton2"
-              style={{ top: '70px' }}
-            >
-              {bank && (
-                <div
-                  className="wallet-info d-inline-block text-start px-3"
-                  style={{ fontSize: '13px' }}
+              <ul
+                className="dropdown-menu dropdown-menu-end"
+                aria-labelledby="dropdownMenuButton2"
+                style={{ top: '70px' }}
+              >
+                {bank && (
+                  <div
+                    className="wallet-info d-inline-block text-start px-3"
+                    style={{ fontSize: '13px' }}
+                  >
+                    <span className="d-block">
+                      <strong>YOUR WALLET:</strong>
+                    </span>
+                    <span className="d-block" style={{ marginBottom: '-5px' }}>
+                      {bank} <span className="text-sm">UST</span>
+                    </span>
+                  </div>
+                )}
+                <button
+                  onClick={() => connectTo('disconnect')}
+                  className="dropdown-item"
                 >
-                  <span className="d-block">
-                    <strong>YOUR WALLET:</strong>
-                  </span>
-                  <span className="d-block" style={{ marginBottom: '-5px' }}>
-                    {bank} <span className="text-sm">UST</span>
-                  </span>
-                </div>
-              )}
-              <button
-                onClick={() => connectTo('disconnect')}
-                className="dropdown-item"
-              >
-                <Power size={16} style={{ marginTop: '-2px' }} />{' '}
-                <span style={{ fontSize: '13px' }}>Disconnect</span>
-              </button>
-            </ul>
-          </>
-        )}
-      </div>
+                  <Power size={16} style={{ marginTop: '-2px' }} />{' '}
+                  <span style={{ fontSize: '13px' }}>Disconnect</span>
+                </button>
+              </ul>
+            </>
+          )}
+        </div>
       </VStack>
-      <VStack display={{ base: 'block', md: 'block', lg: 'none'}}>
+      <VStack display={{ base: 'block', md: 'block', lg: 'none' }}>
         {!connected && (
           <div className="dropdown-content3">
             <button
